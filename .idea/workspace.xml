@@ -2,178 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d17ebc9-9846-473a-a2a1-3b420b9b5355" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/antlr-2.7.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/cdi-api-1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/classmate-1.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/dom4j-1.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/el-api-2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/geronimo-jta_1.1_spec-1.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/hibernate-commons-annotations-5.0.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/hibernate-core-5.2.3.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jandex-2.0.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javassist-3.20.0-GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javax.inject-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jboss-logging-3.3.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jsr250-api-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT.war" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/activation-1.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/classmate-1.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/commons-codec-1.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/commons-io-2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/commons-logging-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/hibernate-validator-5.4.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/httpclient-4.5.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/httpcore-4.4.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jandex-2.0.3.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-annotations-api_1.2_spec-1.0.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-dmr-1.4.0.Beta2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-invocation-1.5.0.Beta4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-jaxrs-api_2.0_spec-1.0.1.Beta1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-logmanager-2.0.5.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-marshalling-2.0.0.Beta5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-modules-1.6.0.Beta6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-msc-1.2.7.SP1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-remoting-5.0.0.Beta18.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-stdio-1.0.2.GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-threads-2.2.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jboss-vfs-3.2.12.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/jcip-annotations-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/picketbox-5.0.0.Alpha3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/resteasy-jaxrs-3.1.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/resteasy-jaxrs-services-3.1.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/staxmapper-1.3.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/undertow-core-1.4.11.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/undertow-server-1.0.0.Beta13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/validation-api-1.1.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/vdx-core-1.1.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/vdx-wildfly-1.1.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-client-config-1.0.0.Beta2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-common-1.2.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-controller-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-controller-client-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-core-management-client-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-core-security-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-core-security-api-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-deployment-repository-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-domain-http-interface-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-domain-management-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-elytron-1.1.0.Beta28.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-io-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-network-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-openssl-java-1.0.0.Beta6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-platform-mbean-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-process-controller-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-protocol-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-remoting-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-self-contained-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-server-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/wildfly-version-3.0.0.Beta7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/xnio-api-3.5.0.Beta2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/lib/xnio-nio-3.3.6.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/webshop_ear_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/webshop_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/webshop_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_2_3_5_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_core_1_4_11_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_6_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_8_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_2_8_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_4_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_invocation_jboss_invocation_1_5_0_Beta4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jboss_dmr_1_4_0_Beta2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jboss_vfs_3_2_12_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logmanager_jboss_logmanager_2_0_5_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_marshalling_jboss_marshalling_2_0_0_Beta5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_modules_jboss_modules_1_6_0_Beta6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_msc_jboss_msc_1_2_7_SP1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_remoting_jboss_remoting_5_0_0_Beta18.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_resteasy_resteasy_jaxrs_3_1_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_resteasy_resteasy_jaxrs_services_3_1_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_annotation_jboss_annotations_api_1_2_spec_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_ws_rs_jboss_jaxrs_api_2_0_spec_1_0_1_Beta1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_staxmapper_1_3_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_stdio_jboss_stdio_1_0_2_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_threads_jboss_threads_2_2_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_api_3_5_0_Beta2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_nio_3_3_6_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_picketbox_picketbox_5_0_0_Alpha3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectodd_vdx_vdx_core_1_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectodd_vdx_vdx_wildfly_1_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_client_wildfly_client_config_1_0_0_Beta2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_common_wildfly_common_1_2_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_controller_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_controller_client_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_core_management_client_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_core_security_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_core_security_api_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_deployment_repository_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_domain_http_interface_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_domain_management_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_io_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_network_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_platform_mbean_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_process_controller_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_protocol_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_remoting_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_self_contained_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_server_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_core_wildfly_version_3_0_0_Beta7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_openssl_wildfly_openssl_java_1_0_0_Beta6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_security_elytron_web_undertow_server_1_0_0_Beta13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_wildfly_security_wildfly_elytron_1_1_0_Beta28.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/application.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sogeti/webshop/hibernate.cfg.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jboss-web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/controllers/controllers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/filters/filters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/libs/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/services/services.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/beans.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/WEB-INF/jboss-web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/app/controllers/controllers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/app/filters/filters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/app/libs/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/app/services/services.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/webshop-1.0-SNAPSHOT/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webshop.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -251,6 +80,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="pnederlof" />
         <option value="Peter" />
       </list>
     </option>
@@ -817,12 +647,20 @@
       <workItem from="1489589297391" duration="3582000" />
       <workItem from="1489652554682" duration="2011000" />
       <workItem from="1489654722938" duration="7711000" />
-      <workItem from="1489738421343" duration="466000" />
+      <workItem from="1489738421343" duration="874000" />
     </task>
+    <task id="LOCAL-00001" summary="eerste upload, nog niet werkend ws door persistence.xml">
+      <created>1489738899769</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1489738899769</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13770000" />
+    <option name="totallyTimeSpent" value="14178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1030" extended-state="6" />
@@ -871,6 +709,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="eerste upload, nog niet werkend ws door persistence.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="eerste upload, nog niet werkend ws door persistence.xml" />
   </component>
