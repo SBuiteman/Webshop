@@ -1,2 +1,2 @@
-com\sogeti\webshop\common\EntityManagerExample.class
-com\sogeti\webshop\common\Student.class
+com\sogeti\webshop\common\Product.class
+com\sogeti\webshop\common\ProductManager.class
