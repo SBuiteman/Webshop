@@ -1,0 +1,3 @@
+<jboss-web>
+    <context-root>webshop</context-root>
+</jboss-web>
