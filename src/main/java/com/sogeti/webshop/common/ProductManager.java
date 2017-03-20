@@ -13,7 +13,8 @@ import java.util.List;
 public class ProductManager {
     // create EntityManagerFactory, mus always be closed
 
-    public static final EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("webshopPU");
+    public static final EntityManagerFactory ENTITY_MANAGER_FACTORY =
+            Persistence.createEntityManagerFactory("webshopPU");
 
     public static List<Product> readAllProducts () {
 
