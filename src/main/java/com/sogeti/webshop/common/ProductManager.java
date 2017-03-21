@@ -56,9 +56,7 @@ public class ProductManager {
 
         // Gets a JSON formatted String for each object.
         for(Product product : products) {
-            product.toString();
-            JSONPObject jsonpObject = (JSONPObject) product.toString();
-            JsonArray jsonArray
+            
         }
 
         return products;

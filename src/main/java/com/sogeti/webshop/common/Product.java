@@ -1,5 +1,7 @@
 package com.sogeti.webshop.common;
 
+import jdk.nashorn.internal.parser.JSONParser;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -57,11 +59,4 @@ public class Product implements Serializable {
         return price;
     }
 
-    @Override
-    public String toString() {
-        return new StringBuffer(" Product Name : ").append(this.name)
-                .append(" Product Description : ").append(this.description)
-                .append(" Product Price : ").append(this.price).append(" ID : ")
-                .append(this.id).toString();
-    }
 }
