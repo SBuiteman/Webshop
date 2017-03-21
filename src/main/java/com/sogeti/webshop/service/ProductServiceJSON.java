@@ -18,7 +18,7 @@ public class ProductServiceJSON {
 
         // create list of json products met methode uit productmanager
         //List<?> list =
-        JsonObject json = new JsonObject();
+        ///JsonObject json = new JsonObject();
 
 
         return Response.status(200).entity("Hello").build();

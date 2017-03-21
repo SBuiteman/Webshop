@@ -19,6 +19,8 @@ public class ProductManager {
     public static final EntityManagerFactory ENTITY_MANAGER_FACTORY =
             Persistence.createEntityManagerFactory("webshopPU");
 
+
+
     public static List<Product> readAllProducts () {
 
         List<Product> products = null;
