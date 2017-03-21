@@ -37,7 +37,7 @@ public class ProductManager {
             transaction.begin();
 
             // get a list of products
-            products = manager.createQuery("SELECT p from Product p, Product.class ").getResultList();
+            products = manager.createQuery("SELECT p from Product p, Product.class").getResultList();
 
             // commit transaction
             transaction.commit();
