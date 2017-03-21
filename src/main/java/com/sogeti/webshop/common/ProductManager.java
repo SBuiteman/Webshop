@@ -1,5 +1,8 @@
 package com.sogeti.webshop.common;
 
+import com.mysql.cj.xdevapi.JsonArray;
+import org.codehaus.jackson.map.util.JSONPObject;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -49,6 +52,13 @@ public class ProductManager {
         } finally {
             // close the entitymanager
             manager.close();
+        }
+
+        // Gets a JSON formatted String for each object.
+        for(Product product : products) {
+            product.toString();
+            JSONPObject jsonpObject = (JSONPObject) product.toString();
+            JsonArray jsonArray
         }
 
         return products;
