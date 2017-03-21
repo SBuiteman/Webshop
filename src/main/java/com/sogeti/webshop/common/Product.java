@@ -56,4 +56,12 @@ public class Product implements Serializable {
     public BigDecimal getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return new StringBuffer(" Product Name : ").append(this.name)
+                .append(" Product Description : ").append(this.description)
+                .append(" Product Price : ").append(this.price).append(" ID : ")
+                .append(this.id).toString();
+    }
 }
