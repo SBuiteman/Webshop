@@ -1,9 +1,14 @@
 package com.sogeti.webshop.service;
 
-import javax.json.JsonObject;
+import com.mysql.cj.xdevapi.JsonArray;
+import com.sogeti.webshop.common.Product;
+import com.sogeti.webshop.common.ProductManager;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 
 /**
@@ -13,14 +18,16 @@ import javax.ws.rs.core.Response;
 public class ProductServiceJSON {
 
     @GET
-    @Path("/list/")
-    public Response printProduct(){
+    public Response get(){
 
-        // create list of json products met methode uit productmanager
-        //List<?> list =
-        JsonObject json = new JsonObject();
+        // Get list of products from database.
+        List<Product> list = ProductManager.readAllProducts();
 
+        // Turn list into JSONarray.
+        JsonArray response = JsonConverter.buildFromList(list);
 
-        return Response.status(200).entity("Hello").build();
+        System.out.println(response.toString());
+
+        return Response.status(200).entity(response).build();
     }
 }
