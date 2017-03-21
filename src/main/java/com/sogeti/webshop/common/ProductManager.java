@@ -1,8 +1,5 @@
 package com.sogeti.webshop.common;
 
-import com.mysql.cj.xdevapi.JsonArray;
-import org.codehaus.jackson.map.util.JSONPObject;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -14,7 +11,7 @@ import java.util.List;
  * Created by pnederlo on 20-3-2017.
  */
 public class ProductManager {
-    // create EntityManagerFactory, mus always be closed
+    // create EntityManagerFactory, must always be closed
 
     public static final EntityManagerFactory ENTITY_MANAGER_FACTORY =
             Persistence.createEntityManagerFactory("webshopPU");
@@ -52,11 +49,6 @@ public class ProductManager {
         } finally {
             // close the entitymanager
             manager.close();
-        }
-
-        // Gets a JSON formatted String for each object.
-        for(Product product : products) {
-            
         }
 
         return products;
