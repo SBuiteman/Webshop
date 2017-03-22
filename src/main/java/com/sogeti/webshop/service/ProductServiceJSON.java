@@ -7,6 +7,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.json.JsonArray;
 
 
@@ -16,6 +18,7 @@ import javax.json.JsonArray;
 @Path("/")
 public class ProductServiceJSON {
 
+    private static final Logger LOGGER = Logger.getLogger( ProductServiceJSON.class.getName() );
     @GET
     public Response get(){
 
@@ -28,6 +31,7 @@ public class ProductServiceJSON {
 
 
         System.out.println(response.toString());
+        LOGGER.log(Level.FINE,response.toString());
 
         return Response.status(200).entity(response).build();
     }

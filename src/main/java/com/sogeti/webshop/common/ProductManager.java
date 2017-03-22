@@ -100,11 +100,11 @@ public class ProductManager {
 
     }
 
-    public static void main (String[] args){
-        createProduct(1,"Hondebrokken","Heerlijke malse hondenbrokken", new BigDecimal(5.65));
-        createProduct(2,"Kattenbrokken","Heerlijke malse kattenbrokken", new BigDecimal(10.65));
-        createProduct(3,"Kleine Muizen","Uw slang gaat er van smullen!", new BigDecimal(15.65));
-
-        ENTITY_MANAGER_FACTORY.close();
-    }
+//    public static void main (String[] args){
+//        createProduct(1,"Hondebrokken","Heerlijke malse hondenbrokken", new BigDecimal(5.65));
+//        createProduct(2,"Kattenbrokken","Heerlijke malse kattenbrokken", new BigDecimal(10.65));
+//        createProduct(3,"Kleine Muizen","Uw slang gaat er van smullen!", new BigDecimal(15.65));
+//
+//        ENTITY_MANAGER_FACTORY.close();
+//    }
 }
