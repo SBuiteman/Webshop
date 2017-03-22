@@ -1,14 +1,20 @@
 <html>
 
 <head>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.3/angular-resource.js"></script>
     <script type="text/javascript" src="app/libs/angular.js"></script>
+    <script type="text/javascript" src="app/libs/angular-resources.js"></script>
     <title>Pet Supplies</title>
 </head>
 
 <body>
 
 <h1>Welcome to Pet Supplies!</h1>
+<div ng-controller="ProductListCtrl">
+    <ul ng-repeat="product in products">
+        Result from RESTful service is: {{ product.name }}
+    </ul>
+</div>
 
 </body>
 
