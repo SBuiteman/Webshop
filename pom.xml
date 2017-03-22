@@ -88,6 +88,7 @@
         <groupId>org.wildfly.plugins</groupId>
         <artifactId>wildfly-maven-plugin</artifactId>
         <version>1.2.0.Alpha4</version>
+
     </plugin>
 </plugins>
 </build>
