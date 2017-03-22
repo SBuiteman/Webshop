@@ -1,20 +1,18 @@
 package com.sogeti.webshop.common;
 
-import jdk.nashorn.internal.parser.JSONParser;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * Created by pnederlo on 20-3-2017.
  */
-@Entity @Table(name = "assortment")
+@Entity
+@Table(name = "assortment")
 public class Product implements Serializable {
     @Id
+    @GeneratedValue
     @Column(name = "product_id")
     private int id;
 

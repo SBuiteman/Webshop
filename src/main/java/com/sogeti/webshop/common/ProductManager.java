@@ -1,9 +1,14 @@
 package com.sogeti.webshop.common;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.SessionFactoryBuilder;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.security.auth.login.Configuration;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -17,8 +22,7 @@ public class ProductManager {
             Persistence.createEntityManagerFactory("webshopPU");
 
 
-
-    public static List<Product> readAllProducts () {
+    public static List<Product> readAllProducts() {
 
         List<Product> products = null;
 
@@ -41,9 +45,9 @@ public class ProductManager {
             // commit transaction
             transaction.commit();
 
-        } catch (Exception e){
+        } catch (Exception e) {
             // if there is a transaction
-            if (transaction!= null){
+            if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
@@ -56,7 +60,7 @@ public class ProductManager {
         return products;
     }
 
-    public static void createProduct (int id, String name, String description, BigDecimal price){
+    public static void createProduct(int id, String name, String description, BigDecimal price) {
         // create an entitymanager
         EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
 
@@ -84,9 +88,9 @@ public class ProductManager {
             transaction.commit();
 
 
-        } catch (Exception e){
+        } catch (Exception e) {
             // if there are transactions rollback the changes
-            if (transaction != null){
+            if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
@@ -97,14 +101,17 @@ public class ProductManager {
         }
 
 
-
     }
 
-//    public static void main (String[] args){
+    // create session factory
+    // create session from factory
+
+    public static void main(String[] args) {
 //        createProduct(1,"Hondebrokken","Heerlijke malse hondenbrokken", new BigDecimal(5.65));
 //        createProduct(2,"Kattenbrokken","Heerlijke malse kattenbrokken", new BigDecimal(10.65));
 //        createProduct(3,"Kleine Muizen","Uw slang gaat er van smullen!", new BigDecimal(15.65));
 //
 //        ENTITY_MANAGER_FACTORY.close();
-//    }
+        //SessionFactory sessionFactory =
+    }
 }
