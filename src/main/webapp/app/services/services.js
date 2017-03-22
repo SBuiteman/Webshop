@@ -1,8 +1,8 @@
 /**
  * Created by pnederlo on 16-3-2017.
  */
-
-var services = angular.module('services', ['wsResource']);
+"use strict";
+var services = angular.module('webshop.services', ['wsResource']);
 
 services.factory('UserFactory', function ($resource) {
     return $resource('webshop/user', {}, {
