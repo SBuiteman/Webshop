@@ -18,12 +18,19 @@
 <!--</div>-->
 
 <div ng-controller="ProductController">
-    <ul>
-        <li ng-repeat="product in Producten">
-            {{'Product: ' + product.Product + '  Price: &euro;' + product.Price + ' Description: ' +
-            product.Descrition}}
-        </li>
-    </ul>
+    <table border="1">
+        <tr>
+            <td>Product</td>
+            <td>Price (&euro;)</td>
+            <td>Description</td>
+        </tr>
+        <tr ng-repeat="product in Producten">
+            <td>{{product.Product}}</td>
+            <td>{{product.Price}}</td>
+            <td>{{product.Description}}</td>
+        </tr>
+
+    </table>
 </div>
 
 </body>
