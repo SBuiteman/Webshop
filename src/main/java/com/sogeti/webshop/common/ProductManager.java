@@ -104,6 +104,7 @@ public class ProductManager {
     }
 
 
+<<<<<<< HEAD
 
 //    public static void main(String[] args) {
 //        createProduct(1,"Hondebrokken","Heerlijke malse hondenbrokken", new BigDecimal(5.65));
@@ -114,5 +115,14 @@ public class ProductManager {
 //        //SessionFactory sessionFactory =
 //
 //
+=======
+//    public static void main(String[] args) {
+////        createProduct(1,"Hondebrokken","Heerlijke malse hondenbrokken", new BigDecimal(5.65));
+////        createProduct(2,"Kattenbrokken","Heerlijke malse kattenbrokken", new BigDecimal(10.65));
+////        createProduct(3,"Kleine Muizen","Uw slang gaat er van smullen!", new BigDecimal(15.65));
+////
+////        ENTITY_MANAGER_FACTORY.close();
+//        //SessionFactory sessionFactory =
+>>>>>>> 6d4a30acef116aef2831828a371b30214d589118
 //    }
 }
