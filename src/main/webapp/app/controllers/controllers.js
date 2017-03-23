@@ -13,8 +13,8 @@ angular.module('ProductViewer').controller('ProductController', ['$scope', funct
     ]
 }]);
 
-angular.module('ProductsJSON', []);
-angular.module('ProductsJSON').controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
+
+angular.module('ProductViewer').controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
 
     UserFactory.get('UserFactory', function (userFactory) {
         $scope.jsonArray = [userFactory];

@@ -3,6 +3,11 @@ package com.sogeti.webshop.service;
 import com.sogeti.webshop.common.JsonConverter;
 import com.sogeti.webshop.common.Product;
 import com.sogeti.webshop.common.ProductManager;
+
+
+import javax.ejb.EJB;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
@@ -16,14 +21,22 @@ import javax.json.JsonArray;
  * Created by pnederlo on 20-3-2017.
  */
 @Path("/")
-public class ProductServiceJSON {
+public class ProductServiceRestApi {
 
-    private static final Logger LOGGER = Logger.getLogger( ProductServiceJSON.class.getName() );
+    @EJB
+    ProductManager pm;
+//    ProductManager pm = (ProductManager) new InitialContext().lookup("java:comp/env/productmanager");
+
+    private static final Logger LOGGER = Logger.getLogger( ProductServiceRestApi.class.getName() );
+
+    public ProductServiceRestApi() throws NamingException {
+    }
+
     @GET
     public Response get(){
 
         // Get list of products from database.
-        List<Product> list = ProductManager.readAllProducts();
+        List<Product> list = pm.readAllProducts();
 
 
         // Turn list into JSONarray.
@@ -37,7 +50,7 @@ public class ProductServiceJSON {
     }
 
 //    public static void main(String [] args) {
-//        ProductServiceJSON productServiceJSON = new ProductServiceJSON();
+//        ProductServiceRestApi productServiceJSON = new ProductServiceRestApi();
 //        System.out.println(productServiceJSON.get());
 //    }
 }

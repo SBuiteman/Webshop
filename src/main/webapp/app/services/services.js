@@ -2,7 +2,7 @@
  * Created by pnederlo on 16-3-2017.
  */
 "use strict";
-var services = angular.module('webshop.services', ['wsResource']);
+var services = angular.module('ProductViewer', ['wsResource']);
 
 services.factory('UserFactory', function ($resource) {
     return $resource('webshop', {}, {
