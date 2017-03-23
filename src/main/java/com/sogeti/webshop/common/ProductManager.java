@@ -4,18 +4,18 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.SessionFactoryBuilder;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.security.auth.login.Configuration;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * Created by pnederlo on 20-3-2017.
  */
+
 public class ProductManager {
+
+
     // create EntityManagerFactory, must always be closed
 
     public static final EntityManagerFactory ENTITY_MANAGER_FACTORY =
@@ -103,15 +103,16 @@ public class ProductManager {
 
     }
 
-    // create session factory
-    // create session from factory
 
-    public static void main(String[] args) {
+
+//    public static void main(String[] args) {
 //        createProduct(1,"Hondebrokken","Heerlijke malse hondenbrokken", new BigDecimal(5.65));
 //        createProduct(2,"Kattenbrokken","Heerlijke malse kattenbrokken", new BigDecimal(10.65));
 //        createProduct(3,"Kleine Muizen","Uw slang gaat er van smullen!", new BigDecimal(15.65));
 //
 //        ENTITY_MANAGER_FACTORY.close();
-        //SessionFactory sessionFactory =
-    }
+//        //SessionFactory sessionFactory =
+//
+//
+//    }
 }
