@@ -35,4 +35,9 @@ public class ProductServiceJSON {
 
         return Response.status(200).entity(response).build();
     }
+
+//    public static void main(String [] args) {
+//        ProductServiceJSON productServiceJSON = new ProductServiceJSON();
+//        System.out.println(productServiceJSON.get());
+//    }
 }
