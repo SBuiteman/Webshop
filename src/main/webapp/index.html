@@ -13,23 +13,23 @@
     <table border="1">
         <tr>
             <td>Product</td>
-            <td>Price (&euro;)</td>
+            <td>Price</td>
             <td>Description</td>
         </tr>
-        <tr ng-repeat="product in Producten">
-            <td>{{product.Product}}</td>
-            <td>{{product.Price}}</td>
-            <td>{{product.Description}}</td>
+        <tr ng-repeat="product1 in producten">
+            <td>{{product1.product}}</td>
+            <td>{{product1.price|currency:"&euro; "}}</td>
+            <td>{{product1.description}}</td>
         </tr>
 
     </table>
 </div>
 
-<div ng-controller="JSONController">
-    <ul ng-repeat="product in jsonArray">
-        Result from RESTful service is: {{ product.name }}
-    </ul>
-</div>
+<!--<div ng-controller="JSONController">-->
+    <!--<ul ng-repeat="product in jsonArray">-->
+        <!--Result from RESTful service is: {{ product.name }}-->
+    <!--</ul>-->
+<!--</div>-->
 
 </body>
 
