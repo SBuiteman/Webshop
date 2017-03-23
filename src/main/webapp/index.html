@@ -3,26 +3,24 @@
 <head>
     <script type="text/javascript" src="app/libs/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
-    <!--<script type="text/javascript" src="app/libs/angular-resources.js"></script>-->
     <script type="text/javascript" src="app/controllers/controllers.js"></script>
     <title>Pet Supplies</title>
 </head>
 
 <body>
-
 <h1>Welcome to Pet Supplies!</h1>
-<!--<div ng-controller="ProductListCtrl">-->
-    <!--<ul ng-repeat="product in products">-->
-        <!--Result from RESTful service is: {{ product.name }}-->
-    <!--</ul>-->
-<!--</div>-->
-
 <div ng-controller="ProductController">
     <ul>
         <li ng-repeat="product in Producten">
             {{'Product: ' + product.Product + '  Price: &euro;' + product.Price + ' Description: ' +
             product.Descrition}}
         </li>
+    </ul>
+</div>
+
+<div ng-controller="JSONController">
+    <ul ng-repeat="product in jsonArray">
+        Result from RESTful service is: {{ product.name }}
     </ul>
 </div>
 

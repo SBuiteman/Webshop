@@ -5,7 +5,7 @@
 var services = angular.module('webshop.services', ['wsResource']);
 
 services.factory('UserFactory', function ($resource) {
-    return $resource('webshop/user', {}, {
+    return $resource('webshop', {}, {
         query: {
             method: 'GET',
             params: {},
