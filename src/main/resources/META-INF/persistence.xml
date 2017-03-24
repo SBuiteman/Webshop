@@ -6,12 +6,15 @@
 
     <persistence-unit name="webshopPU">
 
-        <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:/MySqlDS</jta-data-source>
+        <class>com.sogeti.webshop.common.ProductManager</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
-        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.connection.username" value="admin" />
+            <property name = "hibernate.connection.password" value = "admin" />
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>-->
             <!--<property name="hibernate.enable_lazy_load_no_trans" value="true" />-->
             <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
@@ -19,6 +22,8 @@
             <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
             <!--<property name="hibernate.hbm2ddl.auto" value="none"/>-->
 
+
+            <!--<property name="hibernate.show_sql" value="true"/>-->
             <!--<property name="hibernate.format_sql" value="true"/>-->
             <!--<property name="hibernate.use_sql_comments" value="true"/>-->
 
