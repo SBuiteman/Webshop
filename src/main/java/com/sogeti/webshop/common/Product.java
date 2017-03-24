@@ -1,6 +1,5 @@
 package com.sogeti.webshop.common;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;

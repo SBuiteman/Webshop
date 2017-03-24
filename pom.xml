@@ -15,7 +15,6 @@
     </properties>
 
 <dependencies>
-
     <dependency>
         <groupId>org.wildfly.core</groupId>
         <artifactId>wildfly-server</artifactId>
@@ -33,21 +32,18 @@
         <artifactId>hibernate-core</artifactId>
         <version>5.2.8.Final</version>
      </dependency>
-
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
     <dependency>
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-validator</artifactId>
         <version>5.4.0.Final</version>
     </dependency>
-
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>6.0.6</version>
     </dependency>
-
     <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
     <dependency>
         <groupId>org.jboss.resteasy</groupId>
@@ -59,7 +55,6 @@
         <artifactId>resteasy-jackson-provider</artifactId>
         <version>3.0.4.Final</version>
     </dependency>
-
     <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
@@ -77,18 +72,24 @@
         <artifactId>javax.ejb-api</artifactId>
         <version>3.2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
-
 </dependencies>
+
 <build>
-
+    <!-- To define the plugin version in your parent POM -->
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.2.0.Alpha4</version>
+            </plugin>
+        </plugins>
+    </pluginManagement>
 <plugins>
-
     <plugin>
         <groupId>org.wildfly.plugins</groupId>
         <artifactId>wildfly-maven-plugin</artifactId>
         <version>1.2.0.Alpha4</version>
-
     </plugin>
 </plugins>
 </build>

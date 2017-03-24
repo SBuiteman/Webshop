@@ -6,18 +6,19 @@
 
     <persistence-unit name="webshopPU">
 
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
         <jta-data-source>java:/MySqlDS</jta-data-source>
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
-            <property name="hibernate.enable_lazy_load_no_trans" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>-->
+            <!--<property name="hibernate.enable_lazy_load_no_trans" value="true" />-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
             <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
             <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
             <!--<property name="hibernate.hbm2ddl.auto" value="none"/>-->
 
-
-            <!--<property name="hibernate.show_sql" value="true"/>-->
             <!--<property name="hibernate.format_sql" value="true"/>-->
             <!--<property name="hibernate.use_sql_comments" value="true"/>-->
 
