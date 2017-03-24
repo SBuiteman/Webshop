@@ -45,7 +45,7 @@
     </div>
 
     <div class="row">
-        <div class=" well col-lg-9" ng-controller="ProductController">
+        <div class=" well col-lg-9" ng-controller="ProductController as main">
             <table class="table table-bordered table-hover">
                 <tbody>
                 <tr>
@@ -57,13 +57,13 @@
                     <td>{{product1.product}}</td>
                     <td>{{product1.price|currency:"&euro; "}}</td>
                     <td>{{product1.description}}</td>
-                    <td><button type="submit" class="btn btn-success" role="button">Bestellen</button></td>
+                    <td><button type="submit" class="btn btn-success" role="button" ng-click="main.product">Bestellen</button></td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
+    <div><p> {{main.product}}</p></div>
 
     <div ng-controller="JSONController">
         <ul ng-repeat="product in jsonArray">
