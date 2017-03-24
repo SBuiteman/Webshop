@@ -7,9 +7,9 @@ angular.module('ProductViewer', []);
 angular.module('ProductViewer').controller('ProductController', ['$scope', function ($scope) {
 
     $scope.producten = [
-        {product: 'catfood', price: '20', description: 'Mix of peas and salmon.'},
-        {product: 'dogfood', price: '30', description: 'Real cow meat.'},
-        {product: 'mice', price: '10', description: 'Your snake will love them.'}
+        {product: 'Kattenvoer', price: '20', description: 'Mix van zalm en zeebaars.'},
+        {product: 'Hondenvoer', price: '30', description: 'Hormoonvrij echt rundvlees.'},
+        {product: 'Muizen', price: '10', description: 'Uw slang gaat er van smullen.'}
     ]
 }]);
 

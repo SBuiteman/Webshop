@@ -34,7 +34,7 @@ public class ProductServiceRestApi {
 
     @GET
     public Response get(){
-
+        LOGGER.fine("Handling GET request");
         // Get list of products from database.
         List<Product> list = pm.readAllProducts();
 
