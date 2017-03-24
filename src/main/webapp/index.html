@@ -1,35 +1,81 @@
 <html ng-app="ProductViewer">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app/css/bootstrap.css">
+
     <script type="text/javascript" src="app/libs/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
     <script type="text/javascript" src="app/controllers/controllers.js"></script>
     <title>Pet Supplies</title>
+
+    <style>
+        .jumbotron {
+            background: #47BC47;
+            box-shadow: 10px 10px 5px #0B6A0B ;
+        }
+        .well {
+            background: #DAFADA;
+        }
+    </style>
 </head>
 
 <body>
-<h1>Welcome to Pet Supplies!</h1>
-<div ng-controller="ProductController">
-    <table border="1">
-        <tr>
-            <td>Product</td>
-            <td>Price</td>
-            <td>Description</td>
-        </tr>
-        <tr ng-repeat="product1 in producten">
-            <td>{{product1.product}}</td>
-            <td>{{product1.price|currency:"&euro; "}}</td>
-            <td>{{product1.description}}</td>
-        </tr>
+<div class="container">
+    <div class="jumbotron page-header row ">
 
-    </table>
+        <div class="col-lg-9">
+            <h2>Welkom bij Pet Supplies!</h2>
+         </div>
+
+        <div class="col-lg-3">
+            <span class="glyphicon glyphicon-phone-alt col-lg-4" style="font-size: 30px" ></span> <p>010-7893524</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="well col-lg-9">
+            <h3>Bestel hier uw dierbenodigdheden</h3>
+        </div>
+        <div class="text-center col-lg-3">
+            <button type="submit" style="background:#DAFADA"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"></span></button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" well col-lg-9" ng-controller="ProductController">
+            <table class="table table-bordered table-hover">
+                <tbody>
+                <tr>
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Prijs</th>
+                    <th class="text-center">Beschrijving</th>
+                </tr>
+                <tr ng-repeat="product1 in producten">
+                    <td>{{product1.product}}</td>
+                    <td>{{product1.price|currency:"&euro; "}}</td>
+                    <td>{{product1.description}}</td>
+                    <td><button type="submit" class="btn btn-success" role="button">Bestellen</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div ng-controller="JSONController">
+        <ul ng-repeat="product in jsonArray">
+            Result from RESTful service is: {{ product.name }}
+        </ul>
+    </div>
+
 </div>
 
-<div ng-controller="JSONController">
-    <ul ng-repeat="product in jsonArray">
-        Result from RESTful service is: {{ product.name }}
-    </ul>
-</div>
+
+<script type="text/javascript" src="app/libs/jquery-3.2.0.js"></script>
+<script type="text/javascript" src="app/libs/bootstrap.js"></script>
 
 </body>
 
