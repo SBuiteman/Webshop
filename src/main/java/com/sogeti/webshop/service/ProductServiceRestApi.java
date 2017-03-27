@@ -40,6 +40,7 @@ public class ProductServiceRestApi {
 
 
         // Turn list into JSONarray.
+
         JsonArray response = JsonConverter.buildFromList(list);
 
 
