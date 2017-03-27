@@ -11,6 +11,12 @@ angular.module('ProductViewer').controller('ProductController', ['$scope', funct
         {product: 'Hondenvoer', price: '30', description: 'Hormoonvrij echt rundvlees.'},
         {product: 'Muizen', price: '10', description: 'Uw slang gaat er van smullen.'}
     ]
+
+    $scope.orderList = function (product) {
+        this
+    }
+
+
 }]);
 
 
