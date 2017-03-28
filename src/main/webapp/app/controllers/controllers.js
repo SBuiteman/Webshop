@@ -19,13 +19,10 @@ angular.module('ProductViewer').controller('ProductController', ['$scope', funct
 
 }]);
 
+var app = angular.module("Productenlijst", []);
+app.controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
 
-angular.module('ProductViewer').controller('JSONController', ['UserFactory', function (UserFactory) {
-    var vm = this;
-    vm.products = [];
-    this.getProducts = function () {
-        vm.products = UserFactory.query();
-    }
+
 }]);
 
 

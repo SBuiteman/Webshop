@@ -19,7 +19,7 @@ import javax.json.JsonArray;
 /**
  * Created by pnederlo on 20-3-2017.
  */
-@Path("/")
+@Path("/products")
 public class ProductServiceRestApi {
 
     @EJB
