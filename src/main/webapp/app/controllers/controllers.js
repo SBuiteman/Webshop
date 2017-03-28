@@ -1,10 +1,31 @@
 /**
  * Created by pnederlo on 16-3-2017.
  */
-"use strict";
+'use strict';
+var services = angular.module('Services', ['ngResource']);
 
-angular.module('ProductViewer', ['ngResource']);
-angular.module('ProductViewer').controller('ProductController', ['$scope', function ($scope) {
+services.factory('ProductFactory', function ($resource) {
+    // return $resource('/Webshop/products/all', {}, {
+    //     query: {
+    //         method: 'GET',
+    //         params: {},
+    //         isArray: false
+    //     }
+    // })
+    console.log('service log')
+});
+
+var app = angular.module('ProductViewer', ['ngResource']);
+app.controller('JSONController', ['$scope', 'ProductFactory', function ($scope, UserFactory) {
+    UserFactory.get({}, function (userFactory) {
+
+            $scope.products = userFactory.name;
+        })
+        console.log('test in JSONctrl');
+    }
+]);
+
+app.controller('ProductController', ['$scope', function ($scope) {
 
     $scope.producten = [
         {product: 'Kattenvoer', price: '20', description: 'Mix van zalm en zeebaars.'},
@@ -19,14 +40,10 @@ angular.module('ProductViewer').controller('ProductController', ['$scope', funct
 
 }]);
 
-var app = angular.module('Productenlijst', ['ngResource']);
-app.controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
 
 
-}]);
 
-
-angular.module('ProductViewer').factory('UserFactory', function ($resource) {
-    return $resource('http://localhost:3306/pet_supplies');
-
-});
+// angular.module('ProductViewer').factory('UserFactory', function ($resource) {
+//     return $resource('http://localhost:3306/pet_supplies');
+//
+// });

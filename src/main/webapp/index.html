@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="app/css/bootstrap.css">
 
-    <script type="text/javascript" src="app/libs/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
-    <script type="text/javascript" src="app/controllers/controllers.js"></script>
-
     <title>Pet Supplies</title>
 
     <style>
@@ -46,7 +42,7 @@
     </div>
 
     <div class="row">
-        <div class=" well col-lg-9" ng-controller="ProductController as main">
+        <div class=" well col-lg-9" ng-controller="ProductController">
             <table class="table table-bordered table-hover">
                 <tbody>
                 <tr>
@@ -64,15 +60,21 @@
             </table>
         </div>
     </div>
-    <div><p> {{main.product}}</p></div>
+    <!--<div><p> {{main.product}}</p></div>-->
 
     <div ng-controller="JSONController">
-        <button ng-click="getProducts()">All Products</button>
-        <li ng-repeat="product in products"> {{product.description}}</li>
+        <!--<button ng-click="getProducts()">All Products</button>-->
+        <li ng-repeat="product in products"> {{ product.name }}</li>
     </div>
 
 </div>
 
+<script type="text/javascript" src="app/libs/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/services/services.js"></script>
+<script type="text/javascript" src="app/controllers/controllers.js"></script>
 
 <script type="text/javascript" src="app/libs/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="app/libs/bootstrap.js"></script>
