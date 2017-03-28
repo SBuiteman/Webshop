@@ -9,7 +9,7 @@ services.factory('UserFactory', function ($resource) {
         query: {
             method: 'GET',
             params: {},
-            isArray: false
+            isArray: true
         }
     })
 });
