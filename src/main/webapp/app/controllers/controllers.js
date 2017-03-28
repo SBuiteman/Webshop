@@ -19,8 +19,8 @@ angular.module('ProductViewer').controller('ProductController', ['$scope', funct
 
 }]);
 
-var app = angular.module("Productenlijst", []);
-app.controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
+// var app = angular.module("Productenlijst", []);
+angular.module('ProductViewer').controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
 
 
 }]);
