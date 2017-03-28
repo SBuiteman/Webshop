@@ -19,11 +19,11 @@ angular.module('ProductViewer').controller('ProductController', ['$scope', funct
 
 }]);
 
+var app = angular.module("Productenlijst", []);
+app.controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
 
-angular.module('ProductViewer').controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
-
-    UserFactory.get('UserFactory', function (userFactory) {
-        $scope.jsonArray = [userFactory];
+    UserFactory.get({}, function (userFactory) {
+        $scope.jsonArray = userFactory;
     })
 }]);
 
