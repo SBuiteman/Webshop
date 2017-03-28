@@ -65,10 +65,9 @@
     </div>
     <div><p> {{main.product}}</p></div>
 
-    <div ng-controller="JSONController">
-        <ul ng-repeat="product in jsonArray">
-            Result from RESTful service is: {{ product.name }}
-        </ul>
+    <div ng-controller="JSONController as main">
+        <button ng-click="main.getProducts()">All Products</button>
+        <li ng-repeat="product in main.products"> {{product.description}}</li>
     </div>
 
 </div>

@@ -12,8 +12,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 import javax.json.JsonArray;
 
 
@@ -34,6 +33,7 @@ public class ProductServiceRestApi {
 
     @GET
     public Response get(){
+        Handler ch = new ConsoleHandler();
         LOGGER.fine("Handling GET request");
         // Get list of products from database.
         List<Product> list = pm.readAllProducts();

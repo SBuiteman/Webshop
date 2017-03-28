@@ -3,7 +3,7 @@
  */
 "use strict";
 
-angular.module('ProductViewer', []);
+angular.module('ProductViewer', ['ngResource']);
 angular.module('ProductViewer').controller('ProductController', ['$scope', function ($scope) {
 
     $scope.producten = [
@@ -20,11 +20,16 @@ angular.module('ProductViewer').controller('ProductController', ['$scope', funct
 }]);
 
 
-angular.module('ProductViewer').controller('JSONController', ['$scope', 'UserFactory', function ($scope, UserFactory) {
-
-    UserFactory.get('UserFactory', function (userFactory) {
-        $scope.jsonArray = [userFactory];
-    })
+angular.module('ProductViewer').controller('JSONController', ['UserFactory', function (UserFactory) {
+    var vm = this;
+    vm.products = [];
+    this.getProducts = function () {
+        vm.products = UserFactory.query();
+    }
 }]);
 
 
+angular.module('ProductViewer').factory('UserFactory', function ($resource) {
+    return $resource('http://localhost:3306/pet_supplies');
+
+});
