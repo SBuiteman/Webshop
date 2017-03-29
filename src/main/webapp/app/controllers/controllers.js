@@ -55,7 +55,8 @@ angular.module('myApp').controller('MainController', ['Products', function (Prod
 //         })
 //         console.log('test in JSONctrl');
 //     }
-//     ]);
+// ]);
+
 
 // app.controller('ProductController', ['$scope', function ($scope) {
 //
