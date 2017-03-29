@@ -6,7 +6,7 @@ import javax.ws.rs.core.Application;
 /**
  * Created by pnederlo on 29-3-2017.
  */
-@ApplicationPath("/Webshop/")
+@ApplicationPath("/api/")
 public class WebshopApplication extends Application {
 
 

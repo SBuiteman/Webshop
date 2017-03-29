@@ -1,4 +1,4 @@
 <jboss-web>
-    <context-root>Webshop</context-root>
+    <context-root>webshop</context-root>
 
 </jboss-web>

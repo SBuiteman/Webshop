@@ -6,7 +6,7 @@
 angular.module('myApp',['ngResource']);
 
 angular.module('myApp').factory('Products', function ($resource) {
-   return $resource('http://localhost:8080/Webshop/product');
+   return $resource('http://localhost:8080/webshop/api/product');
 });
 
 angular.module('myApp').controller('MainController', ['Products', function (Products) {
@@ -15,6 +15,9 @@ angular.module('myApp').controller('MainController', ['Products', function (Prod
 
     vm.test = null;
 
+    vm.productList = function () {
+        Products.query();
+    };
     vm.listProducts = [];
     this.getProducts = function () {
         console.log("In de get products functie");

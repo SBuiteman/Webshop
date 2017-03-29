@@ -36,16 +36,16 @@ public class ProductServiceRestApi {
     public List<Product> get(){
 
         LOGGER.fine("Handling GET request");
-        Product product = new Product();
-        product.setPrice(new BigDecimal(5.0));
-        product.setDescription("fdksajdsadonoifds");
-        product.setName("fdsdf");
-        product.setId(8);
-        List<Product> list = new ArrayList<Product>();
-        list.add(product);
+//        Product product = new Product();
+//        product.setPrice(new BigDecimal(5.0));
+//        product.setDescription("fdksajdsadonoifds");
+//        product.setName("fdsdf");
+//        product.setId(8);
+//        List<Product> list = new ArrayList<Product>();
+//        list.add(product);
 
-//        productManager.readAllProducts()
-        return list;
+
+        return  productManager.readAllProducts();
     }
 }
 

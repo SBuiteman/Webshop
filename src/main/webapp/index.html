@@ -50,10 +50,10 @@
                     <th>Prijs</th>
                     <th>Beschrijving</th>
                 </tr>
-                <tr ng-repeat="product1 in main.producten">
-                    <td>{{product1.product}}</td>
-                    <td>{{product1.price|currency:"&euro; "}}</td>
-                    <td>{{product1.description}}</td>
+                <tr ng-repeat="product in main.productList">
+                    <td>{{product.name}}</td>
+                    <td>{{product.price|currency:"&euro; "}}</td>
+                    <td>{{product.description}}</td>
                     <td><button type="submit" class="btn btn-success" role="button" ng-click="main.product">Bestellen</button></td>
                 </tr>
                 </tbody>
@@ -62,11 +62,13 @@
     </div>
     <p><button ng-click="main.getProducts()">Alle producten zien</button></p>
     <ul>
-        <p>{{main.test}}</p>
+
         <li ng-repeat="product1 in main.listProducts">
             {{product1.name}}
         </li>
     </ul>
+
+
     <!--<div><p> {{main.product}}</p></div>-->
 
     <!--<div ng-controller="JSONController">-->
