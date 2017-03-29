@@ -74,7 +74,8 @@
     </dependency>
 </dependencies>
 
-<build>
+
+    <build>
     <!-- To define the plugin version in your parent POM -->
 
 <plugins>

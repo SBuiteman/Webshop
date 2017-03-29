@@ -27,7 +27,7 @@
 
 angular.module('ProductViewer', ['ngResource'])
     .factory('myService', function ($resource) {
-        return $resource('/Webshop/products/all', {}, {
+        return $resource('rest/Webshop/products/all', {}, {
             query: {
                 method: 'GET',
                 params: {},
