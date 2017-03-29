@@ -2,46 +2,57 @@
  * Created by pnederlo on 16-3-2017.
  */
 'use strict';
-// var services = angular.module('Services', ['ngResource']);
-//
-// services.factory('ProductFactory', function ($resource) {
-//     // return $resource('/Webshop/products/all', {}, {
-//     //     query: {
-//     //         method: 'GET',
-//     //         params: {},
-//     //         isArray: false
-//     //     }
-//     // })
-//     console.log('service log')
-// });
-//
-// var app = angular.module('ProductViewer', ['ngResource']);
-// app.controller('JSONController', ['$scope', 'ProductFactory', function ($scope, UserFactory) {
-//     UserFactory.get({}, function (userFactory) {
-//
-//             $scope.products = userFactory.name;
+
+angular.module('myApp',['ngResource']);
+
+angular.module('myApp').factory('Products', function ($resource) {
+   return $resource('http://localhost:8080/Webshop/product');
+});
+
+angular.module('myApp').controller('MainController', ['Products', function (Products) {
+
+    var vm = this;
+
+    vm.test = null;
+
+    vm.listProducts = [];
+    this.getProducts = function () {
+        console.log("In de get products functie");
+        vm.listProducts = Products.query();
+        //vm.test = Products.query();
+    };
+
+    // vm.producten = [
+    //     {product: 'Kattenvoer', price: '20', description: 'Mix van zalm en zeebaars.'},
+    //     {product: 'Hondenvoer', price: '30', description: 'Hormoonvrij echt rundvlees.'},
+    //     {product: 'Muizen', price: '10', description: 'Uw slang gaat er van smullen.'}
+    // ];
+
+}]);
+
+
+
+
+// angular.module('myApp', ['ngResource'])
+//     .factory('myService', function ($resource) {
+//         return $resource('http://localhost:8080/Webshop/', {}, {
+//             query: {
+//                 method: 'GET',
+//                 params: {},
+//                 isArray: false
+//             }
+//         })
+//     })
+//     .controller('MainController', ['$scope', 'myService', function ($scope, myService) {
+//         var vm = this;
+//         vm.listProd = {};
+//         myService.get({}, function (myservice) {
+//             console.log('in service get');
+//             vm.listProd = myservice;
 //         })
 //         console.log('test in JSONctrl');
 //     }
-// ]);
-
-angular.module('ProductViewer', ['ngResource'])
-    .factory('myService', function ($resource) {
-        return $resource('/Webshop/products/all', {}, {
-            query: {
-                method: 'GET',
-                params: {},
-                isArray: false
-            }
-        })
-    })
-    .controller('JSONController', ['$scope', 'myService', function ($scope, myService) {
-        myService.get({}, function (myservice) {
-            console.log('in service get')
-        })
-        console.log('test in JSONctrl');
-    }
-    ]);
+//     ]);
 
 // app.controller('ProductController', ['$scope', function ($scope) {
 //

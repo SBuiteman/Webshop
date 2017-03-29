@@ -1,4 +1,4 @@
-<html ng-app="ProductViewer">
+<html ng-app="myApp">
 
 <head>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container" ng-controller="MainController as main">
     <div class="jumbotron page-header row ">
 
         <div class="col-lg-9">
@@ -50,7 +50,7 @@
                     <th>Prijs</th>
                     <th>Beschrijving</th>
                 </tr>
-                <tr ng-repeat="product1 in producten">
+                <tr ng-repeat="product1 in main.producten">
                     <td>{{product1.product}}</td>
                     <td>{{product1.price|currency:"&euro; "}}</td>
                     <td>{{product1.description}}</td>
@@ -60,18 +60,25 @@
             </table>
         </div>
     </div>
+    <p><button ng-click="main.getProducts()">Alle producten zien</button></p>
+    <ul>
+        <p>{{main.test}}</p>
+        <li ng-repeat="product1 in main.listProducts">
+            {{product1.name}}
+        </li>
+    </ul>
     <!--<div><p> {{main.product}}</p></div>-->
 
-    <div ng-controller="JSONController">
-        <!--<button ng-click="getProducts()">All Products</button>-->
-        <li ng-repeat="product in products"> {{ product.name }}</li>
-    </div>
+    <!--<div ng-controller="JSONController">-->
+        <!--&lt;!&ndash;<button ng-click="getProducts()">All Products</button>&ndash;&gt;-->
+        <!--<li ng-repeat="product in products"> {{ product.name }}</li>-->
+    <!--</div>-->
 
 </div>
 
 <script type="text/javascript" src="app/libs/angular.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script type="text/javascript" src="app/libs/angular-resource.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>-->
 <script type="text/javascript" src="app/app.js"></script>
 <script type="text/javascript" src="app/services/services.js"></script>
 <script type="text/javascript" src="app/controllers/controllers.js"></script>

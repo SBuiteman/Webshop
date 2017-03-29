@@ -1,61 +1,54 @@
 package com.sogeti.webshop.service;
 
-import com.sogeti.webshop.common.JsonConverter;
+
 import com.sogeti.webshop.common.Product;
 import com.sogeti.webshop.common.ProductManager;
 
-
-import javax.ejb.EJB;
-import javax.naming.InitialContext;
+import javax.inject.Inject;
 import javax.naming.NamingException;
+import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.*;
-import javax.json.JsonArray;
-
 
 /**
  * Created by pnederlo on 20-3-2017.
  */
-@Path("/products")
+
+@Path("/product")
 public class ProductServiceRestApi {
 
-    @EJB
-    ProductManager pm;
-//    ProductManager pm = (ProductManager) new InitialContext().lookup("java:comp/env/productmanager");
+    @Inject
+    ProductManager productManager;
 
     private static final Logger LOGGER = Logger.getLogger( ProductServiceRestApi.class.getName() );
 
     public ProductServiceRestApi() throws NamingException {
     }
 
-    @Path("/all")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response get(){
-        Handler ch = new ConsoleHandler();
+    public List<Product> get(){
+
         LOGGER.fine("Handling GET request");
-        // Get list of products from database.
-        List<Product> list = pm.readAllProducts();
+        Product product = new Product();
+        product.setPrice(new BigDecimal(5.0));
+        product.setDescription("fdksajdsadonoifds");
+        product.setName("fdsdf");
+        product.setId(8);
+        List<Product> list = new ArrayList<Product>();
+        list.add(product);
 
-
-        // Turn list into JSONarray.
-
-        JsonArray response = JsonConverter.buildFromList(list);
-
-
-        System.out.println(response.toString());
-        LOGGER.log(Level.FINE,response.toString());
-
-        return Response.status(200).entity(response).build();
+//        productManager.readAllProducts()
+        return list;
     }
-
-//    public static void main(String [] args) {
-//        ProductServiceRestApi productServiceJSON = new ProductServiceRestApi();
-//        System.out.println(productServiceJSON.get());
-//    }
 }
+
+
+
+

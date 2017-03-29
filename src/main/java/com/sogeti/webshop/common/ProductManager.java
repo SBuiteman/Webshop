@@ -1,9 +1,6 @@
 package com.sogeti.webshop.common;
 
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.SessionFactoryBuilder;
+
 
 
 import javax.ejb.Stateless;
