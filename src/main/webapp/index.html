@@ -37,12 +37,20 @@
             <h3>Bestel hier uw dierbenodigdheden</h3>
         </div>
         <div class="text-center col-lg-3">
-            <button type="submit" style="background:#DAFADA"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"></span></button>
+            <button type="submit" style="background:#DAFADA" ng-click="main.toggleSwitch()" ng-show="main.toggle">
+                <span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"  ></span>
+                <p>{{main.productCount}}</p>
+            </button>
+            <button type="submit" style="background:#DAFADA" ng-click="main.toggleSwitch()" ng-hide="main.toggle">
+                <span class="glyphicon glyphicon-chevron-left" style="font-size: 50px"  ></span>
+                <p>Verder Winkelen</p>
+            </button>
+
         </div>
     </div>
 
     <div class="row">
-        <div class=" well col-lg-9">
+        <div class=" well col-lg-9" ng-show="main.toggle">
             <table class="table table-bordered table-hover">
                 <tbody>
                 <tr>
@@ -54,19 +62,34 @@
                     <td>{{product.name}}</td>
                     <td>{{product.price|currency:"&euro; "}}</td>
                     <td>{{product.description}}</td>
-                    <td><button type="submit" class="btn btn-success" role="button" ng-click="main.product">Bestellen</button></td>
+                    <td><button type="submit" class="btn btn-success" role="button" ng-click="main.updateShoppingCart(product); main.calculateTotalPrice()">Bestellen</button></td>
                 </tr>
                 </tbody>
             </table>
         </div>
-    </div>
-    <p><button ng-click="main.getProducts()">Alle producten zien</button></p>
-    <ul>
 
-        <li ng-repeat="product1 in main.listProducts">
-            {{product1.name}}
-        </li>
-    </ul>
+        <div class=" well col-lg-9" ng-hide="main.toggle">
+            <table class="table table-bordered table-hover">
+                <tbody>
+                <tr>
+                    <th>Product</th>
+                    <th>Prijs</th>
+                    <th>Aantal</th>
+                    <th>Totaal</th>
+                </tr>
+                <tr ng-repeat="product in main.shoppingCart">
+                    <td>{{product.name}}</td>
+                    <td>{{product.price|currency:"&euro; "}}</td>
+                    <td>{{product.amount}}</td>
+                    <td>{{product.total|currency:"&euro; "}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <p>{{main.totalPrice}}</p>
+        </div>
+    </div>
+
 
 
     <!--<div><p> {{main.product}}</p></div>-->

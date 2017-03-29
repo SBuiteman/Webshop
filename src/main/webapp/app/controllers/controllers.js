@@ -15,14 +15,65 @@ angular.module('myApp').controller('MainController', ['Products', function (Prod
 
     vm.test = null;
 
-    vm.productList = function () {
-        Products.query();
-    };
+    vm.productList = Products.query();
     vm.listProducts = [];
     this.getProducts = function () {
         console.log("In de get products functie");
         vm.listProducts = Products.query();
         //vm.test = Products.query();
+    };
+
+    vm.productCount = 0;
+    vm.shoppingCart = [];
+    vm.updateShoppingCart = function(prod){
+        vm.productCount++;
+
+        function search(nameKey, myArray){
+            for (var i=0; i < myArray.length; i++) {
+                if (myArray[i].name === nameKey) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        if(!(search(prod.name, vm.shoppingCart))) {
+            prod['amount'] = 0;
+            prod.amount++;
+            prod['total'] = 0;
+            prod.total =  prod.amount * prod.price;
+            vm.shoppingCart.push(prod);
+
+        } else {
+            prod.amount++;
+            prod.total = prod.amount * prod.price;
+        }
+    };
+
+    vm.totalPrice = 0;
+
+   vm.calculateTotalPrice = function(){
+           vm.shoppingCart.forEach(function(prod){
+               vm.totalPrice += prod.total;
+           });
+
+
+   };
+
+
+
+
+
+    vm.makePartHidden = function () {
+        vm.styleHide = {
+            display: 'none'
+        };
+    };
+
+    vm.toggle = true;
+    vm.toggleSwitch = function () {
+        vm.toggle = vm.toggle === false ? true : false;
+
     };
 
     // vm.producten = [
