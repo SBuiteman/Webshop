@@ -62,7 +62,9 @@
                     <td>{{product.name}}</td>
                     <td>{{product.price|currency:"&euro; "}}</td>
                     <td>{{product.description}}</td>
-                    <td><button type="submit" class="btn btn-success" role="button" ng-click="main.updateShoppingCart(product); main.calculateTotalPrice()">Bestellen</button></td>
+                    <td><button type="submit" class="btn btn-success" role="button"
+                                ng-click="main.updateShoppingCart(product);
+                                main.calculateTotalPrice()">Bestellen</button></td>
                 </tr>
                 </tbody>
             </table>
