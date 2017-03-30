@@ -37,7 +37,7 @@
             <h3>Bestel hier uw dierbenodigdheden</h3>
         </div>
         <div class="text-center col-lg-3">
-            <button type="submit" style="background:#DAFADA" ng-click="main.toggleSwitch()" ng-show="main.toggle">
+            <button type="submit" style="background:#DAFADA" ng-click="main.toggleSwitch(); main.calculateTotalPrice()" ng-show="main.toggle">
                 <span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"  ></span>
                 <p>{{main.productCount}}</p>
             </button>
@@ -62,7 +62,7 @@
                     <td>{{product.name}}</td>
                     <td>{{product.price|currency:"&euro; "}}</td>
                     <td>{{product.description}}</td>
-                    <td><button type="submit" class="btn btn-success" role="button" ng-click="main.updateShoppingCart(product); main.calculateTotalPrice()">Bestellen</button></td>
+                    <td><button type="submit" class="btn btn-success" role="button" ng-click="main.updateShoppingCart(product)">Bestellen</button></td>
                 </tr>
                 </tbody>
             </table>
@@ -86,8 +86,9 @@
 
                 </tbody>
             </table>
-            <p>{{main.totalPrice}}</p>
+
         </div>
+        <p>{{main.totalPrice}}</p>
     </div>
 
 
