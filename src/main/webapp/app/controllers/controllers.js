@@ -53,12 +53,14 @@ angular.module('myApp').controller('MainController', ['Products', function (Prod
     vm.totalPrice = 0;
 
    vm.calculateTotalPrice = function(){
-           vm.totalPrice = 0;
+
+       vm.totalPrice = 0;
+       var temp = 0;
            vm.shoppingCart.forEach(function(prod){
 
-               vm.totalPrice += prod.total;
+               temp += prod.total;
            });
-
+       vm.totalPrice += temp;
 
    };
 
