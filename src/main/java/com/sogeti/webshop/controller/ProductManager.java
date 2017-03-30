@@ -1,7 +1,9 @@
-package com.sogeti.webshop.common;
+package com.sogeti.webshop.controller;
 
 
 
+
+import com.sogeti.webshop.model.Product;
 
 import javax.ejb.Stateless;
 import javax.persistence.*;

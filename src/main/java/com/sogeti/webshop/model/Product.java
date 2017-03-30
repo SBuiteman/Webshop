@@ -1,4 +1,4 @@
-package com.sogeti.webshop.common;
+package com.sogeti.webshop.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
