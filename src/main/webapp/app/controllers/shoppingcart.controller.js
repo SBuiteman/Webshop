@@ -3,7 +3,7 @@
  */
 angular.module('ShoppingCart',['UpdateCartService']);
 
-angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService) {
+angular.module('ShoppingCart').controller('ShoppingCartController', function ($route, CartService) {
 
     var vm = this;
 

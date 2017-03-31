@@ -1,0 +1,32 @@
+<div class=" well col-lg-9">
+    <table class="table table-bordered table-hover">
+        <tbody>
+        <tr>
+            <th>Product</th>
+            <th>Prijs</th>
+            <th>Beschrijving</th>
+        </tr>
+        <tr ng-repeat="product in main.listProducts">
+            <td>{{product.name}}</td>
+            <td>{{product.price|currency:"&euro; "}}</td>
+            <td>{{product.description}}</td>
+
+
+            <td><button type="submit" class="btn btn-success" role="button"
+                        ng-click="main.addToCart(product);
+                                            main.getCount()">Toevoegen</button></td>
+
+        </tr>
+        </tbody>
+    </table>
+    <p>Totaal: {{main.prijs}}</p>
+    <button type="submit" style="background:#DAFADA">
+        <a href="#/winkelmandje"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px" ></span></a>
+
+    </button>
+    <a href="#/winkelmandje">Bestellen</a>
+        <!--<input type="button" onclick="location.href='#/winkelmandje';" value="Toevoegen" class="btn btn-success">-->
+        <!---->
+
+    <p>{{main.productCount}}</p>
+</div>
