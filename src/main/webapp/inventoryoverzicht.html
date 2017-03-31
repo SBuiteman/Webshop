@@ -1,0 +1,29 @@
+<div>
+    <div class="text-center col-lg-3">
+        <button type="submit" style="background:#DAFADA" ng-click="main.toggleSwitch(); main.calculateTotalPrice()"
+                ng-show="main.toggle">
+            <span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"  ></span>
+            <p>{{main.productCount}}</p>
+        </button>
+    </div>
+
+    <div class=" well col-lg-9" ng-show="main.toggle">
+        <table class="table table-bordered table-hover">
+            <tbody>
+            <tr>
+                <th>Product</th>
+                <th>Prijs</th>
+                <th>Beschrijving</th>
+            </tr>
+            <tr ng-repeat="product in main.listProducts">
+                <td>{{product.name}}</td>
+                <td>{{product.price|currency:"&euro; "}}</td>
+                <td>{{product.description}}</td>
+                <td><button type="submit" class="btn btn-success" role="button"
+                            ng-click="main.updateShoppingCart(product);
+                                main.calculateTotalPrice()">Toevoegen</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
