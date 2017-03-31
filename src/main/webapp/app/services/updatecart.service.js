@@ -10,7 +10,7 @@ angular.module('UpdateCartService').service('CartService', function () {
 
     vm.productCount = 0;
     vm.shoppingCart = [];
-    vm.totalPrice = 0;
+    vm.totalPrijs = 0;
 
     vm.updateShoppingCart = function(prod){
         vm.productCount++;
@@ -34,10 +34,28 @@ angular.module('UpdateCartService').service('CartService', function () {
         } else {
             prod.amount++;
             prod.total = prod.amount * prod.price;
+            //console.log("Total: "+prod.total);
         }
     };
 
+    vm.updateTotalPrice = function(){
+
+        console.log("eerste keer inde functie " +vm.totalPrijs);
+        vm.totalPrijs = 0;
+        console.log(vm.totalPrijs);
+        var temp = 0;
+        vm.shoppingCart.forEach(function(prod){
+            console.log("In for each function");
+            temp += prod.total;
+        });
+        this.totalPrijs += temp;
+        console.log(vm.totalPrijs);
+        vm.totaal = vm.totalPrijs;
+
+    };
+
     vm.getProductCount = function () {
+
         return vm.productCount;
     };
 
@@ -46,15 +64,6 @@ angular.module('UpdateCartService').service('CartService', function () {
     };
 
     vm.getTotalPrice = function(){
-
-        vm.totalPrice = 0;
-        var temp = 0;
-        vm.shoppingCart.forEach(function(prod){
-
-            temp += prod.total;
-        });
-        vm.totalPrice += temp;
-        return vm.totalPrice;
+        return vm.totalPrijs;
     };
-
 });

@@ -39,9 +39,9 @@
 
             <button type="submit" style="background:#DAFADA">
                 <span class="glyphicon glyphicon-chevron-left" style="font-size: 50px"  ></span>
-                <p>Verder Winkelen</p>
-            </button>
 
+            </button>
+            <p>Verder Winkelen</p>
         </div>
     </div>
 
@@ -59,20 +59,23 @@
                     <td>{{product.price|currency:"&euro; "}}</td>
                     <td>{{product.description}}</td>
                     <td><button type="submit" class="btn btn-success" role="button"
-                                ng-click="main.addToCart(product)">Bestellen</button></td>
-                                <!--main.calculateTotalPrice()-->
-                                   >
+                                ng-click="main.addToCart(product);
+                                            main.getCount()"> Bestellen</button></td>
+
+
                 </tr>
                 </tbody>
             </table>
+            <p>Totaal: {{main.prijs}}</p>
             <button type="submit" style="background:#DAFADA">
                 <span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"></span>
-                <p>{{main.productCount}}</p>
+
             </button>
+            <p>{{main.productCount}}</p>
         </div>
 
 
-        <div class=" well col-lg-9" ng-controller="ShoppingCartController as main" >
+        <div class=" well col-lg-9" ng-controller="ShoppingCartController as cart" >
             <table class="table table-bordered table-hover">
                 <tbody>
                 <tr>
@@ -81,16 +84,24 @@
                     <th>Aantal</th>
                     <th>Totaal</th>
                 </tr>
-                <tr ng-repeat="product in main.shoppingCart">
+                <tr ng-repeat="product in cart.shoppingCart">
                     <td>{{product.name}}</td>
                     <td>{{product.price|currency:"&euro; "}}</td>
                     <td>{{product.amount}}</td>
                     <td>{{product.total|currency:"&euro; "}}</td>
                 </tr>
+                <tr>
+                    <td><strong>Totale bestelling</strong></td>
+                    <td></td>
+                    <td></td>
+                    <td><span ng-bind="cart.haalPrijs()"></span><strong>{{cart.sPrijs|currency:"&euro; "}}</strong></td>
+                </tr>
 
                 </tbody>
             </table>
-            <p class="text-right">Totale prijs: {{main.totalPrice|currency:"&euro; "}}</p>
+            <div>
+                <p><span ng-bind="cart.haalPrijs()"></span> Totale prijs: {{cart.sPrijs|currency:"&euro; "}}</p>
+            </div>
         </div>
     </div>
 </div>

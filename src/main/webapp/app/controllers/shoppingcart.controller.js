@@ -9,8 +9,43 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
 
     vm.shoppingCart = CartService.getShoppingCart();
 
-    vm.totalPrice = CartService.getTotalPrice();
+    vm.sPrijs = 0;
+
+    vm.haalPrijs = function(){
+        vm.sPrijs = CartService.getTotalPrice();
+    };
 
 
+    //$scope.currentTotalPrice = CartService.totalPrice;
+
+    //vm.totalPrice = CartService.totalPrice;
+
+    // $scope.getPrice = function () {
+    //     return $scope.totalPrice = CartService.getTotalPrice(vm.shoppingCart);
+    // };
+    // $scope.$watch('main.totalPrice', function (newVal, oldVal) {
+    //     console.log("Watching");
+    //     $scope.totalPrice = CartService.totalPrice;
+    // });
+
+    // $scope.$watch('main.totalPrice',function (newVal, oldVal) {
+    //     console.log(oldVal, newVal)
+    //     if(newVal != oldVal){
+    //
+    //     }
+    // });
+
+    // $scope.$watch(function () {
+    //
+    //     return $scope.totalPrice;},
+    //     function(newVal, oldVal){
+    //
+    //     if (newVal != oldVal) {
+    //         console.log("Watching");
+    //         $scope.totalPrice = CartService.getTotalPrice(vm.shoppingCart);
+    //     }
+    //
+    //
+    // },true);
 
 });
