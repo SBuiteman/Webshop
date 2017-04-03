@@ -1,7 +1,9 @@
 package com.sogeti.webshop.service;
 
 
+import com.sogeti.webshop.controller.AccountManager;
 import com.sogeti.webshop.controller.OrderManager;
+import com.sogeti.webshop.model.Account;
 import com.sogeti.webshop.model.Order;
 import com.sogeti.webshop.model.Product;
 import com.sogeti.webshop.controller.ProductManager;
@@ -50,8 +52,17 @@ public class ProductServiceRestApi {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void post(Order order) {
+    public void postOrder(Order order) {
         orderManager.persistOrders(order);
+    }
+
+    @Inject
+    AccountManager accountManager;
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void postAccount(Account account) {
+        accountManager.persistAccount(account);
     }
 
 }
