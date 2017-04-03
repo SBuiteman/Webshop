@@ -15,7 +15,6 @@
             <td><button type="submit" class="btn btn-success" role="button"
                         ng-click="main.addToCart(product);
                                             main.getCount()">Toevoegen</button></td>
-
         </tr>
         </tbody>
     </table>
@@ -23,5 +22,5 @@
 
 <div align="center">
     <a href="#!/winkelmandje"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px " ></span></a>
-    <p>{{main.productCount}}</p>
+    <p><span ng-bind="main.getCount()"></span>{{main.productCount}}</p>
 </div>

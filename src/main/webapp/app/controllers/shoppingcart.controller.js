@@ -3,7 +3,7 @@
  */
 angular.module('ShoppingCart',['UpdateCartService']);
 
-angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService) {
+angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService, ProductFactory) {
 
     var vm = this;
 
@@ -15,15 +15,18 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
         vm.sPrijs = CartService.getTotalPrice();
     };
 
-    vm.addProduct = function(){
-
+    vm.addProduct = function(product){
+        CartService.updateShoppingCart(product);
+        CartService.updateTotalPrice();
     };
 
-    vm.removeProduct = function () {
-
+    vm.removeProduct = function (product) {
+        CartService.removeProductFromCart(product);
+        CartService.updateTotalPrice();
     };
 
-    // vm.sendCart = function(){
-    //     ShoppingFactory.create(vm.shoppingCart);
-    // };
+    vm.sendCart = function(){
+        ProductFactory.save(vm.shoppingCart);
+    };
+
 });

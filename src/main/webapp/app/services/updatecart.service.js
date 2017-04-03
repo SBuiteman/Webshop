@@ -38,8 +38,20 @@ angular.module('UpdateCartService').service('CartService', function () {
         }
     };
 
-    vm.removeFromCart = function(product){
+    vm.removeProductFromCart = function(target){
+        vm.productCount--;
+        var targetId = target.id;
+        vm.shoppingCart.forEach(function (product) {
+            if(targetId === product.id){
+                product.amount -= 1;
+                product.total = product.amount * product.price;
+                if(product.amount === 0){
+                    var index = vm.shoppingCart.indexOf(product);
+                    vm.shoppingCart.splice(index, 1);
+                }
+            }
 
+        });
     };
 
     vm.updateTotalPrice = function(){
