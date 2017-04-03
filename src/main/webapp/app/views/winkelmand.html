@@ -1,0 +1,28 @@
+<div class=" well col-lg-9">
+    <table class="table table-bordered table-hover">
+        <tbody>
+        <tr>
+            <th>Product</th>
+            <th>Prijs</th>
+            <th>Aantal</th>
+            <th>Totaal</th>
+        </tr>
+        <tr ng-repeat="product in cart.shoppingCart">
+            <td>{{product.name}}</td>
+            <td>{{product.price|currency:"&euro; "}}</td>
+            <td>{{product.amount}}</td>
+            <td>{{product.total|currency:"&euro; "}}</td>
+        </tr>
+        <tr>
+            <td><strong>Totale bestelling</strong></td>
+            <td></td>
+            <td></td>
+            <td><span ng-bind="cart.haalPrijs()"></span><strong>{{cart.sPrijs|currency:"&euro; "}}</strong></td>
+        </tr>
+
+        </tbody>
+    </table>
+    <div>
+        <p><span ng-bind="cart.haalPrijs()"></span> Totale prijs: {{cart.sPrijs|currency:"&euro; "}}</p>
+    </div>
+</div>

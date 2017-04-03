@@ -20,7 +20,8 @@
 </head>
 
 <body>
-<div class="container" ng-controller="MainController as main">
+
+<div class="container" >
     <div class="jumbotron page-header row ">
 
         <div class="col-lg-9">
@@ -36,68 +37,88 @@
             <h3>Bestel hier uw dierbenodigdheden</h3>
         </div>
         <div class="text-center col-lg-3">
-            <button type="submit" style="background:#DAFADA" ng-click="main.toggleSwitch(); main.calculateTotalPrice()"
-                    ng-show="main.toggle">
-                <span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"  ></span>
-                <p>{{main.productCount}}</p>
-            </button>
-            <button type="submit" style="background:#DAFADA" ng-click="main.toggleSwitch()" ng-hide="main.toggle">
-                <span class="glyphicon glyphicon-chevron-left" style="font-size: 50px"  ></span>
-                <p>Verder Winkelen</p>
-            </button>
 
+            <button type="submit" style="background:#DAFADA">
+                <span class="glyphicon glyphicon-chevron-left" style="font-size: 50px"  ></span>
+
+            </button>
+            <p>Verder Winkelen</p>
         </div>
     </div>
 
+    <ng-view></ng-view>
+
     <div class="row">
-        <div class=" well col-lg-9" ng-show="main.toggle">
-            <table class="table table-bordered table-hover">
-                <tbody>
-                <tr>
-                    <th>Product</th>
-                    <th>Prijs</th>
-                    <th>Beschrijving</th>
-                </tr>
-                <tr ng-repeat="product in main.listProducts">
-                    <td>{{product.name}}</td>
-                    <td>{{product.price|currency:"&euro; "}}</td>
-                    <td>{{product.description}}</td>
-                    <td><button type="submit" class="btn btn-success" role="button"
-                                ng-click="main.updateShoppingCart(product);
-                                main.calculateTotalPrice()">Bestellen</button></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <!--<div class=" well col-lg-9" ng-controller="ProductController as main">-->
+            <!--<table class="table table-bordered table-hover">-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<th>Product</th>-->
+                    <!--<th>Prijs</th>-->
+                    <!--<th>Beschrijving</th>-->
+                <!--</tr>-->
+                <!--<tr ng-repeat="product in main.listProducts">-->
+                    <!--<td>{{product.name}}</td>-->
+                    <!--<td>{{product.price|currency:"&euro; "}}</td>-->
+                    <!--<td>{{product.description}}</td>-->
+                    <!--<td><button type="submit" class="btn btn-success" role="button"-->
+                                <!--ng-click="main.addToCart(product);-->
+                                            <!--main.getCount()"> Bestellen</button></td>-->
 
-        <div class=" well col-lg-9" ng-hide="main.toggle">
-            <table class="table table-bordered table-hover">
-                <tbody>
-                <tr>
-                    <th>Product</th>
-                    <th>Prijs</th>
-                    <th>Aantal</th>
-                    <th>Totaal</th>
-                </tr>
-                <tr ng-repeat="product in main.shoppingCart">
-                    <td>{{product.name}}</td>
-                    <td>{{product.price|currency:"&euro; "}}</td>
-                    <td>{{product.amount}}</td>
-                    <td>{{product.total|currency:"&euro; "}}</td>
-                </tr>
 
-                </tbody>
-            </table>
-            <p class="text-right">Totale prijs: {{main.totalPrice|currency:"&euro; "}}</p>
-        </div>
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+            <!--<p>Totaal: {{main.prijs}}</p>-->
+            <!--<button type="submit" style="background:#DAFADA">-->
+                <!--<span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px"></span>-->
+
+            <!--</button>-->
+            <!--<p>{{main.productCount}}</p>-->
+        <!--</div>-->
+
+
+        <!--<div class=" well col-lg-9" ng-controller="ShoppingCartController as cart" >-->
+            <!--<table class="table table-bordered table-hover">-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<th>Product</th>-->
+                    <!--<th>Prijs</th>-->
+                    <!--<th>Aantal</th>-->
+                    <!--<th>Totaal</th>-->
+                <!--</tr>-->
+                <!--<tr ng-repeat="product in cart.shoppingCart">-->
+                    <!--<td>{{product.name}}</td>-->
+                    <!--<td>{{product.price|currency:"&euro; "}}</td>-->
+                    <!--<td>{{product.amount}}</td>-->
+                    <!--<td>{{product.total|currency:"&euro; "}}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td><strong>Totale bestelling</strong></td>-->
+                    <!--<td></td>-->
+                    <!--<td></td>-->
+                    <!--<td><span ng-bind="cart.haalPrijs()"></span><strong>{{cart.sPrijs|currency:"&euro; "}}</strong></td>-->
+                <!--</tr>-->
+
+                <!--</tbody>-->
+            <!--</table>-->
+            <!--<div>-->
+                <!--<p><span ng-bind="cart.haalPrijs()"></span> Totale prijs: {{cart.sPrijs|currency:"&euro; "}}</p>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </div>
 
 <script type="text/javascript" src="app/libs/angular.js"></script>
+<script type="text/javascript" src="app/libs/angular-route.js"></script>
 <script type="text/javascript" src="app/libs/angular-resource.js"></script>
+
 <script type="text/javascript" src="app/app.js"></script>
-<script type="text/javascript" src="app/services/productservice.js"></script>
-<script type="text/javascript" src="app/controllers/productoverview.js"></script>
+<script type="text/javascript" src="app/services/productsfromdb.service.js"></script>
+<script type="text/javascript" src="app/services/updatecart.service.js"></script>
+<script type="text/javascript" src="app/controllers/productoverview.controller.js"></script>
+<script type="text/javascript" src="app/controllers/shoppingcart.controller.js"></script>
+
 
 <script type="text/javascript" src="app/libs/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="app/libs/bootstrap.js"></script>
