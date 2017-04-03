@@ -15,20 +15,16 @@ public class OrderManager {
     @PersistenceContext(unitName = "webshopPU")
     EntityManager em;
 
-    public void persistOrders() {
+    public boolean persistOrders(Order order) {
 
-        Order order = new Order();
-        order.setProductName("test");
-        order.setProductAmount(1);
-        order.setClientFirstName("test");
-        order.setClientLastName("test");
-        order.setAddress("test");
-        order.setPostalCode("test");
-        order.setCity("test");
-        order.setEmail("test");
+        try {
 
-        em.persist(order);
+            em.persist(order);
+            return true;
 
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }
