@@ -1,9 +1,6 @@
 <div class=" well col-lg-9">
-
-    <div class="well">
-        <h3>Mijn winkelmandje</h3>
-    </div>
     <table class="table table-bordered table-hover">
+        <th>Uw winkelmandje:</th>
         <tbody>
         <tr>
             <th>Product</th>
@@ -35,9 +32,7 @@
 
         </tbody>
     </table>
-    <button type="submit" class="btn btn-success" role="button"
-            ng-click="main.sendCart()">Bestellen</button>
-    </div>
+</div>
 
 <div align="center">
     <!--style="background:#DAFADA"> -->
@@ -45,53 +40,44 @@
     <p>Verder Winkelen</p>
 </div>
 
-<!--<!DOCTYPE html>-->
-<!--<div>-->
+<div class="well col-lg-9">
+    <form name="userForm" novalidate>
+        <table class="user-form">
+            <th>Uw bestelgegevens:</th>
+            <tr>
+                <td>Voornaam:</td>
+                <td><input type="text" ng-model="main.user.firstName" required></td>
+            </tr>
+            <tr>
+                <td>Achternaam:</td>
+                <td><input type="text" ng-model="main.user.lastName" required></td>
+            </tr>
+            <tr>
+                <td>Straatnaam:</td>
+                <td><input type="text" ng-model="main.user.streetName" required></td>
+            </tr>
+            <tr>
+                <td>Huisnummer:</td>
+                <td><input type="text" ng-model="main.user.houseNumber" required></td>
+            </tr>
+            <tr>
+                <td>Postcode:</td>
+                <td><input type="text" ng-model="main.user.zip" required ng-pattern="/^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/"></td>
+            </tr>
+            <tr>
+                <td>Email-adres:</td>
+                <td><input type="email" ng-model="main.user.email" required></td>
+            </tr>
 
-    <!--<div class="row">-->
-        <!--<div class="well col-lg-9">-->
-            <!--<h3>Mijn winkelmandje</h3>-->
-        <!--</div>-->
-        <!--<div class="text-center col-lg-3">-->
-            <!--<button type="submit" style="background:#DAFADA">-->
-                <!--<span class="glyphicon glyphicon-chevron-left" style="font-size: 50px"  ></span>-->
-                <!--<p>Verder Winkelen</p>-->
-            <!--</button>-->
-        <!--</div>-->
-    <!--</div>-->
+            <tr>
+                <td>&nbsp</td>
+                <td><button class="btn btn-success" ng-click="main.submitForm(userForm); main.sendCart()" required>Bestellen</button></td>
+            </tr>
 
-    <!--<div class=" well col-lg-9">-->
-        <!--<table class="table table-bordered table-hover">-->
-            <!--<tbody>-->
-            <!--<tr>-->
-                <!--<th>Product</th>-->
-                <!--<th>Prijs</th>-->
-                <!--<th>Minder</th>-->
-                <!--<th>Aantal</th>-->
-                <!--<th>Meer</th>-->
-                <!--<th>Totaal</th>-->
-            <!--</tr>-->
-            <!--<tr ng-repeat="product in main.shoppingCart">-->
-                <!--<td>{{product.name}}</td>-->
-                <!--<td>{{product.price|currency:"&euro; "}}</td>-->
-                <!--<td style="align-content: center">-->
-                    <!--<button type="submit" class="btn btn-success" role="button"-->
-                            <!--ng-click="main.removeProduct(product);-->
-                                <!--main.calculateTotalPrice()">-->
-                        <!--<span class="glyphicon glyphicon-minus" style="font-size: 25px"  ></span>-->
-                    <!--</button></td><td>-->
-                <!--{{product.amount}}</td><td>-->
-                <!--<button type="submit" class="btn btn-success" role="button"-->
-                        <!--ng-click="main.addProduct(product);-->
-                                <!--main.calculateTotalPrice()">-->
-                    <!--<span class="glyphicon glyphicon-plus" style="font-size: 25px"  ></span>-->
-                <!--</button>-->
-            <!--</td>-->
-                <!--<td>{{product.total|currency:"&euro; "}}</td>-->
-            <!--</tr>-->
+        </table>
+    </form>
 
-            <!--</tbody>-->
-        <!--</table>-->
-        <!--<p class="text-right">Totale prijs: {{main.totalPrice|currency:"&euro; "}}</p>-->
-    <!--</div>-->
-<!--</div>-->
+    <p>
+        {{main.user}}
+    </p>
+</div>

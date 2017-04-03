@@ -34,8 +34,24 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
                 clientMail: 'email@mail.com'
             };
             vm.orderContent.push(vm.singleItem);
-        })
+        });
         ProductFactory.save(vm.orderContent);
     };
+
+
+    vm.user = {
+
+    };
+
+    vm.submitForm = function(form){
+
+        if (form.$valid){
+                window.alert('Passed.');
+        } else {
+            window.alert('Failed.');
+        }
+    };
+
+
 
 });
