@@ -20,7 +20,7 @@ public class Order implements Serializable{
     private String productName;
 
     @Column(name = "product_amount")
-    private int productAmount;
+    private String productAmount;
 
     @Column(name = "client_mail")
     private String clientMail;
@@ -41,11 +41,11 @@ public class Order implements Serializable{
         this.productName = productName;
     }
 
-    public int getProductAmount() {
+    public String getProductAmount() {
         return productAmount;
     }
 
-    public void setProductAmount(int productAmount) {
+    public void setProductAmount(String productAmount) {
         this.productAmount = productAmount;
     }
 

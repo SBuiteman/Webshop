@@ -27,14 +27,21 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
 
     vm.sendCart = function(){
         vm.orderContent = [];
+        vm.productNames = [];
+        vm.productAmounts = [];
+
         vm.shoppingCart.forEach(function (product) {
-            vm.singleItem = {
-                productName: product.name,
-                productAmount: product.amount,
-                clientMail: 'email@mail.com'
-            };
-            vm.orderContent.push(vm.singleItem);
+            vm.productNames.push(product.name);
+            vm.productAmounts.push(product.amount);
         })
+
+        vm.orderContent = {
+            productName: vm.productNames.toString(),
+            productAmount: vm.productAmounts.toString(),
+            clientMail: 'email@mail.com'
+        };
+        //vm.orderContent.push(vm.singleItem);
+
         ProductFactory.save(vm.orderContent);
     };
 
