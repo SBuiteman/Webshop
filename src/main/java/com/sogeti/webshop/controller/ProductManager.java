@@ -1,10 +1,6 @@
 package com.sogeti.webshop.controller;
 
-
-
-
 import com.sogeti.webshop.model.Product;
-
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;

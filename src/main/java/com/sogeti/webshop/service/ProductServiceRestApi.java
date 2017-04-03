@@ -1,14 +1,13 @@
 package com.sogeti.webshop.service;
 
 
+import com.sogeti.webshop.controller.OrderManager;
 import com.sogeti.webshop.model.Product;
 import com.sogeti.webshop.controller.ProductManager;
 
 import javax.inject.Inject;
 import javax.naming.NamingException;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.logging.*;
@@ -44,6 +43,16 @@ public class ProductServiceRestApi {
 
         return  productManager.readAllProducts();
     }
+
+    @Inject
+    OrderManager orderManager;
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void post() {
+        orderManager.persistOrders();
+    }
+
 }
 
 
