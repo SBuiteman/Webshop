@@ -38,6 +38,10 @@ angular.module('UpdateCartService').service('CartService', function () {
         }
     };
 
+    vm.removeFromCart = function(product){
+
+    };
+
     vm.updateTotalPrice = function(){
 
         console.log("eerste keer inde functie " +vm.totalPrijs);

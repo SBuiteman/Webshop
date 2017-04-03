@@ -3,7 +3,7 @@
  */
 angular.module('ShoppingCart',['UpdateCartService']);
 
-angular.module('ShoppingCart').controller('ShoppingCartController', function ($route, CartService) {
+angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService) {
 
     var vm = this;
 
@@ -11,41 +11,19 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function ($r
 
     vm.sPrijs = 0;
 
-    vm.haalPrijs = function(){
+    vm.getPrice = function(){
         vm.sPrijs = CartService.getTotalPrice();
     };
 
+    vm.addProduct = function(){
 
-    //$scope.currentTotalPrice = CartService.totalPrice;
+    };
 
-    //vm.totalPrice = CartService.totalPrice;
+    vm.removeProduct = function () {
 
-    // $scope.getPrice = function () {
-    //     return $scope.totalPrice = CartService.getTotalPrice(vm.shoppingCart);
+    };
+
+    // vm.sendCart = function(){
+    //     ShoppingFactory.create(vm.shoppingCart);
     // };
-    // $scope.$watch('main.totalPrice', function (newVal, oldVal) {
-    //     console.log("Watching");
-    //     $scope.totalPrice = CartService.totalPrice;
-    // });
-
-    // $scope.$watch('main.totalPrice',function (newVal, oldVal) {
-    //     console.log(oldVal, newVal)
-    //     if(newVal != oldVal){
-    //
-    //     }
-    // });
-
-    // $scope.$watch(function () {
-    //
-    //     return $scope.totalPrice;},
-    //     function(newVal, oldVal){
-    //
-    //     if (newVal != oldVal) {
-    //         console.log("Watching");
-    //         $scope.totalPrice = CartService.getTotalPrice(vm.shoppingCart);
-    //     }
-    //
-    //
-    // },true);
-
 });

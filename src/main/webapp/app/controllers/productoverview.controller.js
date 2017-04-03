@@ -5,7 +5,7 @@
 
 angular.module('ProductOverview',['UpdateCartService']);
 
-angular.module('ProductOverview').controller('ProductController', function ($route, ProductFactory, CartService) {
+angular.module('ProductOverview').controller('ProductController', function (ProductFactory, CartService) {
 
     var vm = this;
 

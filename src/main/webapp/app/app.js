@@ -4,7 +4,7 @@
 'use strict';
 angular.module('myApp',['ngRoute','ProductService', 'UpdateCartService', 'ProductOverview', 'ShoppingCart']);
 
-angular.module('myApp').config(function ($routeProvider) {
+angular.module('myApp').config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
         .when('/welkom', {
@@ -15,9 +15,9 @@ angular.module('myApp').config(function ($routeProvider) {
         .when('/winkelmandje', {
             templateUrl: 'app/views/winkelmand.html',
             controller: 'ShoppingCartController',
-            controllerAs: 'cart'
+            controllerAs: 'main'
         })
         .otherwise({
             redirectTo: '/welkom'
         })
-});
+}]);

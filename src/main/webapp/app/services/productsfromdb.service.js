@@ -10,6 +10,19 @@ angular.module('ProductService').factory('ProductFactory', function ($resource) 
             method: 'GET',
             params: {},
             isArray: true
+        },
+        create: {
+            method: 'POST'
         }
     });
 });
+
+// angular.module('ProductService').factory('ShoppingFactory', function ($resource) {
+//
+//     return $resource('http://localhost:8080/webshop/api', {}, {
+//
+//         create: {
+//             method: 'POST'
+//         }
+//     });
+// });
