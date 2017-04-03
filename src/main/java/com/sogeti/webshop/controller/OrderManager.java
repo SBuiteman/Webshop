@@ -15,11 +15,12 @@ public class OrderManager {
     @PersistenceContext(unitName = "webshopPU")
     EntityManager em;
 
-    public boolean persistOrders(Order order) {
+    public boolean persistOrders(Order[] order) {
 
         try {
-
-            em.persist(order);
+            for (Order o : order) {
+                em.persist(o);
+            }
             return true;
 
         } catch (Exception e) {

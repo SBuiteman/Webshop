@@ -52,7 +52,7 @@ public class ProductServiceRestApi {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void postOrder(Order order) {
+    public void postOrder(Order[] order) {
         orderManager.persistOrders(order);
     }
 
