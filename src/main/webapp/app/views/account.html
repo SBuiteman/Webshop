@@ -1,0 +1,44 @@
+<div>
+    <form name="userForm" novalidate>
+        <table class="user-form">
+            <tr>
+                <td>Voornaam:</td>
+                <td><input type="text" ng-model="main.user.firstName" required></td>
+            </tr>
+            <tr>
+                <td>Achternaam:</td>
+                <td><input type="text" ng-model="main.user.lastName" required></td>
+            </tr>
+            <tr>
+                <td>Straatnaam:</td>
+                <td><input type="text" ng-model="main.user.streetName" required></td>
+            </tr>
+            <tr>
+                <td>Huisnummer:</td>
+                <td><input type="text" ng-model="main.user.houseNumber" required></td>
+            </tr>
+            <tr>
+                <td>Postcode:</td>
+                <td><input type="text" ng-model="main.user.zip" required ng-pattern="/^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/"></td>
+            </tr>
+            <tr>
+                <td>Telefoonnummer (10 cijfers):</td>
+                <td><input type="text" ng-model="main.user.phone" required ng-minlength="10"></td>
+            </tr>
+            <tr>
+                <td>Email-adres:</td>
+                <td><input type="email" ng-model="main.user.email" required></td>
+            </tr>
+
+            <tr>
+                <td>&nbsp</td>
+                <td><button ng-click="main.submitForm(userForm)" required>Bestellen</button></td>
+            </tr>
+
+        </table>
+    </form>
+
+<p>
+    {{main.user}}
+</p>
+</div>
