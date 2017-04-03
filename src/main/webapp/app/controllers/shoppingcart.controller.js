@@ -26,7 +26,16 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
     };
 
     vm.sendCart = function(){
-        ProductFactory.save(vm.shoppingCart);
+        vm.orderContent = [];
+        vm.shoppingCart.forEach(function (product) {
+            vm.singleItem = {
+                productName: product.name,
+                productAmount: product.amount,
+                clientMail: 'email@mail.com'
+            };
+            vm.orderContent.push(vm.singleItem);
+        })
+        ProductFactory.save(vm.orderContent);
     };
 
 });
