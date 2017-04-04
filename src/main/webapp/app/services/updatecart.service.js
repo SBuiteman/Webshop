@@ -18,13 +18,15 @@ angular.module('UpdateCartService').service('CartService', function () {
         function search(nameKey, myArray){
             for (var i=0; i < myArray.length; i++) {
                 if (myArray[i].name === nameKey) {
-                    return true;
+                    return i;
                 }
             }
-            return false;
+            return -1;
         }
 
-        if(!(search(prod.name, vm.shoppingCart))) {
+        var indexOfProduct = search(prod.name, vm.shoppingCart);
+
+        if(indexOfProduct===-1) {
             prod['amount'] = 0;
             prod.amount++;
             prod['total'] = 0;
@@ -32,15 +34,9 @@ angular.module('UpdateCartService').service('CartService', function () {
             vm.shoppingCart.push(prod);
 
         } else {
-            prod.amount++;
-            prod.total = prod.amount * prod.price;
-            var index = vm.shoppingCart.indexOf(prod);
-            var test = vm.shoppingCart[index];
-            console.log(test);
-
-
-
-
+            var target = vm.shoppingCart[indexOfProduct];
+            target.amount++;
+            target.total = target.amount * target.price;
         }
     };
 
@@ -62,7 +58,6 @@ angular.module('UpdateCartService').service('CartService', function () {
 
     vm.updateTotalPrice = function(){
 
-        //console.log("eerste keer inde functie " +vm.totalPrijs);
         vm.totalPrijs = 0;
         console.log(vm.totalPrijs);
         var temp = 0;

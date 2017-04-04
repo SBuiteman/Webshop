@@ -22,9 +22,8 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
         vm.productCount = CartService.getProductCount();
     };
 
-
     vm.addToCart = function (prod) {
-        console.log("in addTocart functie");
+        console.log("in addTocart functie "+prod.name);
         CartService.updateShoppingCart(prod);
         CartService.updateTotalPrice();
     };
