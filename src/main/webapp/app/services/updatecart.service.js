@@ -56,6 +56,15 @@ angular.module('UpdateCartService').service('CartService', function () {
         });
     };
 
+    vm.removeAllProducts = function () {
+        vm.shoppingCart.forEach(function (product) {
+            var index = vm.shoppingCart.indexOf(product);
+            vm.shoppingCart.splice(index);
+        });
+        vm.productCount = 0;
+        vm.totalPrijs = 0;
+    };
+
     vm.updateTotalPrice = function(){
 
         vm.totalPrijs = 0;
