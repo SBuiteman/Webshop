@@ -34,7 +34,9 @@ angular.module('UpdateCartService').service('CartService', function () {
         } else {
             prod.amount++;
             prod.total = prod.amount * prod.price;
-            //console.log("Total: "+prod.total);
+            var index = vm.shoppingCart.indexOf(prod);
+
+
         }
     };
 
