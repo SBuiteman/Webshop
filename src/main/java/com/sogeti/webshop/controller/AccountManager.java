@@ -17,10 +17,8 @@ public class AccountManager {
     public boolean persistAccount(Account account) {
 
         try {
-
             em.persist(account);
             return true;
-
         } catch (Exception e) {
             return false;
         }

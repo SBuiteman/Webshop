@@ -24,6 +24,9 @@ public class Product implements Serializable {
     @Column(name = "product_price")
     private BigDecimal price;
 
+    @Column(name = "product_category")
+    private String category;
+
     public void setId(int id) {
         this.id = id;
     }
@@ -56,4 +59,11 @@ public class Product implements Serializable {
         return price;
     }
 
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
 }

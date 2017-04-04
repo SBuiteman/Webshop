@@ -1,6 +1,8 @@
 package com.sogeti.webshop.controller;
 
 import com.sogeti.webshop.model.Product;
+import com.sogeti.webshop.model.Product_;
+
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -27,8 +29,18 @@ public class ProductManager {
         CriteriaQuery<Product> all = cq.select(rootEntry);
         TypedQuery<Product> allQuery = em.createQuery(all);
 
-
         return allQuery.getResultList();
+    }
+
+    public List<Product> getProductsByCategory(String category) {
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Product> cq = cb.createQuery(Product.class);
+        Root<Product> rootEntry = cq.from(Product.class);
+        cq.where(cb.equal(rootEntry.get(Product_.category), category));
+        TypedQuery<Product> catQuery = em.createQuery(cq);
+
+        return catQuery.getResultList();
     }
 
     public void createProduct(int id, String name, String description, BigDecimal price) {

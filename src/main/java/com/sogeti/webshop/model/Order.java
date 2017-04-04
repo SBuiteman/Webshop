@@ -2,7 +2,6 @@ package com.sogeti.webshop.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.io.StringReader;
 
 /**
  * Created by SBUITEMA on 31-3-2017.

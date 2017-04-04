@@ -25,8 +25,6 @@ public class ProductServiceRestApi {
     @Inject
     ProductManager productManager;
 
-    private static final Logger LOGGER = Logger.getLogger( ProductServiceRestApi.class.getName() );
-
     public ProductServiceRestApi() throws NamingException {
     }
 
@@ -34,17 +32,17 @@ public class ProductServiceRestApi {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Product> get(){
 
-        LOGGER.fine("Handling GET request");
-//        Product product = new Product();
-//        product.setPrice(new BigDecimal(5.0));
-//        product.setDescription("fdksajdsadonoifds");
-//        product.setName("fdsdf");
-//        product.setId(8);
-//        List<Product> list = new ArrayList<Product>();
-//        list.add(product);
-
-
         return  productManager.readAllProducts();
+    }
+
+    @Path("{category}")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Product> getProductsByCategory(@PathParam("category") String category) {
+
+        return productManager.getProductsByCategory(category);
+
     }
 
     @Inject
