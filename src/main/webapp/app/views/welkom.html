@@ -1,4 +1,4 @@
-<div class=" well col-lg-9">
+<div class="well col-lg-9">
     <table class="table table-bordered table-hover">
         <tbody>
         <tr>
@@ -10,19 +10,13 @@
             <td>{{product.name}}</td>
             <td>{{product.price|currency:"&euro; "}}</td>
             <td>{{product.description}}</td>
-
-
             <td><button type="button" class="btn btn-success"
-                        ng-click="main.addToCart(product);
-                                            main.getCount()">Toevoegen</button></td>
+                        ng-click="main.addToCart(product)">Toevoegen</button></td>
         </tr>
         </tbody>
     </table>
-    <p>{{main.shoppingCart}}</p>
 </div>
-
 <div align="center">
-    <a href="#!/winkelmandje"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px " ></span></a>
+    <a href="#!/winkelwagen"><span class="glyphicon glyphicon-shopping-cart"></span></a>
     <p><span ng-bind="main.getCount()"></span>{{main.productCount}}</p>
-    <!--<p><span ng-bind="main.getPrice()"></span><strong>{{main.sPrijs|currency:"€ "}}</strong></p>-->
 </div>

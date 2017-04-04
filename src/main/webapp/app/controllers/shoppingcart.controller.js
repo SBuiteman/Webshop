@@ -37,13 +37,10 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
         vm.orderContent = [];
         vm.productNames = [];
         vm.productAmounts = [];
-
         vm.shoppingCart.forEach(function (product) {
-
-
             vm.productNames.push(product.name);
             vm.productAmounts.push(product.amount);
-        })
+        });
 
         vm.orderContent = {
             productName: vm.productNames.toString(),

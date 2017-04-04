@@ -2,8 +2,14 @@
  * Created by sbuitema on 22-3-2017.
  */
 'use strict';
-angular.module('myApp',['ngRoute','ProductService', 'UpdateCartService', 'ProductOverview', 'ShoppingCart','Account',
-    'AccountService', 'AlertModule']);
+angular.module('myApp',['ngRoute',
+                        'ProductService',
+                        'UpdateCartService',
+                        'ProductOverview',
+                        'ShoppingCart',
+                        'Account',
+                        'AccountService',
+                        'AlertModule']);
 
 angular.module('myApp').config(['$routeProvider', function ($routeProvider) {
 
@@ -13,8 +19,8 @@ angular.module('myApp').config(['$routeProvider', function ($routeProvider) {
             controller: 'ProductController',
             controllerAs: 'main'
         })
-        .when('/winkelmandje', {
-            templateUrl: 'app/views/winkelmand.html',
+        .when('/winkelwagen', {
+            templateUrl: 'app/views/winkelwagen.html',
             controller: 'ShoppingCartController',
             controllerAs: 'main'
         })

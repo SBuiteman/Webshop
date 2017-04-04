@@ -5,40 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="app/css/bootstrap.css">
+    <link rel="stylesheet" href="app/css/main.css">
 
     <title>Pet Supplies</title>
-
-    <style>
-        .jumbotron {
-            background: #47BC47;
-            box-shadow: 10px 10px 5px #0B6A0B ;
-        }
-        .well {
-            background: #DAFADA;
-        }
-        input {
-            margin: 1%;
-        }
-        input.ng-dirty.ng-valid {
-            background: #BADB99;
-        }
-
-        input.ng-dirty.ng-invalid {
-            background: #DB9999;
-        }
-    </style>
 </head>
 
 <body>
 
 <div class="container" >
     <div class="jumbotron page-header row ">
-
         <div class="col-lg-9">
             <h2>Welkom bij Pet Supplies!</h2>
         </div>
         <div class="col-lg-3">
-            <span class="glyphicon glyphicon-phone-alt col-lg-4" style="font-size: 30px" ></span> <p>010-7893524</p>
+            <span class="glyphicon glyphicon-phone-alt col-lg-4"></span> <p>010-7893524</p>
         </div>
     </div>
 
@@ -55,10 +35,9 @@
             </div>
         </div>
     </div>
-
-    <ng-view></ng-view>
-
-
+    <div>
+        <ng-view></ng-view>
+    </div>
 </div>
 
 <script type="text/javascript" src="app/libs/angular.js"></script>

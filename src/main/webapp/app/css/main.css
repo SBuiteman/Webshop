@@ -1,0 +1,31 @@
+.glyphicon.glyphicon-chevron-left,
+.glyphicon.glyphicon-shopping-cart,
+.glyphicon.glyphicon-trash {
+    font-size: 50px;
+    color:#47BC47;
+}
+.glyphicon.glyphicon-chevron-left:hover,
+.glyphicon.glyphicon-shopping-cart:hover,
+.glyphicon.glyphicon-trash:hover {
+    color:#91E240;
+}
+.glyphicon.glyphicon-phone-alt{
+    font-size: 30px;
+}
+.jumbotron {
+    background: #47BC47;
+    box-shadow: 10px 10px 5px #0B6A0B ;
+}
+.well {
+    background: #DAFADA;
+}
+input {
+    margin: 1%;
+}
+input.ng-dirty.ng-valid {
+    background: #BADB99;
+}
+
+input.ng-dirty.ng-invalid {
+    background: #DB9999;
+}

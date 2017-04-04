@@ -68,21 +68,16 @@ angular.module('UpdateCartService').service('CartService', function () {
     vm.updateTotalPrice = function(){
 
         vm.totalPrijs = 0;
-        console.log(vm.totalPrijs);
         var temp = 0;
         vm.shoppingCart.forEach(function(prod){
-            //console.log("In for each function");
-            //comment om te kunne pushen
-            temp += prod.total;
+           temp += prod.total;
         });
         this.totalPrijs += temp;
         console.log(vm.totalPrijs);
         vm.totaal = vm.totalPrijs;
-
     };
 
     vm.getProductCount = function () {
-
         return vm.productCount;
     };
 
