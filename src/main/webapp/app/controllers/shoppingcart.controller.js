@@ -6,6 +6,10 @@ angular.module('ShoppingCart',['UpdateCartService','AccountService']);
 angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService, ProductFactory, AccountFactory) {
 
     var vm = this;
+    
+    vm.user = {
+
+    };
 
     vm.shoppingCart = CartService.getShoppingCart();
 
@@ -40,17 +44,10 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
         vm.orderContent = {
             productName: vm.productNames.toString(),
             productAmount: vm.productAmounts.toString(),
-            clientMail: 'email@mail.com'
+            clientMail: vm.user.email
         };
-        //vm.orderContent.push(vm.singleItem);
-
 
         ProductFactory.save(vm.orderContent);
-    };
-
-
-    vm.user = {
-
     };
 
     vm.submitForm = function(){
