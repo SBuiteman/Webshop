@@ -25,6 +25,10 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
         CartService.updateShoppingCart(prod);
         CartService.updateTotalPrice();
     };
+    vm.sPrijs = 0;
+    vm.getPrice = function(){
+        vm.sPrijs = CartService.getTotalPrice();
+    };
 
 
 
