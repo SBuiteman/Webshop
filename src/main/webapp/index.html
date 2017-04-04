@@ -45,6 +45,14 @@
     <div class="row">
         <div class="well col-lg-9">
             <h3>Bestel hier uw dierbenodigdheden</h3>
+            <div ng-controller="AlertDemoCtrl">
+                <script type="text/ng-template" id="alert.html">
+                    <div ng-transclude></div>
+                </script>
+
+                <div uib-alert ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+
+            </div>
         </div>
     </div>
 
@@ -64,7 +72,7 @@
 <script type="text/javascript" src="app/controllers/productoverview.controller.js"></script>
 <script type="text/javascript" src="app/controllers/shoppingcart.controller.js"></script>
 <script type="text/javascript" src="app/controllers/account.controller.js"></script>
-
+<script type="text/javascript" src="app/controllers/alert.controller.js"></script>
 
 <script type="text/javascript" src="app/libs/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="app/libs/bootstrap.js"></script>

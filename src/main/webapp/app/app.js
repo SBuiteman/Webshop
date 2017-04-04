@@ -2,7 +2,8 @@
  * Created by sbuitema on 22-3-2017.
  */
 'use strict';
-angular.module('myApp',['ngRoute','ProductService', 'UpdateCartService', 'ProductOverview', 'ShoppingCart','Account','AccountService']);
+angular.module('myApp',['ngRoute','ProductService', 'UpdateCartService', 'ProductOverview', 'ShoppingCart','Account',
+    'AccountService', 'AlertModule']);
 
 angular.module('myApp').config(['$routeProvider', function ($routeProvider) {
 
