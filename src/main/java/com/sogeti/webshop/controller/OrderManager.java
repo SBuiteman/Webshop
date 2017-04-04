@@ -2,7 +2,6 @@ package com.sogeti.webshop.controller;
 
 import com.sogeti.webshop.model.Order;
 import javax.ejb.Stateless;
-import javax.jms.Session;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -18,14 +17,10 @@ public class OrderManager {
     public boolean persistOrders(Order order) {
 
         try {
-
-                em.persist(order);
-
+            em.persist(order);
             return true;
-
         } catch (Exception e) {
             return false;
         }
     }
-
 }
