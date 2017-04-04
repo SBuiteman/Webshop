@@ -41,7 +41,7 @@
 </div>
 
 <div class="well col-lg-9">
-    <form name="userForm" novalidate>
+    <form name="userForm">
         <table class="user-form">
             <th>Uw bestelgegevens:</th>
             <tr>
@@ -56,13 +56,10 @@
                 <td>Straatnaam:</td>
                 <td><input type="text" ng-model="main.user.address" required></td>
             </tr>
-            <!--<tr>-->
-                <!--<td>Huisnummer:</td>-->
-                <!--<td><input type="text" ng-model="main.user.houseNumber" required></td>-->
-            <!--</tr>-->
             <tr>
                 <td>Postcode:</td>
-                <td><input type="text" ng-model="main.user.postalCode" required ng-pattern="/^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/"></td>
+                <td><input type="text" ng-model="main.user.postalCode" required
+                           ng-pattern="/^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/"></td>
             </tr>
             <tr>
                 <td>Stad:</td>
@@ -75,7 +72,8 @@
 
             <tr>
                 <td>&nbsp</td>
-                <td><button class="btn btn-success" ng-click="main.submitForm(); main.sendCart()" required>Bestellen</button></td>
+                <td><a href="#!/welkom"><button class="btn btn-success" ng-click="main.submitForm(); main.sendCart()"
+                                               ng-disabled="userForm.$invalid">Bestellen</button></a></td>
             </tr>
 
         </table>

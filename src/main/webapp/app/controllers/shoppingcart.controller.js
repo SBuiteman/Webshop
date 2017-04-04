@@ -6,7 +6,7 @@ angular.module('ShoppingCart',['UpdateCartService','AccountService']);
 angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService, ProductFactory, AccountFactory) {
 
     var vm = this;
-    
+
     vm.user = {
 
     };
