@@ -1,9 +1,9 @@
 /**
  * Created by pnederlo on 30-3-2017.
  */
-angular.module('ShoppingCart',['UpdateCartService']);
+angular.module('ShoppingCart',['UpdateCartService','AccountService']);
 
-angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService, ProductFactory) {
+angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService, ProductFactory, AccountFactory) {
 
     var vm = this;
 
@@ -53,15 +53,7 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
 
     };
 
-    vm.submitForm = function(form){
-
-        if (form.$valid){
-                window.alert('Passed.');
-        } else {
-            window.alert('Failed.');
-        }
+    vm.submitForm = function(){
+        AccountFactory.save(vm.user);
     };
-
-
-
 });
