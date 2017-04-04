@@ -15,6 +15,10 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
 
     vm.sPrijs = 0;
 
+    vm.removeAll = function () {
+        CartService.removeAllProducts();
+    };
+
     vm.getPrice = function(){
         vm.sPrijs = CartService.getTotalPrice();
     };
