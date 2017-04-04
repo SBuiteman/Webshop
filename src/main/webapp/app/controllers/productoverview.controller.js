@@ -9,6 +9,8 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
 
     var vm = this;
 
+    vm.shoppingCart = CartService.getShoppingCart();
+
     vm.listProducts = [];
     ProductFactory.query({}, function (products) {
         vm.listProducts = products;
@@ -22,6 +24,7 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
 
 
     vm.addToCart = function (prod) {
+        console.log("in addTocart functie");
         CartService.updateShoppingCart(prod);
         CartService.updateTotalPrice();
     };

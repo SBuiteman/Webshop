@@ -35,6 +35,10 @@ angular.module('UpdateCartService').service('CartService', function () {
             prod.amount++;
             prod.total = prod.amount * prod.price;
             var index = vm.shoppingCart.indexOf(prod);
+            var test = vm.shoppingCart[index];
+            console.log(test);
+
+
 
 
         }
@@ -58,12 +62,12 @@ angular.module('UpdateCartService').service('CartService', function () {
 
     vm.updateTotalPrice = function(){
 
-        console.log("eerste keer inde functie " +vm.totalPrijs);
+        //console.log("eerste keer inde functie " +vm.totalPrijs);
         vm.totalPrijs = 0;
         console.log(vm.totalPrijs);
         var temp = 0;
         vm.shoppingCart.forEach(function(prod){
-            console.log("In for each function");
+            //console.log("In for each function");
             temp += prod.total;
         });
         this.totalPrijs += temp;

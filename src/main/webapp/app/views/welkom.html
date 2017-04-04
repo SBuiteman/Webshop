@@ -12,7 +12,7 @@
             <td>{{product.description}}</td>
 
 
-            <td><button type="submit" class="btn btn-success" role="button"
+            <td><button type="button" class="btn btn-success"
                         ng-click="main.addToCart(product);
                                             main.getCount()">Toevoegen</button></td>
         </tr>
@@ -23,5 +23,5 @@
 <div align="center">
     <a href="#!/winkelmandje"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 50px " ></span></a>
     <p><span ng-bind="main.getCount()"></span>{{main.productCount}}</p>
-    <p><span ng-bind="main.getPrice()"></span><strong>{{main.sPrijs|currency:"€ "}}</stron</p>
+    <p><span ng-bind="main.getPrice()"></span><strong>{{main.sPrijs|currency:"€ "}}</strong></p>
 </div>
