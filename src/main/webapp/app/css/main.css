@@ -1,7 +1,10 @@
 .glyphicon.glyphicon-chevron-left,
-.glyphicon.glyphicon-shopping-cart,
-.glyphicon.glyphicon-trash {
+.glyphicon.glyphicon-shopping-cart{
     font-size: 50px;
+    color:#47BC47;
+}
+.glyphicon.glyphicon-trash{
+    font-size: 25px;
     color:#47BC47;
 }
 .glyphicon.glyphicon-chevron-left:hover,

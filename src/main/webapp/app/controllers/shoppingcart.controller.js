@@ -16,7 +16,7 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
     vm.sPrijs = 0;
 
     vm.removeAll = function () {
-        CartService.removeAllProducts();
+        CartService.emptyCart();
     };
 
     vm.getPrice = function(){
@@ -28,8 +28,16 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
         CartService.updateTotalPrice();
     };
 
-    vm.removeProduct = function (product) {
-        CartService.removeProductFromCart(product);
+    vm.removeOneProduct = function (product) {
+        CartService.removeOneProductFromCart(product);
+        CartService.updateTotalPrice();
+    };
+
+    vm.removeProductFromCart = function (product) {
+        var x = product.amount;
+        for(var i=0; i<x; i++){
+            CartService.removeOneProductFromCart(product);
+        }
         CartService.updateTotalPrice();
     };
 
