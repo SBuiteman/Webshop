@@ -38,4 +38,8 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
             return false;
         }
     }
+
+    vm.toggle = function () {
+        return CartService.getToggleValue();
+    };
 });

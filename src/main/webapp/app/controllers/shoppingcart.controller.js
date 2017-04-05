@@ -73,4 +73,8 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
             return false;
         }
     }
+
+    vm.toggle = function () {
+        CartService.toggleSwitch();
+    };
 });

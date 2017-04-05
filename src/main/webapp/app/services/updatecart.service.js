@@ -93,4 +93,18 @@ angular.module('UpdateCartService').service('CartService', function () {
     vm.getTotalPrice = function(){
         return vm.totalPrijs;
     };
+
+    vm.getToggleValue = function () {
+        return vm.value;
+    };
+    vm.value = true;
+
+    vm.toggleSwitch = function(){
+        console.log("in toggleSwitch function");
+        if(vm.value === false){
+            vm.value = true;
+        } else {
+            vm.value = false;
+        }
+    }
 });
