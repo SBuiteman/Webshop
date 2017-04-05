@@ -63,7 +63,6 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
         AccountFactory.save(vm.user);
     };
 
-
     vm.isLastProduct = function () {
 
         var itemsInCart = CartService.shoppingCartStatus();
