@@ -12,30 +12,34 @@
         <tr ng-repeat="product in main.shoppingCart">
             <td>{{product.name}}</td>
             <td>{{product.price|currency:"&euro; "}}</td>
-            <td><button type="submit" class="btn-sm btn-success" role="button"
-                        ng-click="main.removeOneProduct(product)">
-                        <span class="glyphicon glyphicon-minus" ></span>
-            </button> {{product.amount}}
+            <td><a ng-click="main.removeOneProduct(product)" ng-show="main.isLastProduct()" ng-href="#!/welkom">
+                <button class="btn-sm btn-success"><span class="glyphicon glyphicon-minus"></span></button>
+                </a>
+                <a ng-hide="main.isLastProduct()" ng-click="main.removeOneProduct(product)">
+                   <button class="btn-sm btn-success"><span class="glyphicon glyphicon-minus" ></span></button>
+                </a>
+                {{product.amount}}
                 <button type="submit" class="btn-sm btn-success" role="button"
                         ng-click="main.addProduct(product)">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button></td>
             <td>{{product.total|currency:"&euro; "}}</td>
-            <td><a ng-click="main.removeProductFromCart(product)"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a ng-click="main.removeProductFromCart(product)" ng-hide="main.isLastProduct()"><span class="glyphicon glyphicon-trash"></span></a>
+                <a ng-click="main.removeProductFromCart(product)" ng-show="main.isLastProduct()" ng-href="#!/welkom"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
         </tr>
         <tr>
             <td><strong>Totale bestelling</strong></td>
             <td></td>
             <td></td>
             <td><span ng-bind="main.getPrice()"></span><strong>{{main.sPrijs|currency:"€ "}}</strong></td>
-            <!--<td><a href="#!/welkom" ng-click="main.removeAll()"> <span class="glyphicon glyphicon-trash"></span></a></td>-->
         </tr>
         </tbody>
     </table>
 </div>
 
 <div align="center">
-     <a href="#!/welkom"> <span class="glyphicon glyphicon-chevron-left"></span></a>
+     <a ng-href="#!/welkom"> <span class="glyphicon glyphicon-chevron-left"></span></a>
     <p>Verder Winkelen</p>
 </div>
 <div class="well col-lg-9">
@@ -69,7 +73,7 @@
             </tr>
             <tr>
                 <td>&nbsp</td>
-                <td><a href="#!/welkom"><button class="btn btn-success"
+                <td><a ng-href="#!/welkom"><button class="btn btn-success"
                                                 ng-click="main.submitForm(); main.sendCart();
                                                 main.removeAll()"
                                                ng-disabled="userForm.$invalid">Bestellen</button></a></td>

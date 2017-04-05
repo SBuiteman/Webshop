@@ -30,7 +30,7 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
     vm.getPrice = function(){
         vm.sPrijs = CartService.getTotalPrice();
     };
-    vm.isCartEmpty = function () {
+    vm.isLastProduct = function () {
         var itemsInCart = CartService.shoppingCartStatus();
         if (itemsInCart ===0){
             return true;
