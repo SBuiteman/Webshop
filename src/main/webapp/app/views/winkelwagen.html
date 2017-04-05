@@ -7,12 +7,13 @@
             <th>Prijs</th>
             <th>Aantal</th>
             <th>Totaal</th>
+            <th>Verwijderen</th>
         </tr>
         <tr ng-repeat="product in main.shoppingCart">
             <td>{{product.name}}</td>
             <td>{{product.price|currency:"&euro; "}}</td>
             <td><button type="submit" class="btn-sm btn-success" role="button"
-                        ng-click="main.removeProduct(product)">
+                        ng-click="main.removeOneProduct(product)">
                         <span class="glyphicon glyphicon-minus" ></span>
             </button> {{product.amount}}
                 <button type="submit" class="btn-sm btn-success" role="button"
@@ -20,20 +21,17 @@
                     <span class="glyphicon glyphicon-plus"></span>
                 </button></td>
             <td>{{product.total|currency:"&euro; "}}</td>
+            <td><a ng-click="main.removeProductFromCart(product)"><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
         <tr>
             <td><strong>Totale bestelling</strong></td>
             <td></td>
             <td></td>
             <td><span ng-bind="main.getPrice()"></span><strong>{{main.sPrijs|currency:"€ "}}</strong></td>
+            <td><a href="#!/welkom" ng-click="main.removeAll()"> <span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
-
         </tbody>
     </table>
-    <div class="text-right">
-        <a href="#!/welkom" ng-click="main.removeAll()"> <span class="glyphicon glyphicon-trash"></span></a>
-        <p>Winkelwagen leegmaken</p>
-    </div>
 </div>
 
 <div align="center">
