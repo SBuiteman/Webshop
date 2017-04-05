@@ -1,3 +1,18 @@
+@keyframes example{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        /*display: none;*/
+        visibility: hidden;
+    }
+}
+.animateConfirm {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
 .glyphicon.glyphicon-chevron-left,
 .glyphicon.glyphicon-shopping-cart{
     font-size: 50px;
