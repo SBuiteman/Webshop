@@ -8,8 +8,7 @@ angular.module('myApp',['ngRoute',
                         'ProductOverview',
                         'ShoppingCart',
                         'Account',
-                        'AccountService',
-                        'AlertModule']);
+                        'AccountService']);
 
 angular.module('myApp').config(['$routeProvider', function ($routeProvider) {
 
