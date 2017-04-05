@@ -28,7 +28,7 @@
             <td></td>
             <td></td>
             <td><span ng-bind="main.getPrice()"></span><strong>{{main.sPrijs|currency:"€ "}}</strong></td>
-            <td><a href="#!/welkom" ng-click="main.removeAll()"> <span class="glyphicon glyphicon-trash"></span></a></td>
+            <!--<td><a href="#!/welkom" ng-click="main.removeAll()"> <span class="glyphicon glyphicon-trash"></span></a></td>-->
         </tr>
         </tbody>
     </table>
@@ -51,7 +51,7 @@
                 <td><input type="text" ng-model="main.user.clientLastName" required></td>
             </tr>
             <tr>
-                <td>Straatnaam:</td>
+                <td>Adres:</td>
                 <td><input type="text" ng-model="main.user.address" required></td>
             </tr>
             <tr>
@@ -60,11 +60,11 @@
                            ng-pattern="/^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/"></td>
             </tr>
             <tr>
-                <td>Stad:</td>
+                <td>Woonplaats:</td>
                 <td><input type="text" ng-model="main.user.city" required></td>
             </tr>
             <tr>
-                <td>Email-adres:</td>
+                <td>Email:</td>
                 <td><input type="email" ng-model="main.user.email" required></td>
             </tr>
             <tr>

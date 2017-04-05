@@ -62,4 +62,9 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
     vm.submitForm = function(){
         AccountFactory.save(vm.user);
     };
+
+    vm.isCartEmpty = function () {
+        var itemsInCart = CartService.shoppingCartStatus();
+
+    }
 });
