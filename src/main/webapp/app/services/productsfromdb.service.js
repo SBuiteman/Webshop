@@ -3,7 +3,7 @@
 angular.module('ProductService', ['ngResource']);
 
 angular.module('ProductService').factory('ProductFactory', function ($resource) {
-    console.log("Posting or Getting");
+
     return $resource('http://localhost:8080/webshop/api/product', {}, {
 
         query: {

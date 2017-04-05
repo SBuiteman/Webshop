@@ -16,7 +16,7 @@
         </tbody>
     </table>
 </div>
-<div align="center">
-    <a href="#!/winkelwagen"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+<div align="center" ng-hide="main.isLastProduct()">
+   <a ng-href="#!/winkelwagen"><span class="glyphicon glyphicon-shopping-cart" ></span></a>
     <p><span ng-bind="main.getCount()"></span>{{main.productCount}}</p>
 </div>

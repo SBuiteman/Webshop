@@ -12,6 +12,10 @@ angular.module('UpdateCartService').service('CartService', function () {
     vm.shoppingCart = [];
     vm.totalPrijs = 0;
 
+    vm.shoppingCartStatus = function () {
+        return vm.shoppingCart.length;
+    };
+
     vm.updateShoppingCart = function(prod){
         vm.productCount++;
 
@@ -75,7 +79,6 @@ angular.module('UpdateCartService').service('CartService', function () {
            temp += prod.total;
         });
         this.totalPrijs += temp;
-        console.log(vm.totalPrijs);
         vm.totaal = vm.totalPrijs;
     };
 
