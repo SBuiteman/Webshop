@@ -28,4 +28,14 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
     vm.getMessage = function(){
         vm.welcomeMessage = CartService.getWelcomeMessage();
     };
+
+});
+
+angular.module('ProductOverview').controller('ProductController', '$scope',
+    function (CategoryFactory, $scope) {
+
+    $scope.filterByCategory = function (category) {
+        CategoryFactory.query({ category: category});
+    };
+
 });
