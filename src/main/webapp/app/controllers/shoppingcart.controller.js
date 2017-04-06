@@ -68,12 +68,8 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
 
         var itemsInCart = CartService.shoppingCartStatus();
 
-        if (itemsInCart ===1){
-            return true;
-        } else {
-            return false;
-        }
-    }
+        return itemsInCart === 1;
+    };
 
     vm.toggle = function () {
         CartService.toggleSwitch();

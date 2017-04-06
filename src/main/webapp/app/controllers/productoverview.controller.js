@@ -16,8 +16,6 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
         vm.listProducts = products;
     });
 
-
-
     vm.getCount = function(){
         vm.productCount = CartService.getProductCount();
     };
@@ -27,24 +25,7 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
         CartService.updateTotalPrice();
     };
 
-
-
-    vm.isLastProduct = function () {
-        var itemsInCart = CartService.shoppingCartStatus();
-        if (itemsInCart ===0){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    //vm.welcomeMessage = '';
     vm.getMessage = function(){
         vm.welcomeMessage = CartService.getWelcomeMessage();
     };
-
-
-
-
-
 });

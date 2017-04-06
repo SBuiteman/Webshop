@@ -69,8 +69,6 @@ angular.module('UpdateCartService').service('CartService', function ($timeout) {
         vm.totalPrijs = 0;
     };
 
-
-
     vm.updateTotalPrice = function(){
 
         vm.totalPrijs = 0;
@@ -101,11 +99,7 @@ angular.module('UpdateCartService').service('CartService', function ($timeout) {
 
     vm.toggleSwitch = function(){
         console.log("in toggleSwitch function");
-        if(vm.value === false){
-            vm.value = true;
-        } else {
-            vm.value = false;
-        }
+        vm.value = vm.value === false;
     };
 
     vm.welcomeMessage = 'Bestel hier uw dierbenodigdheden!';
