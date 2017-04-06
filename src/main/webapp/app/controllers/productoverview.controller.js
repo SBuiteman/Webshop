@@ -43,3 +43,11 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
         return CartService.getToggleValue();
     };
 });
+
+angular.module('ProductOverview').controller('ProductController', '$scope',
+    function (CategoryFactory, $scope) {
+
+    $scope.filterByCategory = function (category) {
+        CategoryFactory.query({ category: category});
+    };
+});
