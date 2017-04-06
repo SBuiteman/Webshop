@@ -46,7 +46,7 @@ function minErr(module, ErrorConstructor) {
       template = templateArgs[1],
       paramPrefix, i;
 
-    message += template.replace(/\{\d+\}/g, function(match) {
+    welcomeMessage += template.replace(/\{\d+\}/g, function(match) {
       var index = +match.slice(1, -1),
         shiftedIndex = index + SKIP_INDEXES;
 
@@ -57,15 +57,15 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.6.2/' +
+    welcomeMessage += '\nhttp://errors.angularjs.org/1.6.2/' +
       (module ? module + '/' : '') + code;
 
     for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
-      message += paramPrefix + 'p' + (i - SKIP_INDEXES) + '=' +
+      welcomeMessage += paramPrefix + 'p' + (i - SKIP_INDEXES) + '=' +
         encodeURIComponent(toDebugString(templateArgs[i]));
     }
 
-    return new ErrorConstructor(message);
+    return new ErrorConstructor(welcomeMessage);
   };
 }
 
@@ -4768,16 +4768,16 @@ function createInjector(modulesToLoad, strictDi) {
         if (isArray(module)) {
           module = module[module.length - 1];
         }
-        if (e.message && e.stack && e.stack.indexOf(e.message) === -1) {
-          // Safari & FF's stack traces don't contain error.message content
+        if (e.welcomeMessage && e.stack && e.stack.indexOf(e.welcomeMessage) === -1) {
+          // Safari & FF's stack traces don't contain error.welcomeMessage content
           // unlike those of Chrome and IE
-          // So if stack doesn't contain message, we create a new string that contains both.
+          // So if stack doesn't contain welcomeMessage, we create a new string that contains both.
           // Since error.stack is read-only in Safari, I'm overriding e and not e.stack here.
           // eslint-disable-next-line no-ex-assign
-          e = e.message + '\n' + e.stack;
+          e = e.welcomeMessage + '\n' + e.stack;
         }
         throw $injectorMinErr('modulerr', 'Failed to instantiate module {0} due to:\n{1}',
-                  module, e.stack || e.message || e);
+                  module, e.stack || e.welcomeMessage || e);
       }
     });
     return runBlocks;
@@ -14280,7 +14280,7 @@ function $LogProvider() {
        * @name $log#log
        *
        * @description
-       * Write a log message
+       * Write a log welcomeMessage
        */
       log: consoleLog('log'),
 
@@ -14289,7 +14289,7 @@ function $LogProvider() {
        * @name $log#info
        *
        * @description
-       * Write an information message
+       * Write an information welcomeMessage
        */
       info: consoleLog('info'),
 
@@ -14298,7 +14298,7 @@ function $LogProvider() {
        * @name $log#warn
        *
        * @description
-       * Write a warning message
+       * Write a warning welcomeMessage
        */
       warn: consoleLog('warn'),
 
@@ -14307,7 +14307,7 @@ function $LogProvider() {
        * @name $log#error
        *
        * @description
-       * Write an error message
+       * Write an error welcomeMessage
        */
       error: consoleLog('error'),
 
@@ -14316,7 +14316,7 @@ function $LogProvider() {
        * @name $log#debug
        *
        * @description
-       * Write a debug message
+       * Write a debug welcomeMessage
        */
       debug: (function() {
         var fn = consoleLog('debug');
@@ -14332,11 +14332,11 @@ function $LogProvider() {
     function formatError(arg) {
       if (arg instanceof Error) {
         if (arg.stack) {
-          arg = (arg.message && arg.stack.indexOf(arg.message) === -1)
-              ? 'Error: ' + arg.message + '\n' + arg.stack
+          arg = (arg.welcomeMessage && arg.stack.indexOf(arg.welcomeMessage) === -1)
+              ? 'Error: ' + arg.welcomeMessage + '\n' + arg.stack
               : arg.stack;
         } else if (arg.sourceURL) {
-          arg = arg.message + '\n' + arg.sourceURL + ':' + arg.line;
+          arg = arg.welcomeMessage + '\n' + arg.sourceURL + ':' + arg.line;
         }
       }
       return arg;
@@ -16841,7 +16841,7 @@ function qFactory(nextTick, exceptionHandler, errorOnUnhandledRejections) {
    *   });
    * ```
    *
-   * @param {*} reason Constant, message, exception or an object representing the rejection reason.
+   * @param {*} reason Constant, welcomeMessage, exception or an object representing the rejection reason.
    * @returns {Promise} Returns a promise that was already resolved as rejected with the `reason`.
    */
   function reject(reason) {

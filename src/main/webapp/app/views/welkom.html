@@ -1,11 +1,6 @@
-<div class="well col-lg-9" ng-show="main.toggle()">
-    <h3>Bestel hier uw dierbenodigdheden</h3>
+<div class="well col-lg-9">
+    <h3><span ng-bind="main.getMessage()"></span> {{main.welcomeMessage}}</h3>
 </div>
-
-<div class="animateConfirm well col-lg-9" ng-hide="main.toggle()">
-    Bedankt voor uw bestelling!
-</div>
-
 <div class="well col-lg-9">
 
     <table class="table table-bordered table-hover">

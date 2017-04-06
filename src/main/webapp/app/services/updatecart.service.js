@@ -5,7 +5,7 @@
 
 angular.module('UpdateCartService', []);
 
-angular.module('UpdateCartService').service('CartService', function () {
+angular.module('UpdateCartService').service('CartService', function ($timeout) {
     var vm = this;
 
     vm.productCount = 0;
@@ -106,5 +106,26 @@ angular.module('UpdateCartService').service('CartService', function () {
         } else {
             vm.value = false;
         }
-    }
+    };
+
+    vm.welcomeMessage = 'Bestel hier uw dierbenodigdheden!';
+
+    vm.getWelcomeMessage = function () {
+        return vm.welcomeMessage;
+    };
+
+    var timeoutPromise = null;
+    vm.delay = 4000;
+
+    vm.setWelcomeMessage = function(){
+        vm.welcomeMessage = '';
+        vm.welcomeMessage += 'Bedankt voor uw Bestelling!';
+
+        timeoutPromise = $timeout(function(){
+            vm.welcomeMessage = '';
+            vm.welcomeMessage += 'Bestel hier uw dierbenodigdheden!';
+            timeoutPromise = null;
+        }, vm.delay, true);
+    };
+
 });
