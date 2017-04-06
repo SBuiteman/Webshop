@@ -61,6 +61,7 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
 
     vm.submitForm = function(){
         AccountFactory.save(vm.user);
+        CartService.setWelcomeMessage();
     };
 
     vm.isLastProduct = function () {

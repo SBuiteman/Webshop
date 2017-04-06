@@ -3,7 +3,7 @@
 
     <persistence-unit name="webshopPU">
 
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
         <jta-data-source>java:/MySqlDS</jta-data-source>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
