@@ -3,9 +3,10 @@
  */
 'use strict';
 
-angular.module('ProductOverview',['UpdateCartService']);
+angular.module('ProductOverview',['UpdateCartService', 'sharing']);
 
-angular.module('ProductOverview').controller('ProductController', function (ProductFactory, CartService) {
+angular.module('ProductOverview').controller('ProductController',
+    function (ProductFactory, CartService, sharingService) {
 
     var vm = this;
 
@@ -13,8 +14,14 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
 
     vm.listProducts = [];
     ProductFactory.query({}, function (products) {
-        vm.listProducts = products;
+        sharingService.productList = products;
+        vm.fillProductTable();
     });
+
+    vm.fillProductTable = function () {
+        vm.listProducts = sharingService.productList;
+        vm.productCategory = sharingService.productCategory;
+    };
 
     vm.getCount = function(){
         vm.productCount = CartService.getProductCount();
@@ -28,14 +35,4 @@ angular.module('ProductOverview').controller('ProductController', function (Prod
     vm.getMessage = function(){
         vm.welcomeMessage = CartService.getWelcomeMessage();
     };
-
-});
-
-angular.module('ProductOverview').controller('ProductController', '$scope',
-    function (CategoryFactory, $scope) {
-
-    $scope.filterByCategory = function (category) {
-        CategoryFactory.query({ category: category});
-    };
-
 });

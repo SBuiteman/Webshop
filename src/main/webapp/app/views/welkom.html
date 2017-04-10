@@ -1,15 +1,26 @@
 <div class="well col-lg-9">
     <h3><span ng-bind="main.getMessage()"></span> {{main.welcomeMessage}}</h3>
 </div>
+<div class="well col-lg-9" ng-controller="CategoryController as cc">
+    <button type="button" class="btn btn-success"
+            ng-click="cc.filterByCategory('')">Alles</button>
+    <button type="button" class="btn btn-success"
+            ng-click="cc.filterByCategory('Kat')">Katten</button>
+    <button type="button" class="btn btn-success"
+            ng-click="cc.filterByCategory('Hond')">Honden</button>
+    <button type="button" class="btn btn-success"
+            ng-click="cc.filterByCategory('Slang')">Slangen</button>
+</div>
 <div class="well col-lg-9">
 
     <table class="table table-bordered table-hover">
-        <tbody>
+        <tbody><span ng-bind="main.fillProductTable()"></span>
         <tr>
-            <th>Product</th>
+            <th>{{ main.productCategory }}</th>
             <th>Prijs</th>
             <th>Beschrijving</th>
         </tr>
+        <span ng-bind="main.fillProductTable()"></span>
         <tr ng-repeat="product in main.listProducts">
             <td>{{product.name}}</td>
             <td>{{product.price|currency:"&euro; "}}</td>

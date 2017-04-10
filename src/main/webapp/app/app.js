@@ -3,9 +3,11 @@
  */
 'use strict';
 angular.module('myApp',['ngRoute',
+                        'sharing',
                         'ProductService',
                         'UpdateCartService',
                         'ProductOverview',
+                        'Categories',
                         'ShoppingCart',
                         'Account',
                         'AccountService']);
