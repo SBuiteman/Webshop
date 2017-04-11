@@ -3,9 +3,9 @@
  */
 "use strict";
 
-angular.module('Account', []);
+angular.module('Account', ['AccountService', 'MessageService']);
 
-angular.module('Account').controller('MainController', function(){
+angular.module('Account').controller('MainController', function(AccountFactory, Messaging){
 
     var vm = this;
 
@@ -13,13 +13,9 @@ angular.module('Account').controller('MainController', function(){
 
     };
 
-    vm.submitForm = function(form){
-
-        if (form.$valid){
-            window.alert('Passed.');
-        } else {
-            window.alert('Failed.');
-        }
+    vm.submitForm = function(){
+        AccountFactory.save(vm.user);
+        Messaging.setConfirmAccountMessage();
     };
 
 });

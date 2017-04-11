@@ -48,6 +48,7 @@ public class ProductServiceRestApi {
     @Inject
     OrderManager orderManager;
 
+    @Path("/order")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postOrder(Order order) {
@@ -57,6 +58,7 @@ public class ProductServiceRestApi {
     @Inject
     AccountManager accountManager;
 
+    @Path("/account")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postAccount(Account account) {

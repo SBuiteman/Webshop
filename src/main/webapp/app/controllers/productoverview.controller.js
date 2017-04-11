@@ -3,10 +3,10 @@
  */
 'use strict';
 
-angular.module('ProductOverview',['UpdateCartService', 'sharing']);
+angular.module('ProductOverview',['UpdateCartService', 'sharing', 'MessageService']);
 
 angular.module('ProductOverview').controller('ProductController',
-    function (ProductFactory, CartService, sharingService) {
+    function (ProductFactory, CartService, sharingService, Messaging) {
 
     var vm = this;
 
@@ -33,6 +33,6 @@ angular.module('ProductOverview').controller('ProductController',
     };
 
     vm.getMessage = function(){
-        vm.welcomeMessage = CartService.getWelcomeMessage();
+        vm.welcomeMessage = Messaging.getWelcomeMessage();
     };
 });

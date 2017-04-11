@@ -7,7 +7,7 @@ angular.module('AccountService', ['ngResource']);
 
 angular.module('AccountService').factory('AccountFactory', function ($resource) {
 
-    return $resource('http://localhost:8080/webshop/api/account', {}, {
+    return $resource('http://localhost:8080/webshop/api/product/account', {}, {
 
         query: {
             method: 'GET',
@@ -15,7 +15,6 @@ angular.module('AccountService').factory('AccountFactory', function ($resource) 
             isArray: true
         },
         create: {
-
             method: 'POST'
         }
     });

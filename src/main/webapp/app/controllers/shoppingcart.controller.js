@@ -1,9 +1,10 @@
 /**
  * Created by pnederlo on 30-3-2017.
  */
-angular.module('ShoppingCart',['UpdateCartService','AccountService']);
+angular.module('ShoppingCart',['UpdateCartService','AccountService','MessageService', 'OrderService']);
 
-angular.module('ShoppingCart').controller('ShoppingCartController', function (CartService, ProductFactory, AccountFactory) {
+angular.module('ShoppingCart').controller('ShoppingCartController',
+    function (CartService, ProductFactory, AccountFactory, Messaging, OrderFactory) {
 
     var vm = this;
 
@@ -56,12 +57,12 @@ angular.module('ShoppingCart').controller('ShoppingCartController', function (Ca
             clientMail: vm.user.email
         };
 
-        ProductFactory.save(vm.orderContent);
+        OrderFactory.save(vm.orderContent);
     };
 
     vm.submitForm = function(){
         AccountFactory.save(vm.user);
-        CartService.setWelcomeMessage();
+        Messaging.setWelcomeMessage();
     };
 
     vm.isLastProduct = function () {

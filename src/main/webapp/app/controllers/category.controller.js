@@ -17,13 +17,4 @@ angular.module('Categories').controller('CategoryController',
         });
         sharingService.setCategoryName(category);
     };
-
-    // catControl.showSelectedCategory = function () {
-    //     if (catControl.myCategory === '' || typeof catControl.myCategory === 'undefined' || catControl.myCategory === 'test') {
-    //         catControl.selectedCategory = 'Alle Producten'
-    //     } else {
-    //         catControl.selectedCategory = catControl.myCategory + ' producten';
-    //     }
-    //
-    // }
 });

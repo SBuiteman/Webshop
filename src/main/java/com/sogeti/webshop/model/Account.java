@@ -33,6 +33,9 @@ public class Account implements Serializable{
     @Column(name = "email")
     private String email;
 
+    @Column(name = "password")
+    private String password;
+
     public int getAccountId() {
         return accountId;
     }
@@ -87,5 +90,13 @@ public class Account implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
