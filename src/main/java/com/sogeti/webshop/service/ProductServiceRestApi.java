@@ -56,13 +56,13 @@ public class ProductServiceRestApi {
     @Path("/order")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void postOrderLine(OrderLine[] orderLineList) {
+    public void postOrderLine(Account account) {
 
         Order order = new Order();
         order.setCustomer_name("Test");
         orderManager.persistOrders(order);
 
-        for (OrderLine orderLine : orderLineList) {
+        for (OrderLine orderLine : account) {
             int id = orderLine.getOrdered_product_id();
             Product product = productManager.getProductById(id);
             orderLine.setProduct(product);

@@ -46,22 +46,32 @@ angular.module('ShoppingCart').controller('ShoppingCartController',
         vm.orderContent = [];
         vm.productNames = [];
         vm.productAmounts = [];
+        // vm.shoppingCart.forEach(function (product) {
+        //     vm.productNames.push(product.name);
+        //     vm.productAmounts.push(product.amount);
+        // });
+        //
+        // vm.orderContent = {
+        //     productName: vm.productNames.toString(),
+        //     productAmount: vm.productAmounts.toString(),
+        //     clientMail: vm.user.email
+        // };
+        vm.orderArrays = [];
         vm.shoppingCart.forEach(function (product) {
-            vm.productNames.push(product.name);
-            vm.productAmounts.push(product.amount);
+            vm.orderArrays.push({
+                productName: vm.productNames[product.name],
+                productAmount: vm.productAmounts[product.amount]
+            });
         });
+        vm.submitForm(vm.orderArrays);
 
-        vm.orderContent = {
-            productName: vm.productNames.toString(),
-            productAmount: vm.productAmounts.toString(),
-            clientMail: vm.user.email
-        };
 
-        OrderFactory.save(vm.orderContent);
+        // OrderFactory.save(vm.orderContent);
     };
 
-    vm.submitForm = function(){
-        AccountFactory.save(vm.user);
+    vm.submitForm = function(orderArray){
+        vm.user.push({orderline: orderArray});
+        OrderFactory.save(vm.user);
         Messaging.setWelcomeMessage();
     };
 

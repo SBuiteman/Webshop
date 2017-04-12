@@ -10,7 +10,7 @@ import static javax.persistence.CascadeType.ALL;
  * Created by SBUITEMA on 3-4-2017.
  */
 @Entity
-@Table(name = "account")
+@Table(name = "accounts")
 public class Account implements Serializable{
 
     @Id
@@ -37,7 +37,6 @@ public class Account implements Serializable{
 
     @Column(name = "city")
     private String city;
-
 
     @OneToMany
     private List<OrderLine> order_lines;
