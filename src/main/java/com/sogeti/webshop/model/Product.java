@@ -3,6 +3,10 @@ package com.sogeti.webshop.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+import static javax.persistence.CascadeType.ALL;
 
 /**
  * Created by pnederlo on 20-3-2017.
@@ -11,59 +15,59 @@ import java.math.BigDecimal;
 @Table(name = "assortment")
 public class Product implements Serializable {
     @Id
-    @GeneratedValue
-    @Column(name = "product_id")
-    private int id;
+//    @Column(name = "product_id")
+    private int product_id;
 
-    @Column(name = "product_name")
-    private String name;
+    //    @Column(name = "product_name")
+    private String product_name;
 
-    @Column(name = "product_description")
-    private String description;
+    //    @Column(name = "product_description")
+    private String product_description;
 
-    @Column(name = "product_price")
-    private BigDecimal price;
+    //    @Column(name = "product_price")
+    private BigDecimal product_price;
 
-    @Column(name = "product_category")
-    private String category;
+    //    @Column(name = "product_category")
+    private String product_category;
 
-    public void setId(int id) {
-        this.id = id;
+
+    public int getProduct_id() {
+        return product_id;
     }
 
-    public int getId() {
-        return id;
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getProduct_name() {
+        return product_name;
     }
 
-    public String getName() {
-        return name;
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getProduct_description() {
+        return product_description;
     }
 
-    public String getDescription() {
-        return description;
+    public void setProduct_description(String product_description) {
+        this.product_description = product_description;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public BigDecimal getProduct_price() {
+        return product_price;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public void setProduct_price(BigDecimal product_price) {
+        this.product_price = product_price;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public String getProduct_category() {
+        return product_category;
     }
 
-    public String getCategory() {
-        return category;
+    public void setProduct_category(String product_category) {
+        this.product_category = product_category;
     }
 }

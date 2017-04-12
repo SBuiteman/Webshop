@@ -18,40 +18,53 @@ import java.util.List;
 public class ProductManager {
 
     @PersistenceContext(unitName = "webshopPU")
-    EntityManager em;
+    EntityManager entityManager;
 
 
     public  List<Product> readAllProducts() {
 
-        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Product> cq = cb.createQuery(Product.class);
         Root<Product> rootEntry = cq.from(Product.class);
         CriteriaQuery<Product> all = cq.select(rootEntry);
-        TypedQuery<Product> allQuery = em.createQuery(all);
+        TypedQuery<Product> allQuery = entityManager.createQuery(all);
 
         return allQuery.getResultList();
     }
 
     public List<Product> getProductsByCategory(String category) {
 
-        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Product> cq = cb.createQuery(Product.class);
         Root<Product> rootEntry = cq.from(Product.class);
         cq.where(cb.equal(rootEntry.get(Product_.category), category));
-        TypedQuery<Product> catQuery = em.createQuery(cq);
+        TypedQuery<Product> catQuery = entityManager.createQuery(cq);
 
         return catQuery.getResultList();
     }
 
+    public Product getProductById(int id){
+        List<Product> productList = readAllProducts();
+
+
+        for (Product product : productList){
+            if (product.getProduct_id() == id){
+                return product;
+            }
+        }
+
+        return null;
+    }
+
     public void createProduct(int id, String name, String description, BigDecimal price) {
         Product prod = new Product();
-        prod.setId(id);
-        prod.setName(name);
-        prod.setDescription(description);
-        prod.setPrice(price);
+        prod.setProduct_id(id);
+        prod.setProduct_name(name);
+        prod.setProduct_description(description);
+        prod.setProduct_price(price);
 
         // persist the product in the database
-        em.persist(prod);
+        entityManager.persist(prod);
 
     }
 

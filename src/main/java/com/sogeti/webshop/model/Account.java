@@ -2,6 +2,9 @@ package com.sogeti.webshop.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
+import static javax.persistence.CascadeType.ALL;
 
 /**
  * Created by SBUITEMA on 3-4-2017.
@@ -12,8 +15,10 @@ public class Account implements Serializable{
 
     @Id
     @GeneratedValue
-    @Column(name = "account_id")
-    private int accountId;
+    private int id;
+
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "first_name")
     private String clientFirstName;
@@ -30,15 +35,16 @@ public class Account implements Serializable{
     @Column(name = "city")
     private String city;
 
-    @Column(name = "email")
-    private String email;
+    @OneToMany
+    private List<OrderLine> order_lines;
 
-    public int getAccountId() {
-        return accountId;
+
+    public List<OrderLine> getOrder_lines() {
+        return order_lines;
     }
 
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
+    public void setOrder_lines(List<OrderLine> order_lines) {
+        this.order_lines = order_lines;
     }
 
     public String getClientFirstName() {
@@ -87,5 +93,12 @@ public class Account implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

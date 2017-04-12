@@ -1,22 +1,23 @@
 package com.sogeti.webshop.controller;
 
-import com.sogeti.webshop.model.Account;
+import com.sogeti.webshop.model.OrderLine;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * Created by SBUITEMA on 3-4-2017.
+ * Created by SBUITEMA on 31-3-2017.
  */
-@Stateless(name = "accountmanager")
-public class AccountManager {
+@Stateless(name = "orderlinemanager")
+public class OrderLineManager {
 
     @PersistenceContext(unitName = "webshopPU")
     EntityManager entityManager;
 
-    public void persistAccount(Account account) {
+    public void persistOrderLine(OrderLine orderLine) {
 
-        entityManager.persist(account);
+        entityManager.persist(orderLine);
 
     }
 }

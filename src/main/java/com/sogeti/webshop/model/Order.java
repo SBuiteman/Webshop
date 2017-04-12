@@ -2,6 +2,7 @@ package com.sogeti.webshop.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by SBUITEMA on 31-3-2017.
@@ -11,48 +12,48 @@ import java.io.Serializable;
 public class Order implements Serializable{
 
     @Id
-    @GeneratedValue
-    @Column(name = "idorders")
-    private int orderId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int order_id;
 
-    @Column(name = "product_name")
-    private String productName;
+    private String customer_name;
 
-    @Column(name = "product_amount")
-    private String productAmount;
+    @OneToMany
+    private List<OrderLine> order_lines;
 
-    @Column(name = "client_mail")
-    private String clientMail;
-
-    public int getOrderId() {
-        return orderId;
+    public List<OrderLine> getOrder_lines() {
+        return order_lines;
     }
 
-    public void setOrderId(int order_id) {
-        this.orderId = order_id;
+    public void setOrder_lines(List<OrderLine> order_lines) {
+        this.order_lines = order_lines;
     }
 
-    public String getProductName() {
-        return productName;
+    public int getOrder_id() {
+        return order_id;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setOrder_id(int order_id) {
+        this.order_id = order_id;
     }
 
-    public String getProductAmount() {
-        return productAmount;
+    public String getCustomer_name() {
+        return customer_name;
     }
 
-    public void setProductAmount(String productAmount) {
-        this.productAmount = productAmount;
+    public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
     }
 
-    public String getClientMail() {
-        return clientMail;
+    public List<OrderLine> getOrderline_list() {
+        return orderline_list;
     }
 
-    public void setClientMail(String clientMail) {
-        this.clientMail = clientMail;
+    public void setOrderline_list(List<OrderLine> orderline_list) {
+        this.orderline_list = orderline_list;
     }
+
+    @OneToMany
+//    @JoinColumn(name = "order_line_id")
+    private List<OrderLine> orderline_list;
+
 }

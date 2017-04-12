@@ -2,9 +2,11 @@ package com.sogeti.webshop.service;
 
 
 import com.sogeti.webshop.controller.AccountManager;
+import com.sogeti.webshop.controller.OrderLineManager;
 import com.sogeti.webshop.controller.OrderManager;
 import com.sogeti.webshop.model.Account;
 import com.sogeti.webshop.model.Order;
+import com.sogeti.webshop.model.OrderLine;
 import com.sogeti.webshop.model.Product;
 import com.sogeti.webshop.controller.ProductManager;
 
@@ -46,22 +48,39 @@ public class ProductServiceRestApi {
     }
 
     @Inject
+    OrderLineManager orderLineManager;
+
+    @Inject
     OrderManager orderManager;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void postOrder(Order order) {
+    public void postOrderLine(OrderLine[] orderLineList) {
+
+        Order order = new Order();
+        order.setCustomer_name("Test");
         orderManager.persistOrders(order);
+
+        for (OrderLine orderLine : orderLineList) {
+            int id = orderLine.getOrdered_product_id();
+            Product product = productManager.getProductById(id);
+            orderLine.setProduct(product);
+            orderLine.setOrder(order);
+            orderLineManager.persistOrderLine(orderLine);
+        }
+
+
+
     }
 
     @Inject
     AccountManager accountManager;
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void postAccount(Account account) {
-        accountManager.persistAccount(account);
-    }
+//    @POST
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public void postAccount(Account account) {
+//        accountManager.persistAccount(account);
+//    }
 
 }
 
