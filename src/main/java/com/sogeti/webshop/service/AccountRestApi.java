@@ -1,13 +1,7 @@
 package com.sogeti.webshop.service;
 
-import com.sogeti.webshop.controller.AccountManager;
-import com.sogeti.webshop.controller.OrderLineManager;
-import com.sogeti.webshop.controller.OrderManager;
-import com.sogeti.webshop.controller.ProductManager;
-import com.sogeti.webshop.model.Account;
-import com.sogeti.webshop.model.Order;
-import com.sogeti.webshop.model.OrderLine;
-import com.sogeti.webshop.model.Product;
+import com.sogeti.webshop.controller.*;
+import com.sogeti.webshop.model.*;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -29,21 +23,24 @@ public class AccountRestApi {
     OrderLineManager orderLineManager;
     @Inject
     OrderManager orderManager;
+    @Inject
+    CustomerManager customerManager;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postAccount(Account account) {
-
-        List<OrderLine> orderLineList = account.getOrder_lines();
-        Order order = new Order();
-        orderManager.persistOrders(order);
-        for (OrderLine orderLine : orderLineList) {
-            int id = orderLine.getOrdered_product_id();
-            Product product = productManager.getProductById(id);
-            orderLine.setProduct(product);
-            orderLine.setOrder(order);
-            orderLineManager.persistOrderLine(orderLine);
-        }
+        Customer customer = account.getCustomer();
+        customerManager.persistCustomer(customer);
+//        List<OrderLine> orderLineList = account.getOrder_lines();
+//        Order order = new Order();
+//        orderManager.persistOrders(order);
+//        for (OrderLine orderLine : orderLineList) {
+//            int id = orderLine.getOrdered_product_id();
+//            Product product = productManager.getProductById(id);
+//            orderLine.setProduct(product);
+//            orderLine.setOrder(order);
+//            orderLineManager.persistOrderLine(orderLine);
+//        }
         accountManager.persistAccount(account);
 
 }
