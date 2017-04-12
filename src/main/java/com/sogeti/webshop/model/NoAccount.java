@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created by SBUITEMA on 3-4-2017.
+ * Created by sbuitema on 12-4-2017.
  */
 @Entity
-@Table(name = "noaccount")
-public class Account implements Serializable{
+@Table(name = "accounts")
+public class NoAccount implements Serializable {
 
     @Id
     @GeneratedValue
@@ -21,6 +21,7 @@ public class Account implements Serializable{
     @Column(name = "last_name")
     private String clientLastName;
 
+
     @Column(name = "address")
     private String address;
 
@@ -32,9 +33,6 @@ public class Account implements Serializable{
 
     @Column(name = "email")
     private String email;
-
-    @Column(name = "password")
-    private String password = "NoAcc";
 
     public int getAccountId() {
         return accountId;
@@ -90,13 +88,5 @@ public class Account implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

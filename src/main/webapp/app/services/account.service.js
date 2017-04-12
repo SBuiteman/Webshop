@@ -5,17 +5,20 @@
 
 angular.module('AccountService', ['ngResource']);
 
+var baseUrl = 'http://localhost:8080/webshop/api/';
+
 angular.module('AccountService').factory('AccountFactory', function ($resource) {
 
-    return $resource('http://localhost:8080/webshop/api/product/account', {}, {
+    return $resource(baseUrl + 'account/:username/:password', {}, {
 
         query: {
             method: 'GET',
-            params: {},
+            params: {username: '@username', password: '@password'},
             isArray: true
         },
         create: {
             method: 'POST'
         }
+
     });
 });

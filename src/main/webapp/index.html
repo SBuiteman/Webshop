@@ -21,20 +21,21 @@
         <div class="col-lg-3">
             <span class="glyphicon glyphicon-phone-alt col-lg-4"></span> <p>010-7893524</p>
             <form name="loginForm" novalidate>
-                <table class="user-form">
+                <table class="user-form" ng-controller="ProductController as pc">
                     <tr>
                         <td>
-                            <input type="text" placeholder="Gebruikers Naam" ng-model="main.user.first_name" required>
+                            <input type="email" placeholder="Gebruikers Naam" ng-model="pc.user.username" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Wachtwoord" ng-model="main.user.last_name" required>
+                            <input type="text" placeholder="Wachtwoord" ng-model="pc.user.password" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button type="button" class="btn btn-primary pull-left custom">Login</button>
+                            <button type="button" class="btn btn-primary pull-left custom"
+                            ng-click="pc.getAccount()">Login</button>
                             <button type="button" class="btn btn-primary pull-right custom">Logout</button>
                         </td>
                     </tr>

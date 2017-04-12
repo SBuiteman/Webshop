@@ -55,15 +55,15 @@ public class ProductServiceRestApi {
         orderManager.persistOrders(order);
     }
 
-    @Inject
-    AccountManager accountManager;
-
-    @Path("/account")
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void postAccount(Account account) {
-        accountManager.persistAccount(account);
-    }
+//    @Inject
+//    AccountManager accountManager;
+//
+//    @Path("/account")
+//    @POST
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public void postAccount(Account account) {
+//        accountManager.persistAccount(account);
+//    }
 
 }
 

@@ -23,7 +23,7 @@ angular.module('MessageService').service('Messaging', function ($timeout) {
     };
 
     vm.getWelcomeMessage = function () {
-        return vm.welcomeMessage;
+        return 'testing';
     };
 
     vm.setConfirmAccountMessage = function(){

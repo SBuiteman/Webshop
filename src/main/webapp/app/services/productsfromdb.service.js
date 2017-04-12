@@ -31,13 +31,3 @@ angular.module('ProductService').factory('CategoryFactory', function ($resource)
         }
     })
 });
-
-// angular.module('ProductService').factory('ShoppingFactory', function ($resource) {
-//
-//     return $resource('http://localhost:8080/webshop/api/product', {}, {
-//
-//         create: {
-//             method: 'POST'
-//         }
-//     });
-// });
