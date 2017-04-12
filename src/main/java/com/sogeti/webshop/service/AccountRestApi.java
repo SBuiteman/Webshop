@@ -12,6 +12,7 @@ import com.sogeti.webshop.model.Product;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -19,7 +20,6 @@ import java.util.List;
  */
 @Path("/account")
 public class AccountRestApi {
-
 
     @Inject
     AccountManager accountManager;
@@ -46,9 +46,15 @@ public class AccountRestApi {
         }
         accountManager.persistAccount(account);
 
+}
 
+    @Path("{password}/{username}")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Account getAccount(@QueryParam("password") String password, @QueryParam("username") String username) {
 
-
+        return new Account();
 
     }
 }

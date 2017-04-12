@@ -3,12 +3,14 @@
  */
 'use strict';
 
-angular.module('ProductOverview',['UpdateCartService', 'sharing']);
+angular.module('ProductOverview',['UpdateCartService', 'sharing', 'MessageService', 'AccountService']);
 
 angular.module('ProductOverview').controller('ProductController',
-    function (ProductFactory, CartService, sharingService) {
+    function (ProductFactory, CartService, sharingService, Messaging, AccountFactory) {
 
     var vm = this;
+
+    vm.welcomeMessage = 'test';
 
     vm.shoppingCart = CartService.getShoppingCart();
 
@@ -33,6 +35,22 @@ angular.module('ProductOverview').controller('ProductController',
     };
 
     vm.getMessage = function(){
-        vm.welcomeMessage = CartService.getWelcomeMessage();
+        console.log(vm);
+        vm.welcomeMessage = Messaging.getWelcomeMessage();
+        console.log(Messaging.getWelcomeMessage());
+        //welcomeMessage = 'hallo';
+    };
+
+    vm.getAccount = function () {
+        console.log(vm.user.username + " & " + vm.user.password);
+        AccountFactory.query({username: vm.user.username, password: vm.user.password}, function (account) {
+            if (account) {
+                console.log("komt ie terug" + account)
+            }
+            //var acc = account;
+            console.log("ga ik hier dood2?" + acc);
+        });
+        console.log("ga ik hier dood?");
+        console.log(vm);
     };
 });

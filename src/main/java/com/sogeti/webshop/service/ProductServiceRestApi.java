@@ -53,6 +53,7 @@ public class ProductServiceRestApi {
     @Inject
     OrderManager orderManager;
 
+    @Path("/order")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postOrderLine(OrderLine[] orderLineList) {
@@ -68,20 +69,7 @@ public class ProductServiceRestApi {
             orderLine.setOrder(order);
             orderLineManager.persistOrderLine(orderLine);
         }
-
-
-
     }
-
-    @Inject
-    AccountManager accountManager;
-
-//    @POST
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public void postAccount(Account account) {
-//        accountManager.persistAccount(account);
-//    }
-
 }
 
 

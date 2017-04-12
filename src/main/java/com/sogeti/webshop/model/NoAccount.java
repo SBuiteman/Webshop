@@ -2,23 +2,18 @@ package com.sogeti.webshop.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
-
-import static javax.persistence.CascadeType.ALL;
 
 /**
- * Created by SBUITEMA on 3-4-2017.
+ * Created by sbuitema on 12-4-2017.
  */
 @Entity
-@Table(name = "account")
-public class Account implements Serializable{
+@Table(name = "noaccounts")
+public class NoAccount implements Serializable {
 
     @Id
     @GeneratedValue
-    private int id;
-
-    @Column(name = "email")
-    private String email;
+    @Column(name = "account_id")
+    private int accountId;
 
     @Column(name = "first_name")
     private String clientFirstName;
@@ -26,30 +21,25 @@ public class Account implements Serializable{
     @Column(name = "last_name")
     private String clientLastName;
 
+
     @Column(name = "address")
     private String address;
 
     @Column(name = "postal_code")
     private String postalCode;
 
-    @Column(name = "password")
-    private String password;
-
     @Column(name = "city")
     private String city;
 
+    @Column(name = "email")
+    private String email;
 
-    @OneToMany
-    private List<OrderLine> order_lines;
-
-
-    public List<OrderLine> getOrder_lines() {
-        return order_lines;
+    public int getAccountId() {
+        return accountId;
     }
 
-
-    public void setOrder_lines(List<OrderLine> order_lines) {
-        this.order_lines = order_lines;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
     public String getClientFirstName() {
@@ -98,22 +88,5 @@ public class Account implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-
     }
 }

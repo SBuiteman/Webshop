@@ -4,13 +4,15 @@
 'use strict';
 angular.module('myApp',['ngRoute',
                         'sharing',
+                        'MessageService',
                         'ProductService',
                         'UpdateCartService',
                         'ProductOverview',
                         'Categories',
                         'ShoppingCart',
                         'Account',
-                        'AccountService']);
+                        'AccountService',
+                        'OrderService']);
 
 angular.module('myApp').config(['$routeProvider', function ($routeProvider) {
 
