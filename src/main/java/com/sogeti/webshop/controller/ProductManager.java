@@ -59,9 +59,9 @@ public class ProductManager {
     public void createProduct(int id, String name, String description, BigDecimal price) {
         Product prod = new Product();
         prod.setProduct_id(id);
-        prod.setProduct_name(name);
-        prod.setProduct_description(description);
-        prod.setProduct_price(price);
+        prod.setName(name);
+        prod.setDescription(description);
+        prod.setPrice(price);
 
         // persist the product in the database
         entityManager.persist(prod);

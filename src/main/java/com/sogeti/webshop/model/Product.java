@@ -15,21 +15,20 @@ import static javax.persistence.CascadeType.ALL;
 @Table(name = "assortment")
 public class Product implements Serializable {
     @Id
-//    @Column(name = "product_id")
+    @Column(name = "product_id")
     private int product_id;
 
-    //    @Column(name = "product_name")
-    private String product_name;
+    @Column(name = "product_name")
+    private String name;
 
-    //    @Column(name = "product_description")
-    private String product_description;
+    @Column(name = "product_description")
+    private String description;
 
-    //    @Column(name = "product_price")
-    private BigDecimal product_price;
+    @Column(name = "product_price")
+    private BigDecimal price;
 
-    //    @Column(name = "product_category")
-    private String product_category;
-
+    @Column(name = "product_category")
+    private String category;
 
     public int getProduct_id() {
         return product_id;
@@ -39,35 +38,35 @@ public class Product implements Serializable {
         this.product_id = product_id;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getName() {
+        return name;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getProduct_description() {
-        return product_description;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProduct_description(String product_description) {
-        this.product_description = product_description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public BigDecimal getProduct_price() {
-        return product_price;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setProduct_price(BigDecimal product_price) {
-        this.product_price = product_price;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
-    public String getProduct_category() {
-        return product_category;
+    public String getCategory() {
+        return category;
     }
 
-    public void setProduct_category(String product_category) {
-        this.product_category = product_category;
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
