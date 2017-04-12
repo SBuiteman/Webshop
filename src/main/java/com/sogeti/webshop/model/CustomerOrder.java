@@ -1,26 +1,24 @@
 package com.sogeti.webshop.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
-import static javax.persistence.CascadeType.ALL;
-
 /**
- * Created by SBUITEMA on 3-4-2017.
+ * Created by pnederlo on 12-4-2017.
  */
 @Entity
-@Table(name = "accounts")
-public class Account implements Serializable{
+@Table(name="customer_order")
+public class CustomerOrder {
 
     @Id
     @GeneratedValue
     private int id;
 
-    private String password;
-
-    @OneToOne
+    @ManyToOne
     private Customer customer;
+
+    @OneToMany
+    private List<OrderLine> order_lines;
 
     public int getId() {
         return id;
@@ -30,19 +28,19 @@ public class Account implements Serializable{
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public List<OrderLine> getOrder_lines() {
+        return order_lines;
+    }
+
+    public void setOrder_lines(List<OrderLine> order_lines) {
+        this.order_lines = order_lines;
     }
 }
