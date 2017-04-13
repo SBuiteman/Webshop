@@ -1,14 +1,8 @@
 package com.sogeti.webshop.service;
 
 
-import com.sogeti.webshop.controller.AccountManager;
-import com.sogeti.webshop.controller.OrderLineManager;
-import com.sogeti.webshop.controller.OrderManager;
-import com.sogeti.webshop.model.Account;
-import com.sogeti.webshop.model.Order;
-import com.sogeti.webshop.model.OrderLine;
-import com.sogeti.webshop.model.Product;
-import com.sogeti.webshop.controller.ProductManager;
+import com.sogeti.webshop.controller.*;
+import com.sogeti.webshop.model.*;
 
 import javax.inject.Inject;
 import javax.naming.NamingException;
@@ -53,20 +47,25 @@ public class ProductServiceRestApi {
     @Inject
     OrderManager orderManager;
 
+    @Inject
+    CustomerManager customerManager;
+
     @Path("/order")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void postOrderLine(Account account) {
+    public void postOrderLine(CustomerOrder customerOrder) {
 
         Order order = new Order();
-        order.setCustomer_name("Test");
-        orderManager.persistOrders(order);
+        Customer customer = customerOrder.getCustomer();
+        //order.setCustomer_name("Test");
+        customerManager.persistCustomer(customer);
 
-        for (OrderLine orderLine : account) {
+        for (OrderLine orderLine : customerOrder.getOrder_lines()) {
             int id = orderLine.getOrdered_product_id();
             Product product = productManager.getProductById(id);
             orderLine.setProduct(product);
             orderLine.setOrder(order);
+            orderManager.persistOrders(order);
             orderLineManager.persistOrderLine(orderLine);
         }
     }

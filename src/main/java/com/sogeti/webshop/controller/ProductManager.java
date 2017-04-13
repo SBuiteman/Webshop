@@ -53,6 +53,9 @@ public class ProductManager {
             }
         }
 
+        Product product = new Product();
+        product.setProduct_id(999);
+
         return null;
     }
 
