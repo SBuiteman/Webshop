@@ -38,4 +38,14 @@ public class AccountManager {
         return customer;
     }
 
+    public void createDummyAccount(Customer customer){
+
+//
+        Account account = new Account();
+        account.setPassword("admin");
+        account.setCustomer(customer);
+        persistAccount(account);
+
+    }
+
 }

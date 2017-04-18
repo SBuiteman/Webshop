@@ -59,30 +59,16 @@ public class ProductManager {
         return null;
     }
 
-    public void createProduct(int id, String name, String description, BigDecimal price) {
-        Product prod = new Product();
-        prod.setId(id);
-        prod.setName(name);
-        prod.setDescription(description);
-        prod.setPrice(price);
+    public void createDummyProduct(String name, String description, BigDecimal price, String category) {
+        Product product = new Product();
+//        prod.setId(id);
+        product.setName(name);
+        product.setDescription(description);
+        product.setPrice(price);
+        product.setCategory(category);
 
         // persist the product in the database
-        entityManager.persist(prod);
+        entityManager.persist(product);
 
     }
-
-
-
-
-//    public static void main(String[] args) {
-//        ProductManager pm = new ProductManager();
-//        pm.createProduct(1,"Hondebrokken","Heerlijke malse hondenbrokken", new BigDecimal(5.65));
-//        pm.createProduct(2,"Kattenbrokken","Heerlijke malse kattenbrokken", new BigDecimal(10.65));
-//        pm.createProduct(3,"Kleine Muizen","Uw slang gaat er van smullen!", new BigDecimal(15.65));
-//
-//
-//
-//
-//
-//    }
 }

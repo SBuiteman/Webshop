@@ -21,4 +21,16 @@ public class CustomerManager {
             entityManager.persist(customer);
 
         }
+
+        public Customer createDummyCustomer(){
+            Customer customer = new Customer();
+            customer.setAddress("Hullenbergweg 302");
+            customer.setCity("Amsterdam");
+            customer.setClientFirstName("Edo");
+            customer.setClientLastName("Hendriksen");
+            customer.setEmail("test@test");
+            customer.setPostalCode("1022AL");
+            persistCustomer(customer);
+            return customer;
+        }
     }

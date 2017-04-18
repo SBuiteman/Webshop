@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @Table(name = "assortment")
 public class Product implements Serializable {
     @Id
+    @GeneratedValue
     @Column(name = "product_id")
     private int id;
 

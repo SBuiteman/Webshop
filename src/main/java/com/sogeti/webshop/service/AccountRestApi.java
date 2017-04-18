@@ -39,7 +39,7 @@ public class AccountRestApi {
 
     @Path("{username}/{password}")
     @GET
-    @Consumes(MediaType.APPLICATION_JSON)
+//    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Customer getAccount(@QueryParam("password") String password, @QueryParam("username") String username) {
 
