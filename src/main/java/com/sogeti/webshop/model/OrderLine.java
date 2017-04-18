@@ -26,10 +26,8 @@ public class OrderLine {
 
 
     @ManyToOne
-    @JoinColumn(name="customer_order_id", foreignKey=@ForeignKey(name="customer_order_id"))
-    private CustomerOrder customerOrder;
-
-
+    @JoinColumn(name="order_id", foreignKey=@ForeignKey(name="order_id"))
+    private Order order;
 
 
     public int getOrder_line_id() {
@@ -64,11 +62,11 @@ public class OrderLine {
         this.product = product;
     }
 
-    public CustomerOrder getCustomerOrder() {
-        return customerOrder;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setCustomerOrder(CustomerOrder customerOrder) {
-        this.customerOrder = customerOrder;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }

@@ -1,17 +1,26 @@
 package com.sogeti.webshop.model;
 
+import javax.persistence.*;
 import java.util.List;
 
 /**
- * Created by pnederlo on 12-4-2017.
+ * Created by pnederlo on 18-4-2017.
  */
+@Entity
+@Table(name = "orders")
+public class Order {
 
-public class CustomerOrder {
-
+    @Id
+    @GeneratedValue
+    @Column(name = "order_id")
     private int id;
 
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @OneToMany
+//    @JoinColumn(name="order_line_id")
     private List<OrderLine> order_lines;
 
     public int getId() {
@@ -38,3 +47,5 @@ public class CustomerOrder {
         this.order_lines = order_lines;
     }
 }
+
+

@@ -53,8 +53,8 @@ public class ProductManager {
             }
         }
 
-        Product product = new Product();
-        product.setId(999);
+//        Product product = new Product();
+//        product.setId(999);
 
         return null;
     }
