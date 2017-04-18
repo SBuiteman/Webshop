@@ -1,6 +1,7 @@
 package com.sogeti.webshop.controller;
 
-import com.sogeti.webshop.model.Order;
+import com.sogeti.webshop.model.CustomerOrder;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,13 +9,13 @@ import javax.persistence.PersistenceContext;
 /**
  * Created by SBUITEMA on 31-3-2017.
  */
-@Stateless(name = "ordermanager")
-public class OrderManager {
+@Stateless(name = "customerordermanager")
+public class CustomerOrderManager {
 
     @PersistenceContext(unitName = "webshopPU")
     EntityManager em;
 
-    public boolean persistOrders(Order order) {
+    public boolean persistOrders(CustomerOrder order) {
 
         try {
             em.persist(order);

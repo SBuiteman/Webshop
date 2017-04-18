@@ -6,8 +6,6 @@ import com.sogeti.webshop.model.*;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.io.Serializable;
-import java.util.List;
 
 /**
  * Created by pnederlo on 4-4-2017.
@@ -22,7 +20,7 @@ public class AccountRestApi {
     @Inject
     OrderLineManager orderLineManager;
     @Inject
-    OrderManager orderManager;
+    CustomerOrderManager orderManager;
     @Inject
     CustomerManager customerManager;
 
@@ -33,7 +31,7 @@ public class AccountRestApi {
         customerManager.persistCustomer(customer);
 //        List<OrderLine> orderLineList = account.getOrder_lines();
 //        Order order = new Order();
-//        orderManager.persistOrders(order);
+//        customerOrderManager.persistOrders(order);
 //        for (OrderLine orderLine : orderLineList) {
 //            int id = orderLine.getOrdered_product_id();
 //            Product product = productManager.getProductById(id);

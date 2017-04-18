@@ -9,7 +9,6 @@ import javax.naming.NamingException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
-import java.util.logging.*;
 
 /**
  * Created by pnederlo on 20-3-2017.
@@ -45,7 +44,7 @@ public class ProductServiceRestApi {
     OrderLineManager orderLineManager;
 
     @Inject
-    OrderManager orderManager;
+    CustomerOrderManager customerOrderManager;
 
     @Inject
     CustomerManager customerManager;
@@ -54,20 +53,29 @@ public class ProductServiceRestApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postOrderLine(CustomerOrder customerOrder) {
-
-        Order order = new Order();
+        //customer wordt uit customerorder object gehaald
         Customer customer = customerOrder.getCustomer();
-        //order.setCustomer_name("Test");
+
+        //customer wordt gerpesisteerd
         customerManager.persistCustomer(customer);
 
-        for (OrderLine orderLine : customerOrder.getOrder_lines()) {
-            int id = orderLine.getOrdered_product_id();
-            Product product = productManager.getProductById(id);
-            orderLine.setProduct(product);
-            orderLine.setOrder(order);
-            orderManager.persistOrders(order);
-            orderLineManager.persistOrderLine(orderLine);
-        }
+        CustomerOrder currentOrder = new CustomerOrder();
+        currentOrder.setCustomer(customer);
+
+//        List<OrderLine> orderLines = customerOrder.getOrder_lines();
+//
+//        customerOrder.setCustomer(customer);
+//        customerOrderManager.persistOrders(currentOrder);
+//        for (OrderLine orderLine : orderLines) {
+//            int id = orderLine.getOrdered_product_id();
+//            Product product = productManager.getProductById(id);
+//            orderLine.setProduct(product);
+//            orderLine.setCustomerOrder(currentOrder);
+//            orderLineManager.persistOrderLine(orderLine);
+//        }
+
+
+
     }
 }
 

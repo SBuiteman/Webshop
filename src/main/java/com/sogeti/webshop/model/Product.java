@@ -3,10 +3,6 @@ package com.sogeti.webshop.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-
-import static javax.persistence.CascadeType.ALL;
 
 /**
  * Created by pnederlo on 20-3-2017.
@@ -16,7 +12,7 @@ import static javax.persistence.CascadeType.ALL;
 public class Product implements Serializable {
     @Id
     @Column(name = "product_id")
-    private int product_id;
+    private int id;
 
     @Column(name = "product_name")
     private String name;
@@ -30,12 +26,12 @@ public class Product implements Serializable {
     @Column(name = "product_category")
     private String category;
 
-    public int getProduct_id() {
-        return product_id;
+    public int getId() {
+        return id;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setId(int product_id) {
+        this.id = product_id;
     }
 
     public String getName() {

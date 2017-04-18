@@ -48,20 +48,20 @@ public class ProductManager {
 
 
         for (Product product : productList){
-            if (product.getProduct_id() == id){
+            if (product.getId() == id){
                 return product;
             }
         }
 
         Product product = new Product();
-        product.setProduct_id(999);
+        product.setId(999);
 
         return null;
     }
 
     public void createProduct(int id, String name, String description, BigDecimal price) {
         Product prod = new Product();
-        prod.setProduct_id(id);
+        prod.setId(id);
         prod.setName(name);
         prod.setDescription(description);
         prod.setPrice(price);

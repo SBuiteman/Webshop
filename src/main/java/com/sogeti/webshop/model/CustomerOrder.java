@@ -7,25 +7,27 @@ import java.util.List;
  * Created by pnederlo on 12-4-2017.
  */
 @Entity
-@Table(name="customer_order")
+//@Table(name="customer_order")
 public class CustomerOrder {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int customer_order_id;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @OneToMany
+//    @JoinColumn(name="order_line_id")
     private List<OrderLine> order_lines;
 
-    public int getId() {
-        return id;
+    public int getCustomer_order_id() {
+        return customer_order_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCustomer_order_id(int customer_order_id) {
+        this.customer_order_id = customer_order_id;
     }
 
     public Customer getCustomer() {
