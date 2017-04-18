@@ -47,35 +47,33 @@ public class ProductServiceRestApi {
     CustomerOrderManager customerOrderManager;
 
     @Inject
+    OrderManager orderManager;
+
+    @Inject
     CustomerManager customerManager;
 
     @Path("/order")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postOrderLine(CustomerOrder customerOrder) {
-        //customer wordt uit customerorder object gehaald
+
         Customer customer = customerOrder.getCustomer();
 
-        //customer wordt gerpesisteerd
         customerManager.persistCustomer(customer);
 
-        CustomerOrder currentOrder = new CustomerOrder();
-        currentOrder.setCustomer(customer);
+        Order order = new Order();
+        order.setCustomer(customer);
+        orderManager.persistOrder(order);
 
-//        List<OrderLine> orderLines = customerOrder.getOrder_lines();
-//
-//        customerOrder.setCustomer(customer);
-//        customerOrderManager.persistOrders(currentOrder);
-//        for (OrderLine orderLine : orderLines) {
-//            int id = orderLine.getOrdered_product_id();
-//            Product product = productManager.getProductById(id);
-//            orderLine.setProduct(product);
-//            orderLine.setCustomerOrder(currentOrder);
-//            orderLineManager.persistOrderLine(orderLine);
-//        }
+        List<OrderLine> orderLines = customerOrder.getOrder_lines();
 
-
-
+        for (OrderLine orderLine : orderLines) {
+            int id = orderLine.getOrdered_product_id();
+            Product product = productManager.getProductById(id);
+            orderLine.setProduct(product);
+            orderLine.setOrder(order);
+            orderLineManager.persistOrderLine(orderLine);
+        }
     }
 }
 
