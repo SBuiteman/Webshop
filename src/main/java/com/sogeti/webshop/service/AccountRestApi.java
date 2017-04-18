@@ -41,7 +41,7 @@ public class AccountRestApi {
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Customer getAccount(@QueryParam("password") String password, @QueryParam("username") String username) {
+    public Customer getAccount(@PathParam("password") String password, @PathParam("username") String username) {
 
 
         return accountManager.getAccountByPasswordAndId(password, username);
