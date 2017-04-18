@@ -24,7 +24,7 @@
                 <table class="user-form" ng-controller="ProductController as pc">
                     <tr>
                         <td>
-                            <input type="email" placeholder="Gebruikers Naam" ng-model="pc.user.username" required>
+                            <input type="email" placeholder="E-mailadres" ng-model="pc.user.username" required>
                         </td>
                     </tr>
                     <tr>
@@ -35,15 +35,15 @@
                     <tr>
                         <td>
                             <button type="button" class="btn btn-primary pull-left custom"
-                            ng-click="pc.getAccount()">Login</button>
-                            <button type="button" class="btn btn-primary pull-right custom">Logout</button>
+                            ng-click="pc.getAccount()">Inloggen</button>
+                            <button type="button" class="btn btn-primary pull-right custom">Uitloggen</button>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <a ng-href="#!/account">
                                 <button type="button" class="btn btn-primary pull-center btn-block custom2">
-                                    Nieuwe Gebruiker
+                                    Registreren
                                 </button>
                             </a>
                         </td>

@@ -35,7 +35,20 @@ public class AccountManager {
 
         Customer customer = customerTypedQuery.getSingleResult();
 
-        return customer;
+        //int id = customer.getCustomerId();
+
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Account> criteriaQuery = criteriaBuilder.createQuery(Account.class);
+        Root<Account> re = criteriaQuery.from(Account.class);
+        criteriaQuery.where(criteriaBuilder.and(criteriaBuilder.equal(re.get(Account_.customer), customer),
+                criteriaBuilder.equal(re.get(Account_.password), password)));
+        TypedQuery<Account> accountTypedQuery = entityManager.createQuery(criteriaQuery);
+
+        if (accountTypedQuery.getSingleResult() != null) {
+            return customer;
+        }
+
+        return null;
     }
 
     public void createDummyAccount(Customer customer){
