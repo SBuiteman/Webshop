@@ -29,6 +29,8 @@ public class AccountRestApi {
     public void postAccount(Account account) {
         Customer customer = account.getCustomer();
         customerManager.persistCustomer(customer);
+
+
 //        List<OrderLine> orderLineList = account.getOrder_lines();
 //        Order order = new Order();
 //        customerOrderManager.persistOrders(order);
@@ -39,7 +41,7 @@ public class AccountRestApi {
 //            orderLine.setOrder(order);
 //            orderLineManager.persistOrderLine(orderLine);
 //        }
-        accountManager.persistAccount(account);
+//        accountManager.persistAccount(account);
 
 }
 
