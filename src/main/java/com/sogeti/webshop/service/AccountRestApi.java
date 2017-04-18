@@ -37,13 +37,14 @@ public class AccountRestApi {
     }
 
 
-//    @Path("{password}/{username}")
-//    @GET
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Account getAccount(@QueryParam("password") String password, @QueryParam("username") String username) {
-//
-//        return new Account();
-//
-//    }
+    @Path("{username}/{password}")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Customer getAccount(@QueryParam("password") String password, @QueryParam("username") String username) {
+
+
+        return accountManager.getAccountByPasswordAndId(password, username);
+
+    }
 }
