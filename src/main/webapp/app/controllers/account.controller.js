@@ -9,12 +9,22 @@ angular.module('Account').controller('MainController', function(AccountFactory, 
 
     var vm = this;
 
+    vm.account = {};
+
     vm.user = {
 
     };
 
+    vm.security = {};
+
+    vm.account = vm.security;
+
+    vm.account.customer = vm.user;
+
+
+
     vm.submitForm = function(){
-        AccountFactory.save(vm.user);
+        AccountFactory.save(vm.account);
         Messaging.setConfirmAccountMessage();
     };
 

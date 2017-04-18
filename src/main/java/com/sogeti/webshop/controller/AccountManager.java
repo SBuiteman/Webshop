@@ -1,6 +1,7 @@
 package com.sogeti.webshop.controller;
 
 import com.sogeti.webshop.model.Account;
+import com.sogeti.webshop.model.CreateAccount;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

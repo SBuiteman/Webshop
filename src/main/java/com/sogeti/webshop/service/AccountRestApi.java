@@ -26,32 +26,24 @@ public class AccountRestApi {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void postAccount(Account account) {
-        Customer customer = account.getCustomer();
+    public void postAccount(CreateAccount createAccount) {
+        Customer customer = createAccount.getCustomer();
         customerManager.persistCustomer(customer);
 
-
-//        List<OrderLine> orderLineList = account.getOrder_lines();
-//        Order order = new Order();
-//        customerOrderManager.persistOrders(order);
-//        for (OrderLine orderLine : orderLineList) {
-//            int id = orderLine.getOrdered_product_id();
-//            Product product = productManager.getProductById(id);
-//            orderLine.setProduct(product);
-//            orderLine.setOrder(order);
-//            orderLineManager.persistOrderLine(orderLine);
-//        }
-//        accountManager.persistAccount(account);
-
-}
-
-    @Path("{password}/{username}")
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Account getAccount(@QueryParam("password") String password, @QueryParam("username") String username) {
-
-        return new Account();
-
+        Account account = new Account();
+        account.setCustomer(customer);
+        account.setPassword(createAccount.getPassword());
+        accountManager.persistAccount(account);
     }
+
+
+//    @Path("{password}/{username}")
+//    @GET
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Account getAccount(@QueryParam("password") String password, @QueryParam("username") String username) {
+//
+//        return new Account();
+//
+//    }
 }
