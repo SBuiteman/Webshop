@@ -1,16 +1,19 @@
 /**
  * Created by pnederlo on 30-3-2017.
  */
-angular.module('ShoppingCart',['UpdateCartService','AccountService','MessageService', 'OrderService']);
+angular.module('ShoppingCart',['UpdateCartService','AccountService','MessageService', 'OrderService', 'sharing']);
 
 angular.module('ShoppingCart').controller('ShoppingCartController',
-    function (CartService, ProductFactory, AccountFactory, Messaging, OrderFactory) {
+    function (CartService, ProductFactory, AccountFactory, Messaging, OrderFactory, sharingService) {
 
     var vm = this;
 
-    vm.user = {
+    vm.user = {};
 
-    };
+    if( sharingService.getLoginAccount() ) {
+        vm.user = sharingService.getLoginAccount();
+        delete vm.user.customerId;
+    }
 
     vm.shoppingCart = CartService.getShoppingCart();
 
@@ -32,6 +35,7 @@ angular.module('ShoppingCart').controller('ShoppingCartController',
     vm.removeOneProduct = function (product) {
         CartService.removeOneProductFromCart(product);
         CartService.updateTotalPrice();
+        console.log(sharingService.getLoginAccount());
     };
 
     vm.removeProductFromCart = function (product) {
@@ -56,8 +60,8 @@ angular.module('ShoppingCart').controller('ShoppingCartController',
     };
 
     vm.submitForm = function(order){
+        Messaging.setConfirmMessage();
         OrderFactory.save(order);
-        Messaging.setWelcomeMessage();
     };
 
     vm.isLastProduct = function () {

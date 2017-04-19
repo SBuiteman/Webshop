@@ -10,14 +10,13 @@ angular.module('ProductOverview').controller('ProductController',
 
     var vm = this;
 
-    vm.welcomeMessage = 'test';
-
     vm.shoppingCart = CartService.getShoppingCart();
 
     vm.listProducts = [];
     ProductFactory.query({}, function (products) {
         sharingService.productList = products;
         vm.fillProductTable();
+        vm.getMessage();
     });
 
     vm.fillProductTable = function () {
@@ -35,22 +34,10 @@ angular.module('ProductOverview').controller('ProductController',
     };
 
     vm.getMessage = function(){
-        console.log(vm);
-        vm.welcomeMessage = Messaging.getWelcomeMessage();
-        console.log(Messaging.getWelcomeMessage());
-        //welcomeMessage = 'hallo';
+        vm.welcomeMessage =  Messaging.welcomeMessage;
     };
 
-    vm.getAccount = function () {
-        console.log(vm.user.username + " & " + vm.user.password);
-        AccountFactory.query({username: vm.user.username, password: vm.user.password}, function (account) {
-            if (account) {
-                console.log("komt ie terug" + account)
-            }
-            //var acc = account;
-            console.log("ga ik hier dood2?" + acc);
-        });
-        console.log("ga ik hier dood?");
-        console.log(vm);
+    vm.inLoggen = function () {
+        sharingService.getAccount(vm.user.username, vm.user.password);
     };
 });

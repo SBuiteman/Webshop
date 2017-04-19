@@ -9,21 +9,17 @@ angular.module('MessageService').service('Messaging', function ($timeout) {
     var vm = this;
     var timeoutPromise = null;
     vm.delay = 8000;
-    vm.welcomeMessage = '';
+    vm.welcomeMessage = 'Bestel hier uw dierbenodigdheden!';
 
-    vm.setWelcomeMessage = function(){
+    vm.setConfirmMessage = function(){
         vm.welcomeMessage = '';
-        vm.welcomeMessage += 'Bedankt voor uw bestelling!';
+        vm.welcomeMessage = 'Bedankt voor uw bestelling!';
 
         timeoutPromise = $timeout(function(){
             vm.welcomeMessage = '';
-            vm.welcomeMessage += 'Bestel hier uw dierbenodigdheden!';
+            vm.welcomeMessage = 'Bestel hier uw dierbenodigdheden!';
             timeoutPromise = null;
         }, vm.delay, true);
-    };
-
-    vm.getWelcomeMessage = function () {
-        return 'testing';
     };
 
     vm.setConfirmAccountMessage = function(){

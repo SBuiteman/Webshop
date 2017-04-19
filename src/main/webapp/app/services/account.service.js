@@ -14,7 +14,7 @@ angular.module('AccountService').factory('AccountFactory', function ($resource) 
         query: {
             method: 'GET',
             params: {username: '@username', password: '@password'},
-            isArray: true
+            isArray: false
         },
         create: {
             method: 'POST'
