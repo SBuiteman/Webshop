@@ -22,11 +22,7 @@
         <artifactId>javaee-api</artifactId>
         <version>7.0</version>
     </dependency>
-
-
-
 </dependencies>
-
 
     <build>
     <!-- To define the plugin version in your parent POM -->

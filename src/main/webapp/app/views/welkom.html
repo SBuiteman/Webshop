@@ -1,37 +1,35 @@
 <div class="well col-lg-9">
-    <h3><span ng-bind="main.fillProductTable()"></span> {{ main.welcomeMessage }} </h3>
+    <h3> Bestel hier uw dierbenodigheden!</h3>
 </div>
-<div class="well col-lg-9 btn-group" ng-controller="CategoryController as cc">
+
+
+<div class="well col-lg-9 btn-group">
     <button type="button" class="btn btn-success"
-            ng-click="cc.filterByCategory('')">Alles</button>
-    <button type="button" class="btn btn-success"
-            ng-click="cc.filterByCategory('Kat')">Katten</button>
-    <button type="button" class="btn btn-success"
-            ng-click="cc.filterByCategory('Hond')">Honden</button>
-    <button type="button" class="btn btn-success"
-            ng-click="cc.filterByCategory('Slang')">Slangen</button>
+            ng-click="products.showAllProducts()">Alles</button>
+    <button type="button" class="btn btn-success" ng-repeat="category in products.categories"
+            ng-click="products.showProductsByCategory(category)">{{category}}</button>
 </div>
+
 <div class="well col-lg-9">
 
     <table class="table table-bordered table-hover">
-        <tbody><span ng-bind="main.fillProductTable()"></span>
+        <tbody>
         <tr>
-            <th>{{ main.productCategory }}</th>
+            <th>Naam</th>
             <th>Prijs</th>
             <th>Beschrijving</th>
         </tr>
-        <span ng-bind="main.fillProductTable()"></span>
-        <tr ng-repeat="product in main.listProducts">
+        <tr ng-repeat="product in products.listProducts">
             <td>{{product.name}}</td>
             <td>{{product.price|currency:"&euro; "}}</td>
             <td>{{product.description}}</td>
-            <td><button type="button" class="btn btn-success"
-                        ng-click="main.addToCart(product)">Toevoegen</button></td>
+            <td><button type="button" class="btn btn-success" ng-click="products.addToCart(product)">Toevoegen</button></td>
         </tr>
         </tbody>
     </table>
 </div>
-<div align="center" ng-hide="main.isLastProduct()">
+
+<div align="center" >
    <a ng-href="#!/winkelwagen"><span class="glyphicon glyphicon-shopping-cart" ></span></a>
-    <p><span ng-bind="main.getCount()"></span>{{main.productCount}}</p>
+   <p ng-bind="products.getProductCount()">{{products.productCount}}</p>
 </div>

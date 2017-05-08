@@ -6,14 +6,14 @@ angular.module('Categories', ['sharing']);
 angular.module('Categories').controller('CategoryController',
     function (CategoryFactory, sharingService) {
 
-    var catControl = this;
-    catControl.myCategory = 'test';
-    catControl.filteredListProducts = [];
+    var vm = this;
+    vm.myCategory = 'test';
+    vm.filteredListProducts = [];
 
-    catControl.filterByCategory = function (category) {
+    vm.filterByCategory = function (category) {
         CategoryFactory.query({category: category}, function (filteredProducts) {
-            catControl.filteredListProducts = filteredProducts;
-            sharingService.productList = catControl.filteredListProducts;
+            vm.filteredListProducts = filteredProducts;
+            sharingService.productList = vm.filteredListProducts;
         });
         sharingService.setCategoryName(category);
     };

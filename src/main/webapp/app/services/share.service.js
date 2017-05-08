@@ -22,7 +22,11 @@ app.service('sharingService', function (AccountFactory) {
         AccountFactory.query({username: username, password: password}, function (account) {
             userAccount = account;
             console.log("ga ik hier dood2?" + userAccount.clientFirstName);
+            if (typeof userAccount==='undefined'){
+                return null;
+            }
         });
+        return userAccount;
     };
 
     this.getLoginAccount = function () {

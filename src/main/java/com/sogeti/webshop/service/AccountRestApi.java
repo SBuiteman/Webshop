@@ -43,8 +43,13 @@ public class AccountRestApi {
     @Produces(MediaType.APPLICATION_JSON)
     public Customer getAccount(@PathParam("password") String password, @PathParam("username") String username) {
 
+        try{
+            Customer  customer = accountManager.getAccountByPasswordAndId(password, username);
+            return customer;
+        } catch (Exception e){
+            return null;
+        }
 
-        return accountManager.getAccountByPasswordAndId(password, username);
 
     }
 }

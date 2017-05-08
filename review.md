@@ -1,4 +1,4 @@
-com.sogeti.webshop.service.ProductServiceRestApi.get():
+getAllProduct():
 Probeer code achter comments te vermijden,  je gebruikt versiebeheer, dus dit is niet nodig.
 
 

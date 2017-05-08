@@ -9,30 +9,28 @@
             <th>Totaal</th>
             <th>Verwijderen</th>
         </tr>
-        <tr ng-repeat="product in main.shoppingCart">
+        <tr ng-repeat="product in cart.shoppingCart">
             <td>{{product.name}}</td>
             <td>{{product.price|currency:"&euro; "}}</td>
-            <td><a ng-click="main.removeOneProduct(product)" ng-show="main.isLastProduct()" ng-href="#!/welkom">
-                <button class="btn-sm btn-success"><span class="glyphicon glyphicon-minus"></span></button>
-                </a>
-                <a ng-hide="main.isLastProduct()" ng-click="main.removeOneProduct(product)">
+            <td>
+                <a ng-click="cart.removeOneProductItemFromCart(product)">
                    <button class="btn-sm btn-success"><span class="glyphicon glyphicon-minus" ></span></button>
                 </a>
                 {{product.amount}}
                 <button type="submit" class="btn-sm btn-success" role="button"
-                        ng-click="main.addProduct(product)">
+                        ng-click="cart.addToCart(product)">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button></td>
             <td>{{product.total|currency:"&euro; "}}</td>
-            <td><a ng-click="main.removeProductFromCart(product)" ng-hide="main.isLastProduct()"><span class="glyphicon glyphicon-trash"></span></a>
-                <a ng-click="main.removeProductFromCart(product)" ng-show="main.isLastProduct()" ng-href="#!/welkom"><span class="glyphicon glyphicon-trash"></span></a>
+            <td><a ng-click="cart.removeProductFromCart(product)"><span class="glyphicon glyphicon-trash"></span></a>
+                <!--<a ng-click="" ng-href="#!/welkom"><span class="glyphicon glyphicon-trash"></span></a>-->
             </td>
         </tr>
         <tr>
             <td><strong>Totale bestelling</strong></td>
             <td></td>
             <td></td>
-            <td><span ng-bind="main.getPrice()"></span><strong>{{main.sPrijs|currency:"€ "}}</strong></td>
+            <td><span ng-bind=""></span><strong></strong></td>
         </tr>
         </tbody>
     </table>

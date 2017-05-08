@@ -11,7 +11,7 @@
     <title>Pet Supplies</title>
 </head>
 
-<body>
+<body >
 
 <div class="container" >
     <div class="jumbotron page-header row ">
@@ -20,58 +20,62 @@
         </div>
         <div class="col-lg-3">
             <span class="glyphicon glyphicon-phone-alt col-lg-4"></span> <p>010-7893524</p>
-            <form name="loginForm" novalidate>
-                <table class="user-form" ng-controller="ProductController as pc">
-                    <tr>
-                        <td>
-                            <input type="email" placeholder="E-mailadres" ng-model="pc.user.username" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" placeholder="Wachtwoord" ng-model="pc.user.password" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button type="button" class="btn btn-primary pull-left custom"
-                            ng-click="pc.inLoggen()">Inloggen</button>
-                            <button type="button" class="btn btn-primary pull-right custom">Uitloggen</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a ng-href="#!/account">
-                                <button type="button" class="btn btn-primary pull-center btn-block custom2">
-                                    Registreren
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <!--<form name="loginForm" novalidate>-->
+                <!--<table class="user-form" ng-controller="ProductController as pc">-->
+                    <!--<tr>-->
+                        <!--<td>-->
+                            <!--<input type="email" placeholder="E-mailadres" ng-model="pc.user.username" required>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>-->
+                            <!--<input type="password" placeholder="Wachtwoord" ng-model="pc.user.password" required>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>-->
+                            <!--<button type="button" class="btn btn-primary pull-left custom"-->
+                            <!--ng-click="pc.inLoggen()">Inloggen</button>-->
+                            <!--<button type="button" class="btn btn-primary pull-right custom">Uitloggen</button>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>-->
+                            <!--<a ng-href="#!/account">-->
+                                <!--<button type="button" class="btn btn-primary pull-center btn-block custom2">-->
+                                    <!--Registreren-->
+                                <!--</button>-->
+                            <!--</a>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+            <!--</form>-->
         </div>
+
     </div>
 
     <ng-view></ng-view>
+
 
 </div>
 
 <script type="text/javascript" src="app/libs/angular.js"></script>
 <script type="text/javascript" src="app/libs/angular-route.js"></script>
 <script type="text/javascript" src="app/libs/angular-resource.js"></script>
+<script type="text/javascript" src="app/libs/angular-cookies.js"></script>
 
 <script type="text/javascript" src="app/app.js"></script>
-<script type="text/javascript" src="app/services/productsfromdb.service.js"></script>
+<script type="text/javascript" src="app/services/restService.js"></script>
 <script type="text/javascript" src="app/services/updatecart.service.js"></script>
-<script type="text/javascript" src="app/services/share.service.js"></script>
-<script type="text/javascript" src="app/services/message.service.js"></script>
-<script type="text/javascript" src="app/services/account.service.js"></script>
-<script type="text/javascript" src="app/services/order.service.js"></script>
+
+<!--<script type="text/javascript" src="app/services/share.service.js"></script>-->
+<!--<script type="text/javascript" src="app/services/message.service.js"></script>-->
+<!--<script type="text/javascript" src="app/services/account.service.js"></script>-->
+<!--<script type="text/javascript" src="app/services/order.service.js"></script>-->
 <script type="text/javascript" src="app/controllers/productoverview.controller.js"></script>
-<script type="text/javascript" src="app/controllers/category.controller.js"></script>
+<!--<script type="text/javascript" src="app/controllers/category.controller.js"></script>-->
 <script type="text/javascript" src="app/controllers/shoppingcart.controller.js"></script>
-<script type="text/javascript" src="app/controllers/account.controller.js"></script>
+<!--<script type="text/javascript" src="app/controllers/account.controller.js"></script>-->
 <script type="text/javascript" src="app/libs/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="app/libs/bootstrap.js"></script>
 

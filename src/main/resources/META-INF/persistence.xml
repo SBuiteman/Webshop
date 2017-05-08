@@ -13,6 +13,12 @@
             <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!--<property name="hibernate.hbm2ddl.auto" value="none"/>-->
+
         </properties>
+
     </persistence-unit>
+
+
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+
 </persistence>

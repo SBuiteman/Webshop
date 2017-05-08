@@ -1,43 +1,66 @@
 /**
  * Created by pnederlo on 16-3-2017.
  */
-'use strict';
+(function () {
+    angular.module('myApp')
+        .controller('ProductController', ['RestService','$route','CartService', ProductController]);
 
-angular.module('ProductOverview',['UpdateCartService', 'sharing', 'MessageService', 'AccountService']);
+        function ProductController(RestService, $route, CartService) {
 
-angular.module('ProductOverview').controller('ProductController',
-    function (ProductFactory, CartService, sharingService, Messaging, AccountFactory) {
+        var vm = this;
 
-    var vm = this;
+        vm.shoppingCart = CartService.getShoppingCart();
 
-    vm.shoppingCart = CartService.getShoppingCart();
+        RestService.getAllProducts()
+            .then(getProductsSuccess)
+            .catch(errorCallback)
+            .finally();
 
-    vm.listProducts = [];
-    ProductFactory.query({}, function (products) {
-        sharingService.productList = products;
-        vm.fillProductTable();
-        vm.getMessage();
-    });
+        function getProductsSuccess(products) {
+             vm.listProducts = products;
+        }
 
-    vm.fillProductTable = function () {
-        vm.listProducts = sharingService.productList;
-        vm.productCategory = sharingService.productCategory;
-    };
+        function errorCallback(errorMessage) {
+                console.log('Error message: '+ errorMessage);
+            }
 
-    vm.getCount = function(){
-        vm.productCount = CartService.getProductCount();
-    };
+        RestService.getAllCategories()
+            .then(getAllCategoriesSuccess)
+            .catch(errorCallback);
 
-    vm.addToCart = function (prod) {
-        CartService.updateShoppingCart(prod);
-        CartService.updateTotalPrice();
-    };
+        function getAllCategoriesSuccess(categories) {
+            vm.categories = categories;
+        }
 
-    vm.getMessage = function(){
-        vm.welcomeMessage =  Messaging.welcomeMessage;
-    };
+        vm.showProductsByCategory = function (category) {
 
-    vm.inLoggen = function () {
-        sharingService.getAccount(vm.user.username, vm.user.password);
-    };
-});
+            RestService.getProductsByCategory(category)
+                .then(getProductsByCategorySuccess)
+                .catch(errorCallback);
+        }
+
+        function getProductsByCategorySuccess(listByCategory) {
+            vm.listProducts = listByCategory;
+        }
+
+        vm.showAllProducts = function () {
+            $route.reload();
+        };
+
+        vm.getProductCount = function () {
+
+                vm.productCount = 0;
+                vm.shoppingCart.forEach(function (product) {
+                    vm.productCount += product.amount;
+                });
+
+                return vm.productCount;
+            };
+
+        vm.addToCart = function (product) {
+
+            CartService.updateShoppingCart(product);
+
+        };
+    }
+}());

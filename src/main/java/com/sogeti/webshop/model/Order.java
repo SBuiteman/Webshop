@@ -46,6 +46,10 @@ public class Order {
     public void setOrder_lines(List<OrderLine> order_lines) {
         this.order_lines = order_lines;
     }
+
+    public void addOrderLine(OrderLine orderLine){
+        order_lines.add(orderLine);
+    }
 }
 
 

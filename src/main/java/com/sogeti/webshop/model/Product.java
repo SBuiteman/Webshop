@@ -1,12 +1,29 @@
 package com.sogeti.webshop.model;
 
+
 import javax.persistence.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * Created by pnederlo on 20-3-2017.
  */
+@NamedQueries({
+        @NamedQuery(
+                name = "getAllProducts",
+                query = "from Product"
+        ),
+        @NamedQuery(
+                name = "getProductsByCategory",
+                query = "select product from Product product where product.category = :category"
+        ),
+        @NamedQuery(
+                name = "getAllCategories",
+                query = "select distinct category from Product"
+        )
+})
+
 @Entity
 @Table(name = "assortment")
 public class Product implements Serializable {

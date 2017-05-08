@@ -25,10 +25,19 @@ public class ProductServiceRestApi {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Product> get(){
+    public List<Product> getAllProduct(){
 
         return  productManager.readAllProducts();
     }
+
+
+    @GET
+    @Path("/category/allCategories/")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> getAllCategories(){
+        return productManager.getAllCategories();
+    }
+
 
     @Path("{category}")
     @GET
