@@ -68,6 +68,14 @@ public class OrderLine {
 
     public void setOrder(Order order) {
         this.order = order;
-        order.addOrderLine(this);
+//        order.addOrderLine(this);
+    }
+
+    @Override
+    public String toString() {
+        return "OrderLine{" +
+                "amount_ordered=" + amount_ordered +
+                ", ordered_product_id=" + ordered_product_id +
+                '}';
     }
 }

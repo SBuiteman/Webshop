@@ -3,13 +3,15 @@
  */
 (function () {
     angular.module('myApp')
-        .controller('ProductController', ['RestService','$route','CartService', ProductController]);
+        .controller('ProductController', ['RestService','$route','cart', ProductController]);
 
-        function ProductController(RestService, $route, CartService) {
+        function ProductController(RestService, $route, cart) {
 
         var vm = this;
 
-        vm.shoppingCart = CartService.getShoppingCart();
+        vm.shoppingCart = cart.shoppingCart;
+
+        vm.productCount = cart.productCount;
 
         RestService.getAllProducts()
             .then(getProductsSuccess)
@@ -22,7 +24,7 @@
 
         function errorCallback(errorMessage) {
                 console.log('Error message: '+ errorMessage);
-            }
+        }
 
         RestService.getAllCategories()
             .then(getAllCategoriesSuccess)
@@ -47,20 +49,13 @@
             $route.reload();
         };
 
-        vm.getProductCount = function () {
-
-                vm.productCount = 0;
-                vm.shoppingCart.forEach(function (product) {
-                    vm.productCount += product.amount;
-                });
-
-                return vm.productCount;
-            };
 
         vm.addToCart = function (product) {
 
-            CartService.updateShoppingCart(product);
-
+            cart.addProduct(product);
+            // cart.setCartTotal();
+            vm.productCount = cart.productCount;
         };
+
     }
 }());

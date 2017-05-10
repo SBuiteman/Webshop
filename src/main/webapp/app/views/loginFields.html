@@ -1,0 +1,33 @@
+<div class="col-lg-3">
+    <span class="glyphicon glyphicon-phone-alt col-lg-4"></span> <p>010-7893524</p>
+    <form name="loginForm" novalidate>
+        <table class="user-form" >
+            <tr>
+                <td>
+                    <input type="email" placeholder="E-mailadres" ng-model="pc.user.username" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="Wachtwoord" ng-model="pc.user.password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-primary pull-left custom"
+                            ng-click="pc.inLoggen()">Inloggen</button>
+                    <button type="button" class="btn btn-primary pull-right custom">Uitloggen</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a ng-href="#!/account">
+                        <button type="button" class="btn  btn-primary pull-center btn-block custom2">
+                            Registreren
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

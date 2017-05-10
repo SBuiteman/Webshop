@@ -1,16 +1,13 @@
 package com.sogeti.webshop.controller;
 
 import com.sogeti.webshop.model.Product;
-import com.sogeti.webshop.model.Product_;
 
 import javax.ejb.Stateless;
-import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Set;
+
 
 /**
  * Created by pnederlo on 20-3-2017.

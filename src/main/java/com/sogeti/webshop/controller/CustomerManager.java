@@ -1,7 +1,6 @@
 package com.sogeti.webshop.controller;
 
 import com.sogeti.webshop.model.Customer;
-import com.sogeti.webshop.model.OrderLine;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

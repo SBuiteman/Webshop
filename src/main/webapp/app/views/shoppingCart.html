@@ -1,0 +1,44 @@
+<div class=" well col-lg-9">
+    <table class="table table-bordered table-hover">
+        <th>Uw winkelmandje:</th>
+        <tbody>
+        <tr>
+            <th>Product</th>
+            <th>Prijs</th>
+            <th>Aantal</th>
+            <th>Totaal</th>
+            <th>Verwijderen</th>
+        </tr>
+        <tr ng-repeat="product in cart.shoppingCart">
+            <td>{{product.name}}</td>
+            <td>{{product.price|currency:"&euro; "}}</td>
+            <td>
+                <a ng-click="cart.removeOneProductItemFromCart(product)">
+                   <button class="btn-sm btn-success"><span class="glyphicon glyphicon-minus" ></span></button>
+                </a>
+                {{product.amount}}
+                <button type="submit" class="btn-sm btn-success" role="button"
+                        ng-click="cart.addToCart(product)">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button></td>
+            <td>{{product.total|currency:"&euro; "}}</td>
+            <td><a ng-click="cart.removeProductFromCart(product)"><span class="glyphicon glyphicon-trash"></span></a>
+                <!--<a ng-click="" ng-href="#!/welkom"><span class="glyphicon glyphicon-trash"></span></a>-->
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Totale bestelling</strong></td>
+            <td></td>
+            <td></td>
+            <td><span ng-bind=""></span><strong>{{cart.cartTotal|currency:"€ "}}</strong></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div align="center">
+     <a ng-href="#!/welkom"> <span class="glyphicon glyphicon-chevron-left"></span></a>
+    <p>Verder Winkelen</p>
+</div>
+
+<customer-info> </customer-info>

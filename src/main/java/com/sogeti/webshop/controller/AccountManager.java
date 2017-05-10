@@ -20,9 +20,7 @@ public class AccountManager {
     EntityManager entityManager;
 
     public void persistAccount(Account account) {
-
         entityManager.persist(account);
-
     }
 
     public Customer getAccountByPasswordAndId(String password, String emailAddress) {

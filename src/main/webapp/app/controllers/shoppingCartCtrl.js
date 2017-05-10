@@ -4,23 +4,30 @@
 (function () {
 
     angular.module('myApp')
-        .controller('ShoppingCartController',['CartService','$location', ShoppingCartController]);
+        .controller('ShoppingCartController',['$location','cart', ShoppingCartController]);
 
-    function ShoppingCartController(CartService, $location) {
+    function ShoppingCartController($location, cart) {
 
         var vm = this;
 
-        vm.shoppingCart = CartService.getShoppingCart();
+        vm.shoppingCart = cart.shoppingCart;
+
+        vm.cartTotal = cart.cartTotal;
+
 
         vm.removeOneProductItemFromCart = function(product){
-            CartService.removeOneProductItemFromCart(product);
-            if (vm.shoppingCart.length === 0){
+            cart.removeProductItem(product);
+            vm.cartTotal = cart.cartTotal;
+            // cart.setCartTotal();
+            if (cart.shoppingCart.length === 0){
                 $location.path('/');
             }
         };
 
         vm.removeProductFromCart = function (product) {
-            CartService.removeProductFromCart(product);
+            cart.removeProduct(product);
+            vm.cartTotal = cart.cartTotal;
+            // cart.setCartTotal();
             if (vm.shoppingCart.length === 0){
                 $location.path('/');
             }
@@ -29,7 +36,10 @@
 
         vm.addToCart = function (product) {
 
-            CartService.updateShoppingCart(product);
+            cart.addProduct(product);
+            vm.cartTotal = cart.cartTotal;
+            // cart.setCartTotal();
+            vm.productCount = cart.productCount;
 
         };
 

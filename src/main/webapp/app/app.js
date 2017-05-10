@@ -8,19 +8,19 @@
     app.config(['$routeProvider', function ($routeProvider, $resource, $httpProvider) {
         $routeProvider
             .when('/welkom', {
-                templateUrl: 'app/views/welkom.html',
+                templateUrl: 'app/views/productOverview.html',
                 controller: 'ProductController',
                 controllerAs: 'products'
             })
             .when('/winkelwagen', {
-                templateUrl: 'app/views/winkelwagen.html',
+                templateUrl: 'app/views/shoppingCart.html',
                 controller: 'ShoppingCartController',
                 controllerAs: 'cart'
             })
             .when('/account', {
-                templateUrl: 'app/views/account.html',
-                controller: 'MainController',
-                controllerAs: 'main'
+                templateUrl: 'app/views/createAccount.html',
+                controller: 'accountCtrl',
+                controllerAs: 'createAccount'
             })
             .when('api/database',{
 
@@ -49,17 +49,17 @@
 //
 //     $routeProvider
 //         .when('/welkom', {
-//             templateUrl: 'app/views/welkom.html',
+//             templateUrl: 'app/views/productOverview.html',
 //             controller: 'ProductController',
 //             controllerAs: 'main'
 //         })
 //         .when('/winkelwagen', {
-//             templateUrl: 'app/views/winkelwagen.html',
+//             templateUrl: 'app/views/shoppingCart.html',
 //             controller: 'ShoppingCartController',
 //             controllerAs: 'main'
 //         })
 //         .when('/account', {
-//             templateUrl: 'app/views/account.html',
+//             templateUrl: 'app/views/createAccount.html',
 //             controller: 'MainController',
 //             controllerAs: 'main'
 //         })

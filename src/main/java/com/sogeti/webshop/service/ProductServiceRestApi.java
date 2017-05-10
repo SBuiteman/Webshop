@@ -1,13 +1,25 @@
 package com.sogeti.webshop.service;
 
-
-import com.sogeti.webshop.controller.*;
-import com.sogeti.webshop.model.*;
+import com.sogeti.webshop.controller.CustomerManager;
+import com.sogeti.webshop.controller.OrderLineManager;
+import com.sogeti.webshop.controller.OrderManager;
+import com.sogeti.webshop.controller.ProductManager;
+import com.sogeti.webshop.model.Customer;
+import com.sogeti.webshop.model.CustomerOrder;
+import com.sogeti.webshop.model.Order;
+import com.sogeti.webshop.model.OrderLine;
+import com.sogeti.webshop.model.Product;
+import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
-import javax.naming.NamingException;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
 import java.util.List;
 
 /**
@@ -17,19 +29,27 @@ import java.util.List;
 @Path("/product")
 public class ProductServiceRestApi {
 
+    final static Logger logger = Logger.getLogger(ProductServiceRestApi.class);
+
     @Inject
     ProductManager productManager;
 
-    public ProductServiceRestApi() throws NamingException {
-    }
+    @Inject
+    OrderLineManager orderLineManager;
 
+    @Inject
+    OrderManager orderManager;
+
+    @Inject
+    CustomerManager customerManager;
+//    public ProductServiceRestApi() throws NamingException {
+//    }
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Product> getAllProduct(){
-
+//        logger.error("Getting all products");
         return  productManager.readAllProducts();
     }
-
 
     @GET
     @Path("/category/allCategories/")
@@ -49,23 +69,11 @@ public class ProductServiceRestApi {
 
     }
 
-    @Inject
-    OrderLineManager orderLineManager;
-
-    @Inject
-    CustomerOrderManager customerOrderManager;
-
-    @Inject
-    OrderManager orderManager;
-
-    @Inject
-    CustomerManager customerManager;
-
     @Path("/order")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void postOrderLine(CustomerOrder customerOrder) {
-
+        logger.error("POSTING AN ORDER");
         Customer customer = customerOrder.getCustomer();
 
         customerManager.persistCustomer(customer);
@@ -74,7 +82,12 @@ public class ProductServiceRestApi {
         order.setCustomer(customer);
         orderManager.persistOrder(order);
 
+
         List<OrderLine> orderLines = customerOrder.getOrder_lines();
+
+        for (OrderLine orderLine : orderLines){
+            logger.debug(orderLine.toString());
+        }
 
         for (OrderLine orderLine : orderLines) {
             int id = orderLine.getOrdered_product_id();

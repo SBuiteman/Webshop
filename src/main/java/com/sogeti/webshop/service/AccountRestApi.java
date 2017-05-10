@@ -15,14 +15,10 @@ public class AccountRestApi {
 
     @Inject
     AccountManager accountManager;
-    @Inject
-    ProductManager productManager;
-    @Inject
-    OrderLineManager orderLineManager;
-    @Inject
-    CustomerOrderManager orderManager;
+
     @Inject
     CustomerManager customerManager;
+
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

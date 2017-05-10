@@ -1,0 +1,39 @@
+<div class="well col-lg-9">
+    <form name="userForm">
+        <table class="user-form">
+            <thead>Uw bestelgegevens:</thead>
+            <tr>
+                <td>Voornaam:</td>
+                <td><input type="text" ng-model="customerOrder.order.customer.clientFirstName" required></td>
+            </tr>
+            <tr>
+                <td>Achternaam:</td>
+                <td><input type="text" ng-model="customerOrder.order.customer.clientLastName" required></td>
+            </tr>
+            <tr>
+                <td>Adres:</td>
+                <td><input type="text" ng-model="customerOrder.order.customer.address" required></td>
+            </tr>
+            <tr>
+                <td>Postcode:</td>
+                <td><input type="text" ng-model="customerOrder.order.customer.postalCode" required
+                           ng-pattern="/^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/"></td>
+            </tr>
+            <tr>
+                <td>Woonplaats:</td>
+                <td><input type="text" ng-model="customerOrder.order.customer.city" required></td>
+            </tr>
+            <tr>
+                <td>E-mailadres:</td>
+                <td><input type="email" ng-model="customerOrder.order.customer.email" required></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td><a ng-href="#!/welkom"><button class="btn btn-success"
+                                                   ng-click="customerOrder.sendOrders()">Bestellen</button></a></td>
+                                                   <!--ng-disabled="userForm.$invalid"-->
+            </tr>
+        </table>
+    </form>
+    <p>{{customerOrder.order}} </p>
+</div>
