@@ -15,8 +15,11 @@
 
         RestService.getAllProducts()
             .then(getProductsSuccess)
-            .catch(errorCallback)
-            .finally();
+            .catch(errorCallback);
+
+        RestService.getAllCategories()
+            .then(getAllCategoriesSuccess)
+            .catch(errorCallback);
 
         function getProductsSuccess(products) {
              vm.listProducts = products;
@@ -25,10 +28,6 @@
         function errorCallback(errorMessage) {
                 console.log('Error message: '+ errorMessage);
         }
-
-        RestService.getAllCategories()
-            .then(getAllCategoriesSuccess)
-            .catch(errorCallback);
 
         function getAllCategoriesSuccess(categories) {
             vm.categories = categories;
@@ -49,11 +48,9 @@
             $route.reload();
         };
 
-
         vm.addToCart = function (product) {
 
             cart.addProduct(product);
-            // cart.setCartTotal();
             vm.productCount = cart.productCount;
         };
 

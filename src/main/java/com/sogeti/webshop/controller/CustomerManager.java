@@ -3,6 +3,7 @@ package com.sogeti.webshop.controller;
 import com.sogeti.webshop.model.Customer;
 
 import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -10,6 +11,7 @@ import javax.persistence.PersistenceContext;
  * Created by pnederlo on 12-4-2017.
  */
 @Stateless(name = "customermanager")
+
 public class CustomerManager {
 
         @PersistenceContext(unitName = "webshopPU")

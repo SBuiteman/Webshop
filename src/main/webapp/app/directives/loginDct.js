@@ -10,9 +10,9 @@
         return {
             restrict: 'E',
             // template: '<p>TEST</p>'
-            templateUrl: 'app/views/loginFields.html'
-            // controller: 'ProductController',
-            // controllerAs: 'pc'
+            templateUrl: 'app/views/loginFields.html',
+            controller: 'loginCtrl',
+            controllerAs: 'login'
         }
 
     }

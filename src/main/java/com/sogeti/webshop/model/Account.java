@@ -6,6 +6,12 @@ import java.io.Serializable;
 /**
  * Created by sbuitema on 18-4-2017.
  */
+@NamedQueries(
+        @NamedQuery(
+                name = "getAccountByCustomerId",
+                query = "select account.password from Account account where account.customer.customerId = :id"
+        )
+)
 @Entity
 @Table(name = "accounts")
 public class Account implements Serializable {

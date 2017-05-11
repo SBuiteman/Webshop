@@ -21,12 +21,12 @@ public class OrderLine {
     private int ordered_product_id;
 
     @ManyToOne
-    @JoinColumn(name="product_id", foreignKey=@ForeignKey(name="product_id"))
+//    @JoinColumn(name="product_id", foreignKey=@ForeignKey(name="product_id"))
     private Product product;
 
 
     @ManyToOne
-    @JoinColumn(name="order_id", foreignKey=@ForeignKey(name="order_id"))
+//    @JoinColumn(name="order_id", foreignKey=@ForeignKey(name="order_id"))
     private Order order;
 
 

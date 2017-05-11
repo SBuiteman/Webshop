@@ -4,15 +4,17 @@
 (function () {
 
     angular.module('myApp')
-        .controller('ShoppingCartController',['$location','cart', ShoppingCartController]);
+        .controller('ShoppingCartController',['$location','cart','currentCustomerSvc', ShoppingCartController]);
 
-    function ShoppingCartController($location, cart) {
+    function ShoppingCartController($location, cart, currentCustomerSvc) {
 
         var vm = this;
 
         vm.shoppingCart = cart.shoppingCart;
 
         vm.cartTotal = cart.cartTotal;
+
+        // vm.order.customer = currentCustomerSvc.getCurrentCustomer();
 
 
         vm.removeOneProductItemFromCart = function(product){

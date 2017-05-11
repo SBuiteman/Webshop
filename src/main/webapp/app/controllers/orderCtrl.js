@@ -3,15 +3,15 @@
  */
 (function () {
     angular.module('myApp')
-        .controller('orderCtrl',['RestService','cart','$location','$log', orderCtrl]);
+        .controller('orderCtrl',['RestService','cart','$location','$log','currentCustomerSvc', orderCtrl]);
 
-    function orderCtrl(RestService, cart, $location, $log) {
+    function orderCtrl(RestService, cart, $location, $log, currentCustomerSvc) {
 
         var vm = this;
 
         vm.order = {};
 
-        vm.order.customer = {};
+        vm.order.customer = currentCustomerSvc.getCurrentCustomer();
         vm.order.order_lines = [];
 
         vm.shoppingCart = cart.shoppingCart;

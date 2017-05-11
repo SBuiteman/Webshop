@@ -6,6 +6,11 @@ import java.io.Serializable;
 /**
  * Created by pnederlo on 12-4-2017.
  */
+@NamedQueries(
+        @NamedQuery(
+                name = "selectCustomerIdByEmail",
+                query = "select customer.customerId from Customer customer where customer.email = :email")
+)
     @Entity
     @Table(name = "customer")
     public class Customer implements Serializable {

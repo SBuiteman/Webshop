@@ -42,12 +42,11 @@ public class ProductServiceRestApi {
 
     @Inject
     CustomerManager customerManager;
-//    public ProductServiceRestApi() throws NamingException {
-//    }
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Product> getAllProduct(){
-//        logger.error("Getting all products");
+
         return  productManager.readAllProducts();
     }
 
@@ -72,8 +71,8 @@ public class ProductServiceRestApi {
     @Path("/order")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void postOrderLine(CustomerOrder customerOrder) {
-        logger.error("POSTING AN ORDER");
+    public void postOrder(CustomerOrder customerOrder) {
+
         Customer customer = customerOrder.getCustomer();
 
         customerManager.persistCustomer(customer);
@@ -82,12 +81,7 @@ public class ProductServiceRestApi {
         order.setCustomer(customer);
         orderManager.persistOrder(order);
 
-
         List<OrderLine> orderLines = customerOrder.getOrder_lines();
-
-        for (OrderLine orderLine : orderLines){
-            logger.debug(orderLine.toString());
-        }
 
         for (OrderLine orderLine : orderLines) {
             int id = orderLine.getOrdered_product_id();

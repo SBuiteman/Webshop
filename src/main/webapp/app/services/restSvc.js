@@ -11,7 +11,8 @@
             getAllCategories: getAllCategories,
             getProductsByCategory: getProductsByCategory,
             sendOrder: sendOrder,
-            createAccount: createAccount
+            createAccount: createAccount,
+            getLoginInformation: getLoginInformation
         };
 
         function getAllProducts (){
@@ -95,8 +96,26 @@
         }
 
         function createAccountError(response) {
-            console.log('in creatAccountError');
+            // console.log('in createAccountError');
             return $q.reject('Error creating account. (HTTP status: '+response.status + ')');
+        }
+
+        function getLoginInformation(userName, password) {
+            return $http({
+                method: 'GET',
+                url: 'http://localhost:8080/webshop/api/account/'+userName+'/'+password,
+                cache: true
+            })
+                .then(getLoginInformationSuccess)
+                .catch(getLoginInformationError);
+        }
+
+        function getLoginInformationSuccess(response){
+            return response.data;
+        }
+
+        function getLoginInformationError (response) {
+            return $q.reject('Error getting login information. (HTTP status: '+response.status + ')');
         }
     }
 }());

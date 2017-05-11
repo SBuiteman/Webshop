@@ -4,24 +4,24 @@
         <table class="user-form" >
             <tr>
                 <td>
-                    <input type="email" placeholder="E-mailadres" ng-model="pc.user.username" required>
+                    <input type="email" placeholder="E-mailadres" ng-model="login.account.userName" required>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="password" placeholder="Wachtwoord" ng-model="pc.user.password" required>
+                    <input type="password" placeholder="Wachtwoord" ng-model="login.account.password" required>
                 </td>
             </tr>
             <tr>
                 <td>
                     <button type="button" class="btn btn-primary pull-left custom"
-                            ng-click="pc.inLoggen()">Inloggen</button>
-                    <button type="button" class="btn btn-primary pull-right custom">Uitloggen</button>
+                            ng-click="login.submitLoginInformation()" ng-hide="login.toggle">Inloggen</button>
+                    <button type="button" class="btn btn-primary pull-right custom" >Uitloggen</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <a ng-href="#!/account">
+                    <a ng-href="#!/account" ng-hide="login.toggle">
                         <button type="button" class="btn  btn-primary pull-center btn-block custom2">
                             Registreren
                         </button>
@@ -30,4 +30,5 @@
             </tr>
         </table>
     </form>
+    <p>{{login.currentCustomer}}</p>
 </div>

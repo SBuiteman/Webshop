@@ -2,6 +2,7 @@ package com.sogeti.webshop.service;
 
 import com.sogeti.webshop.controller.*;
 import com.sogeti.webshop.model.*;
+import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -12,6 +13,8 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("/account")
 public class AccountRestApi {
+
+    final static Logger logger = Logger.getLogger(AccountRestApi.class);
 
     @Inject
     AccountManager accountManager;
@@ -37,15 +40,9 @@ public class AccountRestApi {
     @GET
 //    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Customer getAccount(@PathParam("password") String password, @PathParam("username") String username) {
-
-        try{
-            Customer  customer = accountManager.getAccountByPasswordAndId(password, username);
-            return customer;
-        } catch (Exception e){
-            return null;
-        }
-
-
+    public Customer getAccount(@PathParam("username") String username, @PathParam("password") String password) {
+        Customer customer = accountManager.getAccountByPasswordAndId(password, username);
+//        logger.info(customer.getClientLastName());
+        return customer;
     }
 }
